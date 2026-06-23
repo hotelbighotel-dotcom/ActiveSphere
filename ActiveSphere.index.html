@@ -1,0 +1,2112 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>ActiveSphere</title>
+<meta name="theme-color" content="#0B0D08">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ActiveSphere">
+<link rel="manifest" id="manifest">
+<link rel="apple-touch-icon" id="appicon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231C8068'/%3E%3Cstop offset='1' stop-color='%230E5446'/%3E%3C/linearGradient%3E%3ClinearGradient id='gc' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23FF8159'/%3E%3Cstop offset='1' stop-color='%23F1542A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='115' fill='url(%23g)'/%3E%3Cellipse cx='180' cy='150' rx='230' ry='170' fill='%23ffffff' opacity='0.06'/%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.10'%3E%3Ccircle cx='256' cy='210' r='150' stroke-width='14'/%3E%3Ccircle cx='256' cy='210' r='106' stroke-width='12'/%3E%3C/g%3E%3Cellipse cx='256' cy='436' rx='66' ry='15' fill='%2305332a' opacity='0.30'/%3E%3Cpath d='M256 96C188 96 136 148 136 214 136 300 256 432 256 432 256 432 376 300 376 214 376 148 324 96 256 96Z' fill='%23ffffff'/%3E%3Ccircle cx='256' cy='200' r='70' fill='url(%23gc)'/%3E%3Cellipse cx='232' cy='176' rx='17' ry='10' fill='%23ffffff' opacity='0.30' transform='rotate(-35 232 176)'/%3E%3Cpath d='M256 158C292 174 292 212 256 246 220 212 220 174 256 158Z' fill='%23ffffff'/%3E%3Cpath d='M256 166L256 238' stroke='%23F1542A' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M256 196L278 182M256 210L234 198' stroke='%23F1542A' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" id="favicon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231C8068'/%3E%3Cstop offset='1' stop-color='%230E5446'/%3E%3C/linearGradient%3E%3ClinearGradient id='gc' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23FF8159'/%3E%3Cstop offset='1' stop-color='%23F1542A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='115' fill='url(%23g)'/%3E%3Cellipse cx='180' cy='150' rx='230' ry='170' fill='%23ffffff' opacity='0.06'/%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.10'%3E%3Ccircle cx='256' cy='210' r='150' stroke-width='14'/%3E%3Ccircle cx='256' cy='210' r='106' stroke-width='12'/%3E%3C/g%3E%3Cellipse cx='256' cy='436' rx='66' ry='15' fill='%2305332a' opacity='0.30'/%3E%3Cpath d='M256 96C188 96 136 148 136 214 136 300 256 432 256 432 256 432 376 300 376 214 376 148 324 96 256 96Z' fill='%23ffffff'/%3E%3Ccircle cx='256' cy='200' r='70' fill='url(%23gc)'/%3E%3Cellipse cx='232' cy='176' rx='17' ry='10' fill='%23ffffff' opacity='0.30' transform='rotate(-35 232 176)'/%3E%3Cpath d='M256 158C292 174 292 212 256 246 220 212 220 174 256 158Z' fill='%23ffffff'/%3E%3Cpath d='M256 166L256 238' stroke='%23F1542A' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M256 196L278 182M256 210L234 198' stroke='%23F1542A' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>
+<style>
+  :root{
+    --ink:#11140F; --brand:#A4CC60; --brand-2:#7FB04A; --mint:#C2F24E; --cta:#C2F24E;
+    --bg:#0B0D08; --surface:#0E110B; --card:#191D14; --line:#2B3123;
+    --text:#F4F7EF; --muted:#BCC6B2; --faint:#8E9986;
+    --accent:#FF7A4D; --accent-deep:#FF8A5D;
+    --green:#5FD08A; --amber:#E8B25C; --red:#F0655F;
+    --shadow:0 2px 6px rgba(0,0,0,.4),0 16px 38px rgba(0,0,0,.5);
+    --radius:20px;
+    --shadow-lg:0 30px 80px rgba(0,0,0,.7);
+    --glass:rgba(16,20,12,.72);
+    font-family:'IBM Plex Sans Thai',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{background:var(--bg);color:var(--text);display:flex;min-height:100vh;min-height:-webkit-fill-available;min-height:100dvh;padding:0;overflow:hidden;-webkit-font-smoothing:antialiased;}
+  .stage{display:flex;width:100vw;height:100vh;height:-webkit-fill-available;height:100dvh}
+  svg.ic{width:1em;height:1em;display:inline-block;vertical-align:middle;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+
+  .pitch{display:none}
+  .pitch .logo{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+  .pitch .logo b{font-family:'Bai Jamjuree';font-weight:700;font-size:21px;color:#fff;letter-spacing:-.3px}
+  .pitch h1{font-family:'Bai Jamjuree';font-weight:700;font-size:27px;line-height:1.25;color:#fff;margin-bottom:14px;letter-spacing:-.3px}
+  .pitch p{font-size:14px;line-height:1.7;color:#b9d4cb;margin-bottom:20px}
+  .pitch .feat{display:flex;gap:11px;align-items:flex-start;margin-bottom:13px;font-size:13px;color:#cde4dc}
+  .pitch .feat .dot{flex:none;width:28px;height:28px;border-radius:9px;background:rgba(127,227,191,.13);display:grid;place-items:center;color:var(--mint);font-size:15px}
+  .pitch .note{font-size:11px;color:#7e988e;margin-top:22px;line-height:1.6;border-top:1px solid rgba(255,255,255,.09);padding-top:14px}
+
+  .phone{width:100vw;height:100vh;height:-webkit-fill-available;height:100dvh;background:#000;position:relative;overflow:hidden;flex:1;}
+  .screen{position:absolute;inset:0;border-radius:0;overflow:hidden;display:flex;flex-direction:column;background:var(--surface)}
+  .notch{display:none}
+  .statusbar{display:none}
+  .statusbar.ondark{color:#fff}.statusbar.onlight{color:#10211C}
+  .statusbar .ico{display:flex;gap:6px;align-items:center;font-size:16px}
+
+  .splash{position:absolute;inset:0;z-index:80;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;background-size:cover;background-position:center;transition:opacity .6s ease,visibility .6s}
+  .splash::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,40,34,.4),rgba(6,30,26,.84))}
+  .splash>*{position:relative;z-index:1}
+  .splash.hide{opacity:0;visibility:hidden;pointer-events:none}
+  .splash .mark{width:74px;height:74px;border-radius:22px;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);display:grid;place-items:center;margin-bottom:22px;border:1px solid rgba(255,255,255,.18);font-size:40px}
+  .splash h1{font-family:'Bai Jamjuree';font-size:30px;font-weight:700;letter-spacing:-.5px}
+  .splash p{font-size:13.5px;color:#cfe6dd;margin-top:8px;max-width:240px;line-height:1.6}
+  .splash .ld{margin-top:30px;display:flex;align-items:center;gap:9px;font-size:12px;color:#bcd6cd}
+  .spin{width:16px;height:16px;border:2.5px solid rgba(255,255,255,.25);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .body{flex:1;min-height:0;position:relative;overflow:hidden}
+  .page{position:absolute;inset:0;display:none}
+  .page.active{display:flex;flex-direction:column}
+  .scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .scroll::-webkit-scrollbar{width:0}
+
+  /* MAP */
+  #map{position:absolute;inset:0;background:#e9efe7;z-index:1}
+  .leaflet-control-attribution{font-size:8px!important;background:rgba(255,255,255,.7)!important}
+  .leaflet-control-zoom{display:none}
+  .as-pin{background:none!important;border:none!important}
+  .clu-wrap{background:none!important;border:none!important}
+  .clu{border-radius:50%;background:rgba(17,20,15,.96);color:#C2F24E;display:grid;place-items:center;font-family:'IBM Plex Mono';font-weight:700;border:3px solid #fff;box-shadow:0 5px 14px rgba(0,0,0,.35)}
+  .pin-wrap{position:relative;width:40px;height:48px}
+  .pin-wrap .ripple{position:absolute;top:3px;left:50%;width:32px;height:32px;transform:translateX(-50%);border-radius:50%;animation:ripple 2.6s ease-out infinite}
+  @keyframes ripple{0%{transform:translateX(-50%) scale(.6);opacity:.45}100%{transform:translateX(-50%) scale(2.3);opacity:0}}
+  .pin-wrap .head{position:absolute;top:0;left:50%;transform:translateX(-50%) rotate(45deg);width:32px;height:32px;border-radius:50% 50% 50% 3px;display:grid;place-items:center;box-shadow:0 5px 12px rgba(0,0,0,.3);border:2.5px solid #fff}
+  .pin-wrap .head b{transform:rotate(-45deg);font-family:'IBM Plex Mono';font-weight:600;font-size:10.5px;color:#fff}
+  .me-dot{width:18px;height:18px;border-radius:50%;background:#2d8bff;border:3px solid #fff;box-shadow:0 0 0 2px rgba(45,139,255,.4),0 2px 6px rgba(0,0,0,.3);position:relative}
+  .me-dot::after{content:"";position:absolute;inset:-14px;border-radius:50%;background:rgba(45,139,255,.16);animation:halo 2.8s ease-out infinite}
+  @keyframes halo{0%{transform:scale(.4);opacity:.7}100%{transform:scale(1);opacity:0}}
+
+  .topfloat{position:absolute;top:calc(14px + env(safe-area-inset-top));left:14px;right:14px;z-index:20;display:flex;flex-direction:column;gap:7px}
+  .maphead{display:flex;align-items:center;gap:9px;background:rgba(20,24,15,.62);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:11px 15px;box-shadow:0 10px 26px rgba(0,0,0,.45)}
+  .maphead .ci{color:var(--cta);font-size:20px;display:flex}
+  .maphead .vtag{margin-left:auto;font-family:'IBM Plex Mono';font-size:10px;font-weight:700;color:#11140F;background:var(--cta);padding:2px 7px;border-radius:8px;align-self:flex-start}
+  .maphead .mh-l{display:flex;flex-direction:column;line-height:1.3}
+  .maphead .mh-hi{font-size:11px;color:rgba(255,255,255,.82);font-weight:500}
+  .maphead b{font-family:'Bai Jamjuree';font-weight:700;font-size:16px;letter-spacing:-.3px;color:#fff}
+  .maphead .mh-tag{font-size:11px;color:rgba(255,255,255,.82);margin-left:auto}
+  .searchbar{background:var(--glass);backdrop-filter:blur(14px);border-radius:13px;display:flex;align-items:center;gap:8px;padding:10px 13px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.07)}
+  .searchbar .ic{font-size:16px;color:var(--brand)}
+  .searchbar input{border:none;outline:none;font-family:inherit;font-size:13.5px;flex:1;background:none;color:var(--text)}
+  .searchbar input::placeholder{color:#7d8f86}
+  .cond{background:var(--glass);backdrop-filter:blur(14px);border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.07);display:flex;align-items:stretch;padding:9px 4px;cursor:pointer}
+  .cond-seg{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:0 6px}
+  .cond-seg .ci{font-size:16px;color:var(--brand)}
+  .cond-seg b{font-family:'Bai Jamjuree';font-size:13px;display:block;line-height:1.05}
+  .cond-seg small{font-size:8.5px;color:var(--muted);display:block}
+  .cond-seg .av{width:9px;height:9px;border-radius:50%}
+  .cond-div{width:1px;background:var(--line);margin:3px 0}
+  .loc-banner{background:var(--glass);backdrop-filter:blur(8px);border-radius:13px;padding:9px 13px;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:8px;box-shadow:var(--shadow);cursor:pointer}
+  .loc-banner .ic{font-size:14px;color:var(--accent);flex:none}
+  .loc-banner b{color:var(--brand)}
+
+  .mapbtns{position:absolute;right:14px;bottom:272px;z-index:20;display:flex;flex-direction:column;gap:7px}
+  .mapbtn{width:40px;height:40px;border-radius:12px;background:var(--glass);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.07);box-shadow:var(--shadow);display:grid;place-items:center;cursor:pointer;color:var(--brand);font-size:18px}
+  .mapbtn:active{transform:scale(.93)}
+  .mapbtn.zoom{height:auto;flex-direction:column;padding:0;gap:0}
+  .mapbtn.zoom button{width:40px;height:36px;border:none;background:none;color:var(--brand);font-size:19px;cursor:pointer;display:grid;place-items:center}
+  .mapbtn.zoom button:first-child{border-bottom:1px solid var(--line)}
+
+  .peek{position:absolute;left:0;right:0;bottom:0;z-index:25;background:#14180E;border-radius:30px 30px 0 0;box-shadow:0 -16px 46px rgba(0,0,0,.6);height:250px;transition:height .34s cubic-bezier(.25,.9,.3,1);display:flex;flex-direction:column;overflow:hidden;border-top:1px solid rgba(255,255,255,.06)}
+  .peek.expanded{height:calc(100% - 60px)}
+  .peek .ph{padding:12px 18px 6px;cursor:grab;flex:none;touch-action:none}
+  .peek .grip{width:42px;height:5px;border-radius:5px;background:#3a4231;margin:0 auto 12px}
+  .peek .pht{display:flex;align-items:center;justify-content:space-between}
+  .peek .pht h2{font-family:'Bai Jamjuree';font-size:18px;font-weight:700;letter-spacing:-.3px}
+  .peek .pht .cnt{font-size:12px;color:#11140F;background:var(--cta);padding:4px 11px;border-radius:20px;font-family:'IBM Plex Mono';font-weight:700}
+  .radius-row{display:flex;align-items:center;gap:11px;padding:10px 18px 4px;flex:none}
+  .radius-row span{font-size:11px;color:var(--muted);white-space:nowrap}
+  .radius-row b{font-family:'IBM Plex Mono';font-size:12px;color:var(--brand);white-space:nowrap}
+  input[type=range]{-webkit-appearance:none;flex:1;height:5px;border-radius:5px;background:linear-gradient(90deg,var(--brand),var(--cta));outline:none}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:19px;height:19px;border-radius:50%;background:#fff;border:4px solid var(--brand);cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+  .peek .plist{flex:1;overflow-y:auto;padding:8px 14px 20px}
+  .peek .plist::-webkit-scrollbar{width:0}
+
+  .cards{display:flex;flex-direction:column;gap:11px}
+  .pcard{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);cursor:pointer;border:1px solid var(--line);transition:transform .12s;position:relative}
+  .pcard:active{transform:scale(.985)}
+  .pcard.ac .cover{height:154px;border-radius:18px 18px 0 0;background-size:cover;background-position:center;position:relative;background-color:#2f3a28;background-image:linear-gradient(135deg,#33402b,#222a1c)}
+  .pcard.ac .cover .tg{position:absolute;left:11px;top:11px;font-size:10px;color:#0A2E29;font-weight:700;background:rgba(255,255,255,.93);padding:3px 9px;border-radius:9px;box-shadow:0 2px 7px rgba(0,0,0,.16);z-index:2}
+  .pcard .coverg{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,24,20,.84),rgba(6,24,20,0) 60%)}
+  .pcard .covertitle{position:absolute;left:13px;right:13px;bottom:11px;color:#fff;font-family:'Bai Jamjuree';font-weight:700;font-size:17.5px;line-height:1.2;letter-spacing:-.3px;text-shadow:0 2px 12px rgba(0,0,0,.55);z-index:2;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .pcard .covertitle .gem{font-size:8px;background:rgba(255,241,233,.95);color:var(--accent-deep);padding:2px 6px;border-radius:6px;font-weight:700;text-shadow:none}
+  .pcard.ac .body{padding:11px 14px 13px}
+  .pcard.ac .body .meta{margin-top:0}
+  .pcard{border-radius:22px}
+  .pcard .top{display:flex;gap:13px;padding:13px 14px 0}
+  .pcard .thumb{width:88px;height:88px;border-radius:15px;flex:none;background-size:cover;background-position:center;position:relative;background-color:#2f3a28;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+  .pcard .thumb .tg{position:absolute;left:6px;top:6px;font-size:9px;color:#0A2E29;font-weight:700;background:rgba(255,255,255,.92);padding:3px 8px;border-radius:8px;backdrop-filter:blur(2px);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+  .pcard .heart{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:50%;background:rgba(8,10,6,.5);backdrop-filter:blur(6px);display:grid;place-items:center;font-size:16px;color:#fff;z-index:3;border:1px solid rgba(255,255,255,.12)}
+  .pcard .heart.on{color:var(--accent)}
+  .pcard .heart.on .ic{fill:var(--accent)}
+  .pcard .info{flex:1;min-width:0;padding-top:1px;padding-right:30px}
+  .pcard .info{padding-top:3px}
+  .pcard .nm{font-family:'Bai Jamjuree';font-size:15.5px;font-weight:700;display:flex;align-items:center;gap:6px;line-height:1.25;letter-spacing:-.2px}
+  .pcard .nm .gem{font-size:8px;background:rgba(255,122,77,.18);color:var(--accent);padding:2px 6px;border-radius:6px;font-weight:600;white-space:nowrap}
+  .pcard .meta{display:flex;gap:9px;font-size:11px;color:var(--muted);margin-top:4px;flex-wrap:wrap;align-items:center}
+  .pcard .meta span{display:flex;align-items:center;gap:3px}
+  .pcard .meta .ic{font-size:11px;opacity:.7}
+  .pcard .openb{font-size:9px;font-weight:600;padding:2px 7px;border-radius:6px}
+  .pcard .openb.o{background:rgba(95,208,138,.16);color:#5FD08A}.pcard .openb.c{background:rgba(240,101,95,.16);color:#F0655F}
+  .pcard .fac{display:flex;gap:5px;margin-top:8px}
+  .pcard .fac .f{width:22px;height:22px;border-radius:7px;background:#232a1b;display:grid;place-items:center;color:var(--brand);font-size:13px}
+  .pcard .fac .more{font-size:10px;color:var(--faint);align-self:center}
+  .ldi{padding:11px 13px 13px}
+  .ldi .lh{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+  .ldi .lh .lab{font-size:10.5px;color:var(--muted);display:flex;align-items:center;gap:5px}
+  .ldi .lh .dot{width:6px;height:6px;border-radius:50%;animation:blink 1.4s infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+  .ldi .lh .st{font-size:11.5px;font-weight:600}
+  .bar{height:7px;border-radius:6px;background:#242a1c;overflow:hidden}
+  .bar>i{display:block;height:100%;border-radius:6px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+  .ldi .ppl{font-size:10px;color:var(--faint);margin-top:4px;font-family:'IBM Plex Mono'}
+
+  .pagehead{position:relative;padding:calc(30px + env(safe-area-inset-top)) 18px 26px;color:#fff;flex:none;border-radius:0 0 28px 28px;overflow:hidden;background:#11140F;box-shadow:0 10px 26px rgba(0,0,0,.4)}
+  .pagehead:before{content:'';position:absolute;inset:0;background:url(https://images.unsplash.com/photo-1715940309860-585403114687?w=900&q=70&auto=format&fit=crop) center/cover;opacity:.62}
+  .pagehead:after{content:'';position:absolute;inset:0;background:linear-gradient(155deg,rgba(11,13,8,.5),rgba(11,13,8,.93))}
+  .pagehead>*{position:relative;z-index:1}
+  .pagehead h2{font-family:'Bai Jamjuree';font-size:29px;font-weight:700;letter-spacing:-.6px;line-height:1.1;text-shadow:0 2px 12px rgba(0,0,0,.3)}
+  .pagehead p{font-size:13px;color:#d8eae2;margin-top:7px;line-height:1.55;max-width:80%}
+  .filters{display:flex;gap:8px;padding:12px 16px 6px;overflow-x:auto;flex:none}
+  .filters::-webkit-scrollbar{height:0}
+  .chip{flex:none;padding:8px 15px;border-radius:22px;background:var(--card);border:1px solid var(--line);font-size:12.5px;color:var(--muted);cursor:pointer;font-weight:600;white-space:nowrap;transition:.15s}
+  .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .chip.on{background:rgba(194,242,78,.14);color:var(--cta);border-color:var(--cta)}
+  .ex-search{margin:10px 16px 0;background:var(--card);border:1px solid var(--line);border-radius:14px;display:flex;align-items:center;gap:9px;padding:11px 13px;flex:none}
+  .ex-search .ic{font-size:17px;color:var(--faint)}
+  .ex-search input{border:none;outline:none;font-family:inherit;font-size:13.5px;flex:1;background:none}
+  .exlist{padding:12px 16px 24px}
+
+  .nav{flex:none;background:var(--card);border-top:1px solid var(--line);display:flex;padding:8px 4px calc(12px + env(safe-area-inset-bottom));justify-content:space-around;position:relative;z-index:30}
+  .nav button{background:none;border:none;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--faint);cursor:pointer;font-family:inherit;font-size:10px;flex:1;padding:4px 0;font-weight:500;transition:.15s;position:relative}
+  .nav button .ic{font-size:23px}
+  .nav button.on{color:var(--cta);background:rgba(194,242,78,.13);border-radius:15px}
+  .nav button.on .ic{transform:translateY(-1px)}
+  .nav button:before{content:'';position:absolute;top:-8px;width:22px;height:3px;border-radius:3px;background:transparent;transition:.15s}
+  .nav button.on:before{background:transparent}
+  .nav .badge{position:absolute;top:-3px;right:50%;margin-right:-20px;background:var(--accent);color:#fff;font-size:9px;font-weight:700;min-width:16px;height:16px;border-radius:9px;display:grid;place-items:center;padding:0 4px}
+
+  .scrim{position:absolute;inset:0;border-radius:0;background:rgba(8,28,24,.45);opacity:0;pointer-events:none;transition:.28s;z-index:70}
+  .scrim.show{opacity:1;pointer-events:auto}
+  .sheet{position:absolute;left:0;right:0;bottom:0;max-height:92%;background:var(--surface);border-radius:26px 26px 0 0;transform:translateY(112%);transition:transform .36s cubic-bezier(.22,.9,.3,1);z-index:71;display:flex;flex-direction:column;box-shadow:0 -12px 44px rgba(0,0,0,.22)}
+  .sheet.show{transform:translateY(0)}
+  .sheet .sc{overflow-y:auto;padding:0 0 16px}
+  .sheet .sc::-webkit-scrollbar{width:0}
+  .hero{height:228px;position:relative;overflow:hidden;background-color:#4ea679}
+  .hero:before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(6,24,20,.82),rgba(6,24,20,.12) 52%,rgba(6,24,20,.18))}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.04) 24%,rgba(0,0,0,.66));pointer-events:none;z-index:1}
+  .hgal{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth}
+  .hgal::-webkit-scrollbar{display:none}
+  .hslide{flex:0 0 100%;height:100%;background-size:cover;background-position:center;scroll-snap-align:start}
+  .hcount{position:absolute;top:12px;left:12px;background:rgba(8,30,26,.6);color:#fff;font-size:11px;padding:3px 10px;border-radius:20px;font-family:'IBM Plex Mono';z-index:3}
+  .hdots{position:absolute;right:14px;bottom:14px;display:flex;gap:5px;z-index:3}
+  .hdots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:.2s}
+  .hdots i.on{background:#fff;width:18px;border-radius:3px}
+  .hero .htext{position:absolute;left:18px;bottom:15px;color:#fff;z-index:2;right:18px}
+  .hero .badges{display:flex;gap:6px;margin-bottom:8px}
+  .hero .badges span{font-size:10px;background:rgba(255,255,255,.22);backdrop-filter:blur(3px);padding:3px 9px;border-radius:7px}
+  .hero .badges .open{background:rgba(21,184,108,.9)}.hero .badges .closed{background:rgba(230,72,70,.9)}
+  .hero .htext h3{font-family:'Bai Jamjuree';font-size:24px;font-weight:700;text-shadow:0 2px 14px rgba(0,0,0,.5);line-height:1.18;letter-spacing:-.4px;margin-top:6px}
+  .hero .grip{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:42px;height:5px;border-radius:5px;background:rgba(255,255,255,.7);z-index:2}
+  .hero .close{position:absolute;top:13px;right:13px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;cursor:pointer;border:none;z-index:2;font-size:16px;color:var(--text)}
+  .sbody{padding:0 18px}
+  .dpanel{position:relative;z-index:2;margin-top:-30px;background:var(--surface);border-radius:30px 30px 0 0;padding:22px 18px 0}
+  .dpanel .dh3{font-family:'Bai Jamjuree';font-size:23px;font-weight:700;letter-spacing:-.4px;line-height:1.2;color:var(--text)}
+  .dpanel .dsub{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.5}
+  .dpanel .kopen{color:var(--green);font-weight:700}
+  .dpanel .kclosed{color:var(--red);font-weight:700}
+  .dstats{display:flex;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 6px;margin-top:15px}
+  .dstat{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;position:relative}
+  .dstat+.dstat:before{content:'';position:absolute;left:0;top:2px;bottom:2px;width:1px;background:var(--line)}
+  .dstat .di{color:var(--cta);font-size:18px;display:flex}
+  .dstat .dv{font-family:'Bai Jamjuree';font-weight:700;font-size:17px;color:var(--text);line-height:1.1}
+  .dstat .dv .unit{font-size:9px;color:var(--muted);font-family:'IBM Plex Mono';font-weight:500}
+  .dstat .dl{font-size:10px;color:var(--muted)}
+  .statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+  .stat{background:#191D14;border:1px solid var(--line);border-radius:18px;padding:13px;text-align:left;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+  .stat .sic{width:34px;height:34px;border-radius:50%;background:#262d1c;color:var(--cta);display:grid;place-items:center;margin-bottom:9px}
+  .stat .sic .ic{font-size:16px}
+  .stat small{text-transform:uppercase;letter-spacing:.5px;font-size:9.5px;color:var(--faint);font-weight:600}
+  .stat b{display:block;margin-top:3px;font-family:'Bai Jamjuree';font-size:19px;font-weight:700;letter-spacing:-.3px}
+  .stat .unit{font-size:10.5px;font-weight:500;color:var(--muted);letter-spacing:0}
+  .stat small{font-size:10px;color:var(--muted);display:block;margin-bottom:4px}
+  .stat b{font-family:'Bai Jamjuree';font-size:16px;display:block;line-height:1}
+  .stat .unit{font-size:9px;color:var(--faint);font-family:'IBM Plex Mono'}
+  .block{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin-top:12px}
+  .block .bt{font-family:'Bai Jamjuree';font-size:14px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:7px}
+  .block .bt .ic{font-size:16px;color:var(--brand)}
+  .fc{display:flex;gap:4px;align-items:flex-end;margin-top:4px}
+  .fc .col{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px}
+  .fc .col .bw{width:100%;display:flex;align-items:flex-end;height:60px}
+  .fc .col .bv{width:70%;margin:0 auto;border-radius:4px 4px 2px 2px;transition:height .4s;min-height:4px}
+  .fc .col small{font-size:7.5px;color:var(--faint);font-family:'IBM Plex Mono'}
+  .fc .col.now .bv{box-shadow:0 0 0 2px var(--cta)}
+  .fc .col.best small{color:var(--green);font-weight:700}
+  .fc-tip{display:flex;align-items:center;gap:8px;background:rgba(95,208,138,.12);border:1px solid rgba(95,208,138,.28);border-radius:11px;padding:9px 11px;margin-top:11px;font-size:11.5px;color:#8fe0ad}
+  .fc-tip .ic{font-size:15px;flex:none}
+  .faclist{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .faclist .fi{display:flex;align-items:center;gap:9px;font-size:12.5px;cursor:pointer;padding:7px;border-radius:13px;border:1px solid var(--line);background:var(--card);transition:.12s}
+  .faclist .fi:active{transform:scale(.97)}
+  .faclist .fi .fchev{margin-left:auto;color:var(--faint);font-size:13px}
+  .facscrim{position:fixed;inset:0;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:.2s;z-index:9998}
+  .facscrim.show{opacity:1;pointer-events:auto}
+  .facsheet{position:fixed;inset:0;z-index:9999;background:var(--surface);overflow-y:auto;transform:translateY(100%);transition:transform .34s cubic-bezier(.25,.9,.3,1);display:flex;flex-direction:column;-webkit-overflow-scrolling:touch}
+  .facsheet.show{transform:translateY(0)}
+  .fachead{position:sticky;top:0;z-index:3;display:flex;align-items:center;gap:12px;padding:calc(16px + env(safe-area-inset-top)) 16px 12px;background:linear-gradient(180deg,var(--surface) 70%,transparent)}
+  .fachead .fback{width:40px;height:40px;border-radius:50%;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;color:var(--text);cursor:pointer;flex:none;font-size:18px}
+  .fachead h3{font-family:'Bai Jamjuree';font-size:19px;font-weight:700;display:flex;align-items:center;gap:9px}
+  .fachead h3 .fic{width:34px;height:34px;border-radius:50%;background:#262d1c;color:var(--cta);display:grid;place-items:center;font-size:17px;flex:none}
+  .facgal{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 16px 8px;-webkit-overflow-scrolling:touch}
+  .facgal img{width:84%;flex:none;height:240px;object-fit:cover;border-radius:20px;scroll-snap-align:center;background:#2f3a28}
+  .facgal .facplace{width:84%;flex:none;height:240px;border-radius:20px;scroll-snap-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#fff}
+  .facgal .facplace .fpic{font-size:54px;display:flex;color:var(--cta)}
+  .facgal .facplace .fpic svg{width:58px;height:58px}
+  .facgal .facplace .fpname{font-family:'Bai Jamjuree';font-weight:700;font-size:18px}
+  .facgal .facplace .fptag{font-size:11px;opacity:.7}
+  .facbody{padding:10px 18px 4px}
+  .facinfo{font-size:14px;color:var(--text);line-height:1.75}
+  .facmeta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .facmeta span{font-size:12px;color:var(--muted);background:var(--card);border:1px solid var(--line);padding:7px 12px;border-radius:11px}
+  .facnote{font-size:11.5px;color:var(--faint);padding:14px 18px 0}
+  .facclose{margin:18px;width:calc(100% - 36px);border:none;border-radius:14px;padding:15px;background:var(--cta);color:#11140F;font-family:'Bai Jamjuree';font-weight:700;font-size:14.5px;cursor:pointer}
+  .evfab{position:absolute;left:14px;top:calc(174px + env(safe-area-inset-top));z-index:23;width:54px;height:54px;border-radius:50%;border:2px solid #fff;background:linear-gradient(150deg,var(--cta),#7fb04a);color:#11140F;display:grid;place-items:center;box-shadow:0 10px 24px rgba(0,0,0,.4);cursor:pointer}
+  .evfab svg{width:25px;height:25px}
+  .evbody{padding:0 14px 8px}
+  .evhint{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--muted);padding:0 2px 10px}
+  .evhint svg{width:13px;height:13px;color:var(--cta)}
+  .evadd{width:100%;border:none;border-radius:14px;padding:13px;background:var(--cta);color:#11140F;font-family:'Bai Jamjuree';font-weight:700;font-size:13.5px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin:2px 0 12px}
+  .evadd svg{width:17px;height:17px}
+  .evexm{font-size:9px;color:var(--amber);background:rgba(224,144,44,.16);padding:1px 6px;border-radius:6px;margin-left:6px;font-weight:700}
+  .evform{display:flex;flex-direction:column;gap:12px}
+  .evform label{font-size:12px;color:var(--muted);font-weight:600;display:block;margin-bottom:5px}
+  .evform input,.evform textarea{width:100%;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;color:var(--text);font-family:inherit;font-size:13.5px;outline:none;box-sizing:border-box}
+  .evform input:focus,.evform textarea:focus{border-color:var(--cta)}
+  .evform textarea{min-height:76px;resize:vertical}
+  .evform .row2{display:flex;gap:10px}.evform .row2>div{flex:1;min-width:0}
+  .evform .mini{align-self:flex-start;font-size:11.5px;color:var(--cta);background:none;border:none;cursor:pointer;padding:4px 0;font-family:inherit;font-weight:700}
+  .evtabs{display:flex;gap:7px;overflow-x:auto;padding:6px 2px 12px;-webkit-overflow-scrolling:touch}
+  .evtab{flex:none;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:20px;padding:8px 15px;font-family:'Bai Jamjuree';font-weight:600;font-size:12.5px;cursor:pointer;white-space:nowrap}
+  .evtab.on{background:var(--cta);color:#11140F;border-color:var(--cta)}
+  .evrow{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:10px;margin-bottom:10px;cursor:pointer;position:relative}
+  .evrow.upcoming{border-color:rgba(194,242,78,.55);box-shadow:0 0 0 1px rgba(194,242,78,.22)}
+  .evrow.past{opacity:.62}
+  .evthumb{width:76px;height:76px;border-radius:14px;flex:none;background-size:cover;background-position:center;background-color:#2f3a28}
+  .evmain{flex:1;min-width:0;padding-right:62px}
+  .evname{font-family:'Bai Jamjuree';font-weight:700;font-size:14.5px;color:var(--text);line-height:1.25;margin-bottom:4px}
+  .evmeta{display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .evmeta svg{width:13px;height:13px;flex:none;color:var(--brand)}
+  .evb{position:absolute;top:10px;right:10px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:8px}
+  .evb.on{background:rgba(39,208,138,.18);color:var(--green)}
+  .evb.up{background:var(--cta);color:#11140F}
+  .evb.pa{background:rgba(255,255,255,.08);color:var(--faint)}
+  .evkv{font-size:13px;color:var(--text);line-height:1.65;display:flex;gap:8px;align-items:flex-start;margin-top:5px}
+  .evkv svg{width:15px;height:15px;color:var(--cta);flex:none;margin-top:3px}
+  .evkv b{font-weight:600;color:var(--muted)}
+  .evstatus{display:inline-block;font-size:11.5px;font-weight:700;padding:5px 13px;border-radius:11px}
+  .evstatus.ongoing{background:rgba(39,208,138,.18);color:var(--green)}
+  .evstatus.upcoming{background:var(--cta);color:#11140F}
+  .evstatus.past{background:rgba(255,255,255,.08);color:var(--faint)}
+  .evload{text-align:center;color:var(--muted);padding:46px 22px;font-size:13px;line-height:1.7}
+  .evload svg{width:34px;height:34px;color:var(--cta);margin-bottom:12px}
+  .aidots{color:var(--muted)}
+  .askai{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px;margin:12px 0 4px}
+  .askai .at{font-family:'Bai Jamjuree';font-weight:700;font-size:14px;display:flex;align-items:center;gap:7px;color:var(--text)}
+  .askai .at svg{color:var(--cta)}
+  .askai .asub{font-size:11.5px;color:var(--muted);margin-top:3px}
+  .askai .ar{display:flex;gap:8px;margin-top:11px}
+  .askai input{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:11px 13px;color:var(--text);font-family:inherit;font-size:13px;outline:none}
+  .askai .aibtn{border:none;border-radius:12px;background:var(--cta);color:#11140F;font-weight:700;padding:0 16px;cursor:pointer;font-family:'Bai Jamjuree'}
+  .aians{display:none;margin-top:11px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 13px;font-size:13px;color:var(--text);line-height:1.75}
+  .faclist .fi .ic2{width:34px;height:34px;border-radius:50%;background:#262d1c;display:grid;place-items:center;color:var(--cta);flex:none;font-size:16px}
+  .navrow{display:flex;gap:8px;margin-bottom:9px}
+  .recreasons{display:flex;flex-wrap:wrap;gap:5px;margin:3px 0 5px}
+  .rchip{font-size:10.5px;font-weight:600;color:var(--brand);background:rgba(164,204,96,.14);border-radius:8px;padding:3px 8px}
+  .aibox{background:linear-gradient(135deg,#0F5A4C,#1C8068);color:#fff;border-radius:16px;padding:14px;margin-bottom:12px;box-shadow:var(--shadow)}
+  .aihead{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+  .aibadge{display:inline-flex;align-items:center;gap:6px;font-family:'Bai Jamjuree';font-weight:700;font-size:13px;background:rgba(255,255,255,.16);padding:5px 11px;border-radius:20px}
+  .aibadge .ic{width:15px;height:15px}
+  .aitime{font-family:'IBM Plex Mono';font-size:12px;opacity:.85}
+  .aitext{font-size:12px;line-height:1.65;color:#dff0e9}
+  .aitop{margin-top:9px;font-size:12.5px;background:rgba(255,255,255,.13);border-radius:11px;padding:9px 11px;line-height:1.6}
+  .aiinsight{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--brand);margin-top:3px;line-height:1.4}
+  .aiinsight .ic{width:13px;height:13px;flex:none}
+  .reccard .top{align-items:flex-start}
+  .match{--p:90;width:46px;height:46px;border-radius:50%;flex:none;align-self:center;background:conic-gradient(var(--cta) calc(var(--p)*1%),#242a1c 0);display:grid;place-items:center}
+  .match span{width:34px;height:34px;border-radius:50%;background:#191D14;display:grid;place-items:center;font-size:10.5px;font-weight:700;color:var(--cta);font-family:'IBM Plex Mono'}
+  .provrow{display:flex;gap:8px;overflow-x:auto;padding:0 16px 10px;-webkit-overflow-scrolling:touch}
+  .provrow::-webkit-scrollbar{display:none}
+  .provchip{flex:none;padding:7px 13px;border-radius:18px;background:var(--card);border:1px solid var(--line);color:var(--brand);font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:.12s}
+  .provchip:active{transform:scale(.95);background:var(--brand);color:#fff}
+  .illus{position:absolute;top:8px;right:8px;background:rgba(8,30,26,.62);color:#fff;font-size:9.5px;font-weight:600;padding:2px 7px;border-radius:7px}
+  .nophoto{position:absolute;left:14px;bottom:64px;background:rgba(8,30,26,.55);color:#fff;font-size:11px;padding:5px 10px;border-radius:9px}
+  .livedot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#15B86C;margin-left:3px;vertical-align:middle;animation:pulse 1.6s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(21,184,108,.6)}70%{box-shadow:0 0 0 6px rgba(21,184,108,0)}100%{box-shadow:0 0 0 0 rgba(21,184,108,0)}}
+  .loc-banner{display:none!important}
+  .wxfab{position:absolute;right:14px;top:calc(174px + env(safe-area-inset-top));z-index:23;width:54px;height:54px;border-radius:50%;border:2px solid #fff;background:linear-gradient(150deg,var(--brand),var(--ink));color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px rgba(8,40,34,.34);cursor:pointer}
+  .wxfab .ic,.wxfab .wxi{font-size:24px;display:flex}
+  .wxfab .wxi svg{width:25px;height:25px}
+  .wxfab.rain{background:linear-gradient(150deg,#2f7fd1,#1c4f8a)}
+  .wxfab.rain:after{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(47,127,209,.5);animation:pulse 1.8s infinite}
+  .wxhero{position:relative;padding:calc(28px + env(safe-area-inset-top)) 18px 24px;text-align:center;color:#fff;background:linear-gradient(160deg,var(--brand),var(--ink));border-radius:0 0 28px 28px}
+  .wxhero .wxbig{display:flex;justify-content:center}
+  .wxhero .wxbig svg{width:56px;height:56px}
+  .wxhero .wxtemp{font-family:'Bai Jamjuree';font-size:48px;font-weight:700;line-height:1;margin-top:6px}
+  .wxhero .wxcond{font-size:14.5px;margin-top:4px;opacity:.96}
+  .wxhero .wxloc{font-size:11px;margin-top:9px;opacity:.82}
+  .rainbar{display:none;position:absolute;top:calc(150px + env(safe-area-inset-top));left:14px;right:14px;z-index:21;background:#2b6cb0;color:#fff;border-radius:12px;padding:9px 14px;font-size:12.5px;font-weight:600;text-align:center;box-shadow:0 6px 16px rgba(8,30,26,.25)}
+  .iqbtn{margin-top:8px;background:var(--card);border:1px solid var(--line);color:var(--brand);border-radius:12px;padding:8px 12px;font-family:'Bai Jamjuree';font-weight:600;font-size:12.5px;cursor:pointer}
+  .airain{margin-top:9px;font-size:12px;background:rgba(43,108,176,.9);border-radius:10px;padding:8px 11px}
+  .searchhere{position:absolute;top:calc(196px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:22;background:var(--cta);color:#11140F;border:none;border-radius:20px;padding:9px 18px;font-family:'Bai Jamjuree';font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(0,0,0,.4);cursor:pointer}
+  .navchip{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px;border:1px solid var(--line);border-radius:11px;background:var(--card);cursor:pointer;font-size:11px;color:var(--muted);transition:.12s}
+  .navchip:active{transform:scale(.95)}
+  .navchip .ic{font-size:18px;color:var(--brand)}
+  .navmain{width:100%;border:none;border-radius:14px;padding:14px;background:var(--cta);color:#11140F;font-family:'Bai Jamjuree';font-weight:700;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 22px rgba(194,242,78,.25)}
+  .navmain .ic{font-size:18px}
+  .navpanel{position:absolute;left:0;right:0;bottom:0;z-index:35;background:var(--card);border-radius:20px 20px 0 0;box-shadow:0 -12px 40px rgba(8,30,26,.25);transform:translateY(110%);transition:transform .3s;max-height:48%;display:flex;flex-direction:column}
+  .navpanel.show{transform:translateY(0)}
+  .np-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 11px;border-bottom:1px solid var(--line)}
+  .np-head b{font-family:'Bai Jamjuree';font-size:15px}
+  .np-eta{font-size:12px;color:var(--brand);font-weight:600;margin-top:3px}
+  .np-stop{width:34px;height:34px;border-radius:50%;background:#262d1c;border:none;display:grid;place-items:center;cursor:pointer;color:var(--text);font-size:16px;flex:none}
+  .np-steps{overflow-y:auto;padding:6px 16px 18px}
+  .nstep{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid var(--line);font-size:12.5px;align-items:flex-start}
+  .nstep .nd{font-family:'IBM Plex Mono';font-size:11px;color:var(--muted);min-width:62px;flex:none}
+  .cta-bar{flex:none;padding:12px 18px 16px;background:var(--card);border-top:1px solid var(--line);display:flex;gap:9px}
+  .btn{flex:1;border:none;border-radius:12px;padding:13px;font-family:'Bai Jamjuree';font-weight:600;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;transition:.15s}
+  .btn .ic{font-size:18px}
+  .btn:active{transform:scale(.97)}
+  .btn-line{background:#262d1c;color:var(--brand);flex:none;width:46px}
+  .btn-line.on{color:var(--accent)}.btn-line.on .ic{fill:var(--accent)}
+  .btn-go{background:var(--accent);color:#fff;box-shadow:0 6px 16px rgba(255,106,61,.34)}
+  .btn-go.free{background:var(--brand);box-shadow:0 6px 16px rgba(15,90,76,.3)}
+
+  .bk-step{margin-top:14px}
+  .bk-step .lbl{font-size:12px;color:var(--muted);margin-bottom:9px;font-weight:500}
+  .courts{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+  .court{border:1.5px solid var(--line);background:var(--card);border-radius:13px;padding:13px;cursor:pointer;transition:.15s}
+  .court.on{border-color:var(--cta);background:rgba(164,204,96,.14)}
+  .court b{font-family:'Bai Jamjuree';font-size:14px;display:block}
+  .court small{font-size:10.5px;color:var(--muted)}
+  .slots{display:flex;flex-wrap:wrap;gap:8px}
+  .slot{padding:10px 14px;border-radius:11px;border:1.5px solid var(--line);background:var(--card);font-family:'IBM Plex Mono';font-size:13px;cursor:pointer;font-weight:600;transition:.15s}
+  .slot.on{border-color:var(--brand);background:var(--brand);color:#fff}
+  .slot.full{opacity:.4;text-decoration:line-through;cursor:not-allowed}
+  .summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:15px}
+  .summary .sr{display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;color:var(--muted)}
+  .summary .sr b{color:var(--text)}
+  .summary .tot{border-top:1px dashed var(--line);padding-top:10px;margin-top:4px;font-size:15px}
+  .summary .tot b{font-family:'Bai Jamjuree';font-size:19px;color:var(--brand)}
+  .success{text-align:center;padding:26px 10px 6px}
+  .success .ok{width:74px;height:74px;border-radius:50%;background:rgba(95,208,138,.16);display:grid;place-items:center;margin:0 auto 16px;animation:pop .45s cubic-bezier(.2,1.4,.4,1);font-size:38px;color:var(--green)}
+  @keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+  .success h3{font-family:'Bai Jamjuree';font-size:21px;margin-bottom:6px}
+  .success p{font-size:13px;color:var(--muted);margin-bottom:18px}
+  .ticket{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:left;position:relative}
+  .ticket::before,.ticket::after{content:"";position:absolute;width:18px;height:18px;border-radius:50%;background:var(--surface);top:54px;transform:translateY(-50%)}
+  .ticket::before{left:-9px}.ticket::after{right:-9px}
+  .ticket .code{font-family:'IBM Plex Mono';font-size:22px;font-weight:600;color:var(--brand);text-align:center;letter-spacing:2px;border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:12px}
+  .ticket .tr{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:7px}
+  .ticket .tr span{color:var(--muted)}.ticket .tr b{font-weight:600}
+
+  .empty{text-align:center;padding:54px 30px;color:var(--faint)}
+  .empty .ic{font-size:50px;margin-bottom:14px;opacity:.5}
+  .empty p{font-size:13.5px;line-height:1.6}
+  .bcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px;margin-bottom:12px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .bcard .stripe{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--brand)}
+  .bcard .bh{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;padding-left:8px}
+  .bcard .bh b{font-family:'Bai Jamjuree';font-size:15px}
+  .bcard .bh small{font-family:'IBM Plex Mono';font-size:11px;color:var(--brand);background:rgba(164,204,96,.13);padding:3px 8px;border-radius:7px}
+  .bcard .brow{display:flex;gap:18px;padding-left:8px;font-size:12.5px;color:var(--muted);margin-bottom:4px}
+  .bcard .brow span{display:flex;align-items:center;gap:5px}
+  .bcard .cancel{margin-top:10px;margin-left:8px;font-size:12px;color:var(--red);background:rgba(240,101,95,.15);border:none;padding:8px 14px;border-radius:9px;cursor:pointer;font-family:inherit;font-weight:600}
+
+  .toast{position:absolute;left:50%;bottom:96px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:11px 18px;border-radius:30px;font-size:12.5px;z-index:90;opacity:0;transition:.3s;pointer-events:none;max-width:80%;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .permmodal{position:absolute;inset:0;z-index:95;background:rgba(8,28,24,.55);display:none;align-items:center;justify-content:center;padding:26px}
+  .permmodal.show{display:flex}
+  .pm-card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px 20px 18px;max-width:330px;width:100%;text-align:center;box-shadow:var(--shadow-lg)}
+  .pm-ic{width:58px;height:58px;border-radius:50%;background:rgba(164,204,96,.13);color:var(--brand);display:grid;place-items:center;margin:0 auto 14px;font-size:28px}
+  .pm-card h3{font-family:'Bai Jamjuree';font-size:18px;margin-bottom:10px}
+  .pm-card p{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:16px;text-align:left}
+  .pm-btn{width:100%;background:var(--accent);color:#fff;border:none;border-radius:13px;padding:14px;font-family:'Bai Jamjuree';font-weight:600;font-size:15px;cursor:pointer;margin-bottom:6px}
+  .pm-close{width:100%;background:none;border:none;color:var(--muted);font-family:inherit;font-size:13px;cursor:pointer;padding:8px}
+
+  @media(max-width:480px){
+    body{padding:0;align-items:stretch}.pitch{display:none}
+    .phone{width:100%;height:100vh;height:100dvh;border-radius:0;box-shadow:none}
+    .screen{inset:0;border-radius:0}.scrim{inset:0;border-radius:0}.splash{border-radius:0}
+    .sheet{left:0;right:0;bottom:0;border-radius:26px 26px 0 0}.notch{display:none}
+  }
+.ain{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:13px;background:var(--card);color:var(--text);font-size:15px;margin-bottom:11px;font-family:inherit;box-sizing:border-box}
+  .ain:focus{outline:none;border-color:var(--cta)}
+  .authbox{padding:2px}
+  .acctcard{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:14px}
+.authhead{background:linear-gradient(150deg,var(--brand-2),var(--brand));padding:22px 18px 24px;border-radius:0 0 26px 26px;position:relative;text-align:center;color:#fff}
+  .authhead .close{position:absolute;top:14px;left:14px;width:34px;height:34px}
+  .authav{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;margin:6px auto 10px}
+  .authav svg{width:32px;height:32px;color:#fff}
+  .authtitle{font-family:'Bai Jamjuree';font-weight:700;font-size:21px}
+  .authsub{font-size:12.5px;opacity:.92;margin-top:3px;max-width:240px;margin-left:auto;margin-right:auto}
+  .authbox{padding:16px}
+  .alabel{display:block;font-size:12px;color:var(--muted);font-weight:600;margin:2px 2px 5px}
+  .gchips{display:flex;gap:7px}
+  .gchip{flex:1;text-align:center;padding:12px 4px;border:1.5px solid var(--line);border-radius:13px;font-size:14px;cursor:pointer;background:var(--card)}
+  .gchip.on{border-color:var(--cta);background:rgba(194,242,78,.12);color:var(--text);font-weight:700}
+  .acctav{width:46px;height:46px;border-radius:50%;background:linear-gradient(150deg,var(--brand-2),var(--brand));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Bai Jamjuree';font-weight:700;font-size:20px;flex:none}
+  .payamt{display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--line);border-radius:15px;padding:14px 16px;margin-bottom:14px}
+  .payamt b{font-family:'Bai Jamjuree';font-size:20px;color:var(--cta)}
+  .paytabs{display:flex;gap:8px;margin-bottom:14px}
+  .paytab{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:11px 4px;border:1.5px solid var(--line);border-radius:13px;font-size:13px;cursor:pointer;background:var(--card)}
+  .paytab svg{width:15px;height:15px}
+  .paytab.on{border-color:var(--cta);background:rgba(194,242,78,.12);font-weight:700}
+  .payqr{display:flex;flex-direction:column;align-items:center;padding:8px 0}
+  .qrbox{width:212px;height:212px;background:#fff;border-radius:16px;display:flex;align-items:center;justify-content:center;padding:8px;box-shadow:0 6px 22px rgba(0,0,0,.18)}
+  .qrbox img,.qrbox canvas{display:block}
+.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+  .statcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 14px;text-align:center}
+  .statcard .stv{font-family:'Bai Jamjuree';font-weight:700;font-size:24px;color:var(--cta)}
+  .statcard .stl{font-size:12px;color:var(--muted);margin-top:3px}
+  .dashsec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 16px;margin-bottom:13px}
+  .dasht{display:flex;align-items:center;gap:7px;font-weight:700;font-size:14.5px;margin-bottom:13px}
+  .dasht svg{width:16px;height:16px;color:var(--cta)}
+  .dbars{display:flex;flex-direction:column;gap:11px}
+  .dbar{display:flex;align-items:center;gap:10px}
+  .dblab{width:84px;font-size:12.5px;color:var(--muted);flex:none}
+  .dbtrack{flex:1;height:12px;background:var(--line);border-radius:7px;overflow:hidden}
+  .dbtrack i{display:block;height:100%;border-radius:7px;transition:width .5s}
+  .dbval{width:62px;text-align:right;font-size:12.5px;font-weight:700;flex:none}
+  .dvrow{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+  .dvrow:last-child{border-bottom:none}
+  .dvn{color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-right:10px}
+  .dashempty{font-size:13px;color:var(--faint);text-align:center;padding:10px}
+.aiplaces{display:flex;flex-direction:column;gap:8px;margin-top:11px}
+  .aiplace{display:flex;align-items:center;gap:11px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:9px 11px;cursor:pointer;transition:.12s}
+  .aiplace:active{transform:scale(.98)}
+  .aiplace .aptn{width:52px;height:52px;border-radius:11px;background-size:cover;background-position:center;flex:none;background-color:#2f3a28}
+  .aiplace .api{flex:1;min-width:0}
+  .aiplace .api b{font-size:14px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .aiplace .api small{font-size:11.5px;color:var(--muted)}
+  .aiplace .apc svg{width:17px;height:17px;color:var(--faint)}
+.travel-b{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;padding:11px 4px;border:1.5px solid var(--line);border-radius:13px;background:var(--card);color:var(--text);font-size:12px;cursor:pointer;font-family:inherit}
+  .travel-b svg{width:18px;height:18px;color:var(--cta)}
+  .travel-b:active{transform:scale(.97)}
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <aside class="pitch">
+    <div class="logo">
+      <svg viewBox="0 0 512 512" width="30" height="30"><defs><linearGradient id="gp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1C8068"/><stop offset="1" stop-color="#0E5446"/></linearGradient><linearGradient id="gpc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF8159"/><stop offset="1" stop-color="#F1542A"/></linearGradient></defs><rect width="512" height="512" rx="115" fill="url(#gp)"/><ellipse cx="180" cy="150" rx="230" ry="170" fill="#ffffff" opacity="0.06"/><g fill="none" stroke="#ffffff" stroke-opacity="0.10"><circle cx="256" cy="210" r="150" stroke-width="14"/><circle cx="256" cy="210" r="106" stroke-width="12"/></g><ellipse cx="256" cy="436" rx="66" ry="15" fill="#05332a" opacity="0.30"/><path d="M256 96C188 96 136 148 136 214 136 300 256 432 256 432 256 432 376 300 376 214 376 148 324 96 256 96Z" fill="#ffffff"/><circle cx="256" cy="200" r="70" fill="url(#gpc)"/><ellipse cx="232" cy="176" rx="17" ry="10" fill="#ffffff" opacity="0.30" transform="rotate(-35 232 176)"/><path d="M256 158C292 174 292 212 256 246 220 212 220 174 256 158Z" fill="#ffffff"/><path d="M256 166L256 238" stroke="#F1542A" stroke-width="6" stroke-linecap="round"/><path d="M256 196L278 182M256 210L234 198" stroke="#F1542A" stroke-width="5" stroke-linecap="round"/></svg>
+      <b>ActiveSphere</b>
+    </div>
+    <h1>หาที่ออกกำลังกาย<br>ที่ "คนไม่แน่น" ใกล้คุณ</h1>
+    <p>แผนที่จริงซูมได้ + โหมดดาวเทียม ดึงสวนและสนามกีฬาจริงทั่วประเทศจาก OpenStreetMap พร้อมสภาพอากาศและค่าฝุ่นจริง</p>
+    <div class="feat"><span class="dot" id="p1"></span><div>ดัชนีความหนาแน่นโดยประมาณตามช่วงเวลา</div></div>
+    <div class="feat"><span class="dot" id="p2"></span><div>สภาพอากาศ + ค่าฝุ่น PM2.5 จริง (Open‑Meteo)</div></div>
+    <div class="feat"><span class="dot" id="p3"></span><div>บันทึกที่ชอบ และจองสนามในแอป</div></div>
+    <p class="note">ℹ️ Prototype จริง: แผนที่ ตำแหน่ง รายชื่อสถานที่ อากาศ และค่าฝุ่นเป็นข้อมูลจริง — ส่วนตัวเลข "ความหนาแน่นของคน" จำลองตามช่วงเวลาเพื่อสาธิต (ของจริงต้องต่อเซนเซอร์/กล้องนับคน)</p>
+  </aside>
+
+  <div class="phone">
+    <div class="screen">
+      <div class="notch"></div>
+      <div class="statusbar ondark" id="statusbar">
+        <span id="clock">06:24</span>
+        <span class="ico" id="sysicons"></span>
+      </div>
+
+      <div class="splash" id="splash">
+        <div class="mark"><svg viewBox="0 0 512 512" width="46" height="46"><defs><linearGradient id="gs" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1C8068"/><stop offset="1" stop-color="#0E5446"/></linearGradient><linearGradient id="gsc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF8159"/><stop offset="1" stop-color="#F1542A"/></linearGradient></defs><rect width="512" height="512" rx="115" fill="url(#gs)"/><ellipse cx="180" cy="150" rx="230" ry="170" fill="#ffffff" opacity="0.06"/><g fill="none" stroke="#ffffff" stroke-opacity="0.10"><circle cx="256" cy="210" r="150" stroke-width="14"/><circle cx="256" cy="210" r="106" stroke-width="12"/></g><ellipse cx="256" cy="436" rx="66" ry="15" fill="#05332a" opacity="0.30"/><path d="M256 96C188 96 136 148 136 214 136 300 256 432 256 432 256 432 376 300 376 214 376 148 324 96 256 96Z" fill="#ffffff"/><circle cx="256" cy="200" r="70" fill="url(#gsc)"/><ellipse cx="232" cy="176" rx="17" ry="10" fill="#ffffff" opacity="0.30" transform="rotate(-35 232 176)"/><path d="M256 158C292 174 292 212 256 246 220 212 220 174 256 158Z" fill="#ffffff"/><path d="M256 166L256 238" stroke="#F1542A" stroke-width="6" stroke-linecap="round"/><path d="M256 196L278 182M256 210L234 198" stroke="#F1542A" stroke-width="5" stroke-linecap="round"/></svg></div>
+        <h1>ActiveSphere</h1>
+        <p>กำลังค้นหาพื้นที่ออกกำลังกายรอบตัวคุณ</p>
+        <div class="ld"><div class="spin"></div><span id="splashmsg">กำลังขอตำแหน่งของคุณ...</span></div>
+      </div>
+
+      <div class="body">
+        <!-- MAP -->
+        <div class="page active" id="page-map">
+          <div id="map"></div>
+          <div class="topfloat">
+            <div class="maphead" onclick="go('recommend')" style="cursor:pointer"><div class="mh-l"><span class="mh-hi">สวัสดี 👋 พร้อมขยับร่างกายหรือยัง</span><b>ไปออกกำลังกายที่ไหนดี?</b></div><span class="ci" data-i="spark"></span></div>
+            <div class="searchbar">
+              <span class="ic" data-i="search"></span>
+              <input id="mapsearch" placeholder="ค้นหาย่าน เช่น อารีย์, เชียงใหม่, หาดใหญ่..." onkeydown="if(event.key==='Enter')doGeoSearch(this.value)">
+            </div>
+            <div class="cond" id="cond" onclick="openWeather()">
+              <div class="cond-seg"><span class="ci" id="wxicon" data-i="cloud"></span><div><b id="wxt">–°</b><small id="wxl">อากาศ</small></div></div>
+              <div class="cond-div"></div>
+              <div class="cond-seg"><span class="av" id="pmav" style="background:var(--faint)"></span><div><b id="pmv">–</b><small id="pml">PM2.5</small></div></div>
+              <div class="cond-div"></div>
+              <div class="cond-seg"><span class="ci" id="openicon" data-i="leaf"></span><div><b id="openc">–</b><small>สวนเปิดอยู่</small></div></div>
+            </div>
+            <div class="loc-banner" id="locbanner" style="display:none" onclick="locateMe()">
+              <span class="ic" data-i="locate"></span><span id="locbannertxt">ใช้ตำแหน่งโดยประมาณ — <b>แตะที่นี่เพื่ออนุญาต GPS</b></span>
+            </div>
+          </div>
+          <div class="mapbtns">
+            <div class="mapbtn zoom"><button onclick="map.zoomIn()">+</button><button onclick="map.zoomOut()">−</button></div>
+            <div class="mapbtn" onclick="toggleLayer()" title="สลับแผนที่/ดาวเทียม"><span data-i="layers"></span></div>
+            <div class="mapbtn" onclick="locateMe()" title="ตำแหน่งฉัน"><span data-i="locate"></span></div>
+          </div>
+          <button class="wxfab" id="wxfab" onclick="openWeather()" title="สภาพอากาศ"><span class="wxi" id="wxfabi" data-i="cloud"></span></button>
+          <button class="evfab" id="evfab" onclick="openEvents()" title="อีเวนต์พิเศษ"><span data-i="calendar"></span></button>
+          <div class="peek" id="peek">
+            <div class="ph" id="peekHandle">
+              <div class="grip"></div>
+              <div class="pht"><h2>สถานที่ใกล้คุณ</h2><span class="cnt" id="nearcount">– แห่ง</span></div>
+            </div>
+            <div class="radius-row">
+              <span>รัศมี</span>
+              <input type="range" id="radius" min="1" max="1000" step="1" value="3" oninput="setRadius(this.value)">
+              <b id="radlbl">3 กม.</b>
+            </div>
+            <div class="plist"><div class="cards" id="nearcards"></div></div>
+          </div>
+        </div>
+
+        <!-- EXPLORE -->
+        <div class="page" id="page-explore">
+          <div class="pagehead"><h2>สำรวจสถานที่</h2><p id="exsub">สวนและสนามกีฬารอบตัวคุณ</p></div>
+          <div class="provrow">
+            <div class="provchip" onclick="jumpTo(13.7367,100.5232,'กรุงเทพฯ')">กรุงเทพฯ</div>
+            <div class="provchip" onclick="jumpTo(13.8591,100.5217,'นนทบุรี')">นนทบุรี</div>
+            <div class="provchip" onclick="jumpTo(18.7883,98.9853,'เชียงใหม่')">เชียงใหม่</div>
+            <div class="provchip" onclick="jumpTo(19.9106,99.8406,'เชียงราย')">เชียงราย</div>
+            <div class="provchip" onclick="jumpTo(16.8211,100.2659,'พิษณุโลก')">พิษณุโลก</div>
+            <div class="provchip" onclick="jumpTo(16.4396,102.8287,'ขอนแก่น')">ขอนแก่น</div>
+            <div class="provchip" onclick="jumpTo(14.9799,102.0978,'นครราชสีมา')">นครราชสีมา</div>
+            <div class="provchip" onclick="jumpTo(17.4138,102.7870,'อุดรธานี')">อุดรธานี</div>
+            <div class="provchip" onclick="jumpTo(15.2287,104.8564,'อุบลราชธานี')">อุบลฯ</div>
+            <div class="provchip" onclick="jumpTo(16.0538,103.6520,'ร้อยเอ็ด')">ร้อยเอ็ด</div>
+            <div class="provchip" onclick="jumpTo(14.3692,100.5877,'พระนครศรีอยุธยา')">อยุธยา</div>
+            <div class="provchip" onclick="jumpTo(12.9276,100.8771,'พัทยา/ชลบุรี')">พัทยา</div>
+            <div class="provchip" onclick="jumpTo(12.6814,101.2789,'ระยอง')">ระยอง</div>
+            <div class="provchip" onclick="jumpTo(7.8804,98.3923,'ภูเก็ต')">ภูเก็ต</div>
+            <div class="provchip" onclick="jumpTo(7.0084,100.4747,'หาดใหญ่/สงขลา')">หาดใหญ่</div>
+            <div class="provchip" onclick="jumpTo(9.1382,99.3217,'สุราษฎร์ธานี')">สุราษฎร์ฯ</div>
+            <div class="provchip" onclick="jumpTo(8.4304,99.9631,'นครศรีธรรมราช')">นครศรีฯ</div>
+            <div class="provchip" onclick="jumpTo(13.5991,100.5998,'สมุทรปราการ')">สมุทรปราการ</div>
+            <div class="provchip" onclick="jumpTo(14.0208,100.5250,'ปทุมธานี')">ปทุมธานี</div>
+            <div class="provchip" onclick="jumpTo(13.8199,100.0621,'นครปฐม')">นครปฐม</div>
+            <div class="provchip" onclick="jumpTo(13.3611,100.9847,'ชลบุรี')">ชลบุรี</div>
+            <div class="provchip" onclick="jumpTo(14.0227,99.5328,'กาญจนบุรี')">กาญจนบุรี</div>
+            <div class="provchip" onclick="jumpTo(13.1119,99.9398,'เพชรบุรี')">เพชรบุรี</div>
+            <div class="provchip" onclick="jumpTo(12.5684,99.9577,'หัวหิน/ประจวบฯ')">หัวหิน</div>
+            <div class="provchip" onclick="jumpTo(14.7995,100.6534,'ลพบุรี')">ลพบุรี</div>
+            <div class="provchip" onclick="jumpTo(14.5289,100.9101,'สระบุรี')">สระบุรี</div>
+            <div class="provchip" onclick="jumpTo(14.4745,100.1177,'สุพรรณบุรี')">สุพรรณบุรี</div>
+            <div class="provchip" onclick="jumpTo(12.6113,102.1035,'จันทบุรี')">จันทบุรี</div>
+            <div class="provchip" onclick="jumpTo(13.6904,101.0779,'ฉะเชิงเทรา')">ฉะเชิงเทรา</div>
+            <div class="provchip" onclick="jumpTo(15.7047,100.1372,'นครสวรรค์')">นครสวรรค์</div>
+            <div class="provchip" onclick="jumpTo(18.2888,99.4908,'ลำปาง')">ลำปาง</div>
+            <div class="provchip" onclick="jumpTo(18.5747,99.0087,'ลำพูน')">ลำพูน</div>
+            <div class="provchip" onclick="jumpTo(18.7756,100.7730,'น่าน')">น่าน</div>
+            <div class="provchip" onclick="jumpTo(16.4190,101.1591,'เพชรบูรณ์')">เพชรบูรณ์</div>
+            <div class="provchip" onclick="jumpTo(17.4860,101.7223,'เลย')">เลย</div>
+            <div class="provchip" onclick="jumpTo(17.1545,104.1348,'สกลนคร')">สกลนคร</div>
+            <div class="provchip" onclick="jumpTo(17.4108,104.7785,'นครพนม')">นครพนม</div>
+            <div class="provchip" onclick="jumpTo(14.9930,103.1029,'บุรีรัมย์')">บุรีรัมย์</div>
+            <div class="provchip" onclick="jumpTo(14.8820,103.4936,'สุรินทร์')">สุรินทร์</div>
+            <div class="provchip" onclick="jumpTo(15.1186,104.3220,'ศรีสะเกษ')">ศรีสะเกษ</div>
+            <div class="provchip" onclick="jumpTo(16.1850,103.3010,'มหาสารคาม')">มหาสารคาม</div>
+            <div class="provchip" onclick="jumpTo(10.4930,99.1800,'ชุมพร')">ชุมพร</div>
+            <div class="provchip" onclick="jumpTo(9.5120,100.0136,'เกาะสมุย')">เกาะสมุย</div>
+            <div class="provchip" onclick="jumpTo(8.0863,98.9063,'กระบี่')">กระบี่</div>
+            <div class="provchip" onclick="jumpTo(7.5563,99.6114,'ตรัง')">ตรัง</div>
+            <div class="provchip" onclick="jumpTo(6.4254,101.8253,'นราธิวาส')">นราธิวาส</div>
+          </div>
+          <div class="ex-search"><span class="ic" data-i="search"></span><input id="exsearch" placeholder="ค้นหาชื่อสถานที่ หรือประเภทกีฬา..." oninput="render()"></div>
+          <div class="filters" id="sportfilters"></div>
+          <div class="filters" style="padding-top:0">
+            <div class="chip on" onclick="setSort(this,'density')">ว่างที่สุด</div>
+            <div class="chip" onclick="setSort(this,'distance')">ใกล้ที่สุด</div>
+            <div class="chip" onclick="setSort(this,'pm')">อากาศดีที่สุด</div>
+          </div>
+          <div class="scroll"><div class="exlist"><div class="cards" id="exfeed"></div></div></div>
+        </div>
+
+        <!-- SAVED -->
+        <div class="page" id="page-saved">
+          <div class="pagehead"><h2>ที่บันทึกไว้</h2><p>สถานที่ออกกำลังกายที่คุณถูกใจ</p></div>
+          <div class="scroll"><div class="exlist"><div class="cards" id="savedlist"></div></div></div>
+        </div>
+
+        <!-- BOOKINGS -->
+        <div class="page" id="page-bookings">
+          <div class="pagehead"><h2>การจองของฉัน</h2><p>ตั๋วเข้าใช้สนามทั้งหมดของคุณ</p></div>
+          <div class="scroll"><div class="exlist" id="mybookings"></div></div>
+        </div>
+
+        <!-- RECOMMEND -->
+        <div class="page" id="page-recommend">
+          <div class="pagehead"><h2>ไปไหนดีตอนนี้</h2><p>คัดที่ดีที่สุด ณ ตอนนี้ จาก คนน้อย + อากาศดี + ใกล้ + เปิดอยู่</p></div>
+          <div class="scroll"><div class="exlist"><div class="cards" id="recfeed"></div></div></div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="on" id="nav-map" onclick="go('map')"><span class="ic" data-i="map"></span>แผนที่</button>
+        <button id="nav-recommend" onclick="go('recommend')"><span class="ic" data-i="spark"></span>แนะนำ</button>
+        <button id="nav-explore" onclick="go('explore')"><span class="ic" data-i="compass"></span>สำรวจ</button>
+        <button id="nav-saved" onclick="go('saved')"><span class="ic" data-i="bookmark"></span>บันทึก</button>
+        <button id="nav-bookings" onclick="go('bookings')"><span class="ic" data-i="ticket"></span>การจอง<span class="badge" id="bkbadge" style="display:none">0</span></button>
+      </nav>
+
+      <div class="scrim" id="scrim" onclick="closeSheet()"></div>
+      <div class="sheet" id="sheet"><div class="sc" id="sheetbody"></div><div class="cta-bar" id="ctabar"></div></div>
+      <div class="toast" id="toast"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============ ICON SET (consistent line icons, Lucide-style) ============ */
+const ICONS={
+  user:'<path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/>',
+  spark:'<path d="M12 2.5l2 5.5 5.5 2-5.5 2-2 5.5-2-5.5-5.5-2 5.5-2z"/><path d="M19 13.5l.9 2.4 2.4.9-2.4.9-.9 2.4-.9-2.4-2.4-.9 2.4-.9z"/>',
+  bookmark:'<path d="M6.5 3h11a1 1 0 0 1 1 1v17l-6.5-3.6L5.5 21V4a1 1 0 0 1 1-1z"/>',
+  search:'<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+  map:'<path d="M14.5 4 9 6 3.5 4v15L9 21l6-2 5.5 2V4l-6 2z"/><path d="M9 6v15M15 4v15"/>',
+  compass:'<circle cx="12" cy="12" r="9.5"/><path d="m15.5 8.5-1.6 5.4-5.4 1.6 1.6-5.4z"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/>',
+  heart:'<path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7 7-7z"/>',
+  ticket:'<path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v3M13 11v2M13 16v3" stroke-dasharray="0.1 4"/>',
+  locate:'<path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="6.5"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/>',
+  layers:'<path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/>',
+  pin:'<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.8"/>',
+  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>',
+  calendar:'<rect x="3" y="4.5" width="18" height="17" rx="2.5"/><path d="M16 2.5v4M8 2.5v4M3 9.5h18"/>',
+  activity:'<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
+  chart:'<path d="M4 4v15a1 1 0 0 0 1 1h15"/><path d="m7 14 3-4 3 3 4-6"/>',
+  wind:'<path d="M12.8 19.6A2 2 0 1 0 14 16H2M17.5 8a2.5 2.5 0 1 1 2 4H2M9.8 4.4A2 2 0 1 1 11 8H2"/>',
+  check:'<path d="M20 6 9 17l-5-5"/>',
+  checkbig:'<path d="M20 6 9 17l-5-5"/>',
+  x:'<path d="M18 6 6 18M6 6l12 12"/>',
+  chevL:'<path d="m15 18-6-6 6-6"/>',
+  chevD:'<path d="m6 9 6 6 6-6"/>',
+  grid:'<rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M3.5 9.5h17M9.5 3.5v17"/>',
+  bulb:'<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.2 1 2V16h6v-.5c0-.8.4-1.4 1-2A6 6 0 0 0 12 3z"/>',
+  leaf:'<path d="M11 20A7 7 0 0 1 4 13c0-6 5-9 16-10 1 11-2 16-9 17z"/><path d="M2 22c2-3 4-5 9-7"/>',
+  sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  cloud:'<path d="M17.5 19H8a5.5 5.5 0 1 1 1.4-10.8A6 6 0 0 1 21 9.5a4.5 4.5 0 0 1-3.5 9.5z"/>',
+  cloudsun:'<path d="M6 7a4 4 0 0 1 7.5-1.9M9 4V2.5M4.2 5.2 3.1 4.1M3 9.5H1.5M14.8 5.2l1.1-1.1"/><path d="M16.5 19H8a5 5 0 1 1 1.3-9.8A5.5 5.5 0 0 1 20.5 11a4 4 0 0 1-4 8z"/>',
+  rain:'<path d="M16.5 14H8a5 5 0 1 1 1.3-9.8A5.5 5.5 0 0 1 20.5 6a4 4 0 0 1-4 8z"/><path d="M8 18l-1 2M12 18l-1 2M16 18l-1 2"/>',
+  thermo:'<path d="M14 4.5a2 2 0 0 0-4 0v9.3a4 4 0 1 0 4 0z"/>',
+  navigation:'<path d="M3 11l19-8-8 19-2.5-8.5z"/>',
+  chevron:'<path d="m9 18 6-6-6-6"/>',
+  trash:'<path d="M3 6h18M8 6V4h8v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>',
+  shuttle:'<circle cx="9" cy="9" r="4.5"/><path d="M5.8 5.8 12.2 12.2M12 12l6.5 6.5"/>',
+  dumbbell:'<rect x="1.5" y="9" width="3" height="6" rx="1"/><rect x="19.5" y="9" width="3" height="6" rx="1"/><rect x="5" y="10.2" width="2.5" height="3.6" rx="1"/><rect x="16.5" y="10.2" width="2.5" height="3.6" rx="1"/><path d="M7.5 12h9"/>',
+  bike:'<circle cx="5.5" cy="17.5" r="3.3"/><circle cx="18.5" cy="17.5" r="3.3"/><circle cx="15" cy="5" r="1"/><path d="M5.5 17.5 9 9.5h5l2 3h2.5M9 9.5h4"/>',
+  run:'<circle cx="14" cy="5" r="1.8"/><path d="M6 13.5 9.5 11l2.5 1.5 1 4M12.5 12.5 16 14l2.5-.5M8 21l2.2-3.5"/>',
+  walk:'<circle cx="12.5" cy="4.5" r="1.8"/><path d="M12.5 6.5v5l-2.5 5M12.5 9l3 2 1.5 4M10 11.5 8.5 9"/>',
+  ball:'<circle cx="12" cy="12" r="8.5"/><path d="M12 6.4l3.3 2.4-1.3 4h-4l-1.3-4z"/><path d="M12 3.5v2.9M15.3 8.8l2.5-1.3M14 12.8l1.6 2.6M10 12.8l-1.6 2.6M8.7 8.8 6.2 7.5"/>',
+  basket:'<circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17M3.5 12h17M6 6c3.3 2.4 8.7 2.4 12 0M6 18c3.3-2.4 8.7-2.4 12 0"/>',
+  tennis:'<circle cx="12" cy="12" r="8.5"/><path d="M5.2 6.2C8 8.7 8 15.3 5.2 17.8M18.8 6.2c-2.8 2.5-2.8 9.1 0 11.6"/>',
+  waves:'<path d="M2 7c.7.6 1.4 1 2.6 1 2.4 0 2.4-2 4.9-2 2.4 0 2.4 2 4.9 2s2.5-2 4.9-2c1.2 0 1.9.4 2.6 1M2 12c.7.6 1.4 1 2.6 1 2.4 0 2.4-2 4.9-2s2.4 2 4.9 2 2.5-2 4.9-2c1.2 0 1.9.4 2.6 1M2 17c.7.6 1.4 1 2.6 1 2.4 0 2.4-2 4.9-2s2.4 2 4.9 2 2.5-2 4.9-2c1.2 0 1.9.4 2.6 1"/>',
+  paddle:'<circle cx="10" cy="9.5" r="5.5"/><path d="M14 13.5 18.5 18l-2 2-4.4-4.4"/>',
+  volley:'<circle cx="12" cy="12" r="8.5"/><path d="M12 3.6c2.6 3.2 2.6 13.6 0 16.8M4 8.4c4 2.2 11.5 2.4 16-.2M5.2 17.6c2.6-3.4 8.6-5.2 13.6-3.4"/>',
+  takraw:'<circle cx="12" cy="12" r="8.5"/><path d="M4.5 9 19.5 15M4.5 15 19.5 9M9 4l6 16M15 4 9 20"/>',
+  glove:'<path d="M8 11V7.5a2.5 2.5 0 0 1 5 0V11M6.5 11H16a3 3 0 0 1 3 3 4 4 0 0 1-4 4H10a4 4 0 0 1-4-4v-4.5a1.5 1.5 0 0 1 .5-1zM6.5 15H10"/>',
+  skate:'<rect x="3" y="12.5" width="18" height="3" rx="1.5"/><circle cx="7.5" cy="18.5" r="1.6"/><circle cx="16.5" cy="18.5" r="1.6"/>',
+  petong:'<circle cx="9.5" cy="14" r="5"/><circle cx="17.5" cy="10.5" r="3"/><circle cx="9.5" cy="14" r="1" fill="currentColor" stroke="none"/>',
+  climb:'<circle cx="14.5" cy="5" r="1.8"/><path d="M14.5 7v3.5l3 2M14.5 9l-4.5 1.2L7.5 16M10 10.3 8.6 14l3.4 5"/>',
+  yoga:'<circle cx="12" cy="4.6" r="1.9"/><path d="M12 6.5v5.5M12 9.5l-4 2.3M12 9.5l4 2.3M9 20l3-7 3 7"/>',
+};
+function svg(name,cls){return `<svg class="ic ${cls||''}" viewBox="0 0 24 24">${ICONS[name]||ICONS.pin}</svg>`;}
+function paintIcons(root){(root||document).querySelectorAll('[data-i]').forEach(e=>{if(!e.dataset.done){e.innerHTML=svg(e.dataset.i);e.dataset.done=1;}});}
+
+/* facility map -> {label, icon} */
+const FAC={
+  track:{l:'ลู่วิ่ง',i:'run'}, walk:{l:'ทางเดิน-วิ่ง',i:'walk'}, gym:{l:'ฟิตเนสกลางแจ้ง',i:'dumbbell'},
+  bad:{l:'สนามแบดมินตัน',i:'shuttle'}, bike:{l:'จุดเช่าจักรยาน',i:'bike'}, futsal:{l:'สนามฟุตซอล',i:'ball'},
+  football:{l:'สนามฟุตบอล',i:'ball'}, basket:{l:'สนามบาสเกตบอล',i:'basket'}, tennis:{l:'สนามเทนนิส',i:'tennis'},
+  volleyball:{l:'วอลเลย์บอล',i:'volley'}, takraw:{l:'ตะกร้อ',i:'takraw'}, yoga:{l:'ลานโยคะ-แอโรบิก',i:'yoga'},
+  pingpong:{l:'โต๊ะปิงปอง',i:'paddle'}, swim:{l:'สระว่ายน้ำ',i:'waves'}, muaythai:{l:'มวยไทย/ค่ายมวย',i:'glove'},
+  skate:{l:'ลานสเก็ต',i:'skate'}, petong:{l:'เปตอง',i:'petong'}, climb:{l:'ปีนผา',i:'climb'},
+  golf:{l:'สนามกอล์ฟ',i:'flag'}, horse:{l:'ขี่ม้า',i:'pin'}, cricket:{l:'คริกเก็ต',i:'ball'}, rugby:{l:'รักบี้',i:'ball'},
+};
+function facIcon(k){return svg((FAC[k]||FAC.walk).i);}
+
+/* ============ images (free Unsplash License) ============ */
+const POOL=[
+  {u:'photo-1715940309860-585403114687',t:'park'},
+  {u:'photo-1744450863430-6144817be640',t:'park'},
+  {u:'photo-1693494358039-d6bb72337389',t:'park'},
+  {u:'photo-1723903278410-23e303137700',t:'park'},
+  {u:'photo-1749085375217-5f25ed5517ce',t:'park'},
+  {u:'photo-1723074832950-9fb031b0f4ec',t:'sport'},
+  {u:'photo-1758798459892-73ec6b42e930',t:'sport'},
+  {u:'photo-1526676537331-7747bf8278fc',t:'sport'}
+];
+function uimg(u,w,q){return 'https://images.unsplash.com/'+u+'?w='+(w||900)+'&q='+(q||72)+'&auto=format&fit=crop';}
+function imgURL(u,w){return /^(https?:|data:)/i.test(u)?u:uimg(u,w||900);}
+const _PH={};
+const GEN_PARK=['photo-1715940309860-585403114687','photo-1744450863430-6144817be640','photo-1693494358039-d6bb72337389','photo-1723903278410-23e303137700','photo-1749085375217-5f25ed5517ce'];
+const GEN_SPORT=['photo-1723074832950-9fb031b0f4ec','photo-1758798459892-73ec6b42e930','photo-1526676537331-7747bf8278fc'];
+function xmlEsc(x){return (''+x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function genTile(p){
+  const name=(p&&(p.name||p.venue))||'สถานที่';const hue=hashStr(name+((p&&p.id)||''))%360;
+  const lab=(p&&(p.ty||p.type))||(p&&p.kind==='park'?'สวนสาธารณะ':'สนามกีฬา');
+  const init=xmlEsc((name.trim()[0]||'?'));
+  const s=`<svg xmlns='http://www.w3.org/2000/svg' width='800' height='480'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='hsl(${hue},42%,40%)'/><stop offset='1' stop-color='hsl(${(hue+45)%360},48%,26%)'/></linearGradient></defs><rect width='800' height='480' fill='url(#g)'/><circle cx='400' cy='188' r='84' fill='rgba(255,255,255,.16)'/><text x='400' y='222' text-anchor='middle' font-family='sans-serif' font-size='92' font-weight='700' fill='#fff'>${init}</text><text x='400' y='330' text-anchor='middle' font-family='sans-serif' font-size='33' font-weight='700' fill='#fff'>${xmlEsc(name).slice(0,24)}</text><text x='400' y='374' text-anchor='middle' font-family='sans-serif' font-size='21' fill='rgba(255,255,255,.85)'>${xmlEsc(lab)}</text></svg>`;
+  return 'data:image/svg+xml,'+encodeURIComponent(s);
+}
+function fallbackImg(p,w){return genTile(p);}
+function PHIMG(kind){if(_PH[kind])return _PH[kind];const park=(kind!=='court'&&kind!=='fitness');const c1=park?'%231C8068':'%230E6E7C',c2=park?'%230E5446':'%23123F52';const icon=park?"%3Cpath d='M200 96c-32 12-49 42-34 78 36-6 57-36 47-70z' fill='%23ffffff' opacity='0.20'/%3E%3Crect x='196' y='150' width='8' height='40' rx='4' fill='%23ffffff' opacity='0.20'/%3E":"%3Ccircle cx='200' cy='138' r='38' fill='none' stroke='%23ffffff' stroke-opacity='0.20' stroke-width='10'/%3E";_PH[kind]="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 220'%3E%3Cdefs%3E%3ClinearGradient id='p' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='"+c1+"'/%3E%3Cstop offset='1' stop-color='"+c2+"'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='220' fill='url(%23p)'/%3E"+icon+"%3Ctext x='200' y='206' text-anchor='middle' font-family='sans-serif' font-size='12' fill='%23ffffff' opacity='0.45'%3EActiveSphere%3C/text%3E%3C/svg%3E";return _PH[kind];}
+function commonsURL(title){return 'https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(title.replace(/^File:/i,''))+'?width=900';}
+// ดึงรูป "จริง" ของพิกัดสวนนั้นจาก OpenStreetMap (แท็กรูป) + Wikimedia Commons (ค้นด้วยพิกัด)
+const BADPIC=/วัด|temple|วิหาร|ubosot|chedi|prang|ปรางค์|พระพุทธ|buddha|flower|ดอกไม้|ร้าน|shop|วิทยาลัย|college|\bwat\b|โบสถ์|church|มัสยิด|mosque|เจดีย์|stupa|พระธาตุ|ศาล|shrine|บ้าน|\bhouse\b|อาคาร|building|โรงแรม|hotel|ตลาด|market|โรงเรียน|school|มหาวิทยาลัย|universit|รูปปั้น|statue|อนุสาวรีย์|monument|portrait|selfie|\bmap\b|plan|locator|logo|sign|diagram|interior|indoor|\bfood\b|menu|\bcar\b|train|\bbus\b|airport|\bstation\b/i;
+const GOODPIC=/park|garden|สวน|สนาม|stadium|field|pitch|lake|บึง|หนอง|อ่างเก็บน้ำ|reservoir|riverside|ริมน้ำ|promenade|recreation|playground|fountain|น้ำพุ|ทะเลสาบ|พฤกษ|green|forest|trail|track/i;
+async function loadVenuePhotos(p){
+  const rv=POIS.find(x=>x.id===p.id)||p;
+  if(rv.photoTry)return rv.photos;
+  rv.photoTry=true;
+  const toks=(rv.name||'').toLowerCase().split(/[\s,()]+/).filter(w=>w.length>=3&&!/สวนสาธารณะ|ไม่ระบุ|สนามกีฬา/.test(w));
+  const ok=ti=>{const t=(ti||'').toLowerCase();if(BADPIC.test(t))return false;if(GOODPIC.test(t))return true;return toks.some(k=>t.includes(k));};
+  let photos=[];
+  if(rv.osmImg&&/^https?:/i.test(rv.osmImg))photos.push(rv.osmImg);
+  if(rv.commons&&/^File:/i.test(rv.commons)&&ok(rv.commons))photos.push(commonsURL(rv.commons));
+  // 0) รูปจาก Wikidata (P18) — รูปตัวแทนของสถานที่นั้นโดยตรง น่าเชื่อถือสุด
+  try{if(rv.wd&&/^Q\d+$/.test(rv.wd)){
+    const d=await fetchJSON(`https://www.wikidata.org/w/api.php?action=wbgetclaims&format=json&origin=*&property=P18&entity=${rv.wd}`,7000);
+    const cl=d&&d.claims&&d.claims.P18;if(cl&&cl[0]&&cl[0].mainsnak.datavalue)photos.push(commonsURL('File:'+cl[0].mainsnak.datavalue.value));}}catch(e){}
+  // 1) รูปหลักจากบทความ Wikipedia (ถ้าสถานที่นั้นมีบทความ — ตรงและน่าเชื่อถือสุด)
+  try{
+    if(rv.wiki){const parts=rv.wiki.split(':');const lang=parts.length>1?parts[0]:'th';const pg=parts.length>1?parts.slice(1).join(':'):rv.wiki;
+      const w=await fetchJSON(`https://${lang}.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=pageimages&piprop=original|thumbnail&pithumbsize=900&titles=${encodeURIComponent(pg)}`,7000);
+      const pgs=w&&w.query&&w.query.pages;if(pgs){const k=Object.keys(pgs)[0];const im=pgs[k].original||pgs[k].thumbnail;if(im&&im.source)photos.push(im.source);}}
+  }catch(e){}
+  // 2) ค้นบทความ Wikipedia ด้วย "ชื่อสวน" (ไม่ต้องมีแท็ก) แล้วเอารูปหลักของบทความ
+  if(toks.length&&!photos.length){
+    try{for(const lang of ['th','en']){
+      const r=await fetchJSON(`https://${lang}.wikipedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrsearch=${encodeURIComponent(rv.name)}&gsrlimit=1&gsrnamespace=0&prop=pageimages&piprop=original|thumbnail&pithumbsize=900`,6000);
+      const pgs=r&&r.query&&r.query.pages;if(pgs){const k=Object.keys(pgs)[0];const im=pgs[k].original||pgs[k].thumbnail;if(im&&im.source){photos.push(im.source);break;}}
+    }}catch(e){}
+  }
+  // 3) ค้น Commons ด้วยชื่อ (ทั้งแบบมี/ไม่มีอัญประกาศ)
+  if(toks.length){
+    for(const term of ['"'+rv.name+'"', rv.name+' park OR สวน OR สนาม']){
+      try{
+        const r=await fetchJSON(`https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrsearch=${encodeURIComponent(term)}&gsrnamespace=6&gsrlimit=14&prop=imageinfo&iiprop=url&iiurlwidth=900`,8000);
+        const pgs=r&&r.query&&r.query.pages;if(pgs)Object.values(pgs).forEach(pg=>{const ti=pg.title||'';if(/\.(jpg|jpeg|png)$/i.test(ti)&&ok(ti)){const ii=pg.imageinfo&&pg.imageinfo[0];if(ii)photos.push(ii.thumburl||ii.url);}});
+      }catch(e){}
+      if(photos.length>=3)break;
+    }
+  }
+  // 4) ค้นด้วยพิกัด (รับรูปที่อยู่ใกล้มาก <130 ม. ด้วย แต่ยังตัดวัด/บ้าน/คน/แผนที่ออก)
+  try{
+    const r=await fetchJSON(`https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&list=geosearch&gscoord=${rv.lat}|${rv.lon}&gsradius=1500&gsnamespace=6&gslimit=30`,8000);
+    const gs=(r&&r.query&&r.query.geosearch)||[];
+    gs.sort((a,b)=>a.dist-b.dist).forEach(g=>{const ti=g.title||'';const lo=ti.toLowerCase();
+      if(/\.(jpg|jpeg|png)$/i.test(ti)&&!BADPIC.test(lo)&&(ok(ti)&&g.dist<400))photos.push(commonsURL(ti));});
+  }catch(e){}
+  photos=[...new Set(photos)].slice(0,6);
+  if(photos.length){rv.photos=photos;rv.gallery=photos;rv.img=photos[0];rv.thumb=photos[0];rv.realPhoto=true;}
+  else{rv.photos=null;rv.realPhoto=false;rv.thumb=fallbackImg(rv,400);rv.img=fallbackImg(rv,900);} // ไม่พบรูปจริง → ใช้รูปสวนทั่วไป (ภาพประกอบ)
+  return rv.photos;
+}
+function updateHero(gal){
+  const h=document.getElementById('hgal');if(!h)return;
+  const np=document.getElementById('nophoto');if(np)np.remove();
+  h.innerHTML=gal.map(u=>`<div class="hslide" style="background-image:url(${imgURL(u,900)})"></div>`).join('');h.scrollLeft=0;
+  const hc=document.getElementById('hcount');if(hc)hc.textContent='1 / '+gal.length;
+  const hd=document.getElementById('hdots');if(hd)hd.innerHTML=gal.map((_,i)=>`<i class="${i===0?'on':''}" onclick="heroGo(${i})"></i>`).join('');
+  startHeroAuto(gal.length);
+}
+async function prefetchPhotos(){
+  if(state.radius>=900)return; // โหมดทั่วประเทศ: ข้ามพรีเฟตช์เพื่อไม่ให้หนัก
+  const list=POIS.slice(0,16);
+  for(const p of list){if(!p.photoTry){try{await loadVenuePhotos(p);}catch(e){}}}
+  render();
+}
+function galleryFor2(kind,seed){
+  const want=kind==='park'?'park':'sport';
+  const prim=POOL.filter(x=>x.t===want).map(x=>x.u);
+  const sec=POOL.filter(x=>x.t!==want).map(x=>x.u);
+  const rot=a=>a.map((_,i)=>a[(i+seed)%a.length]);
+  return [...rot(prim),...rot(sec)].slice(0,7);
+}
+try{document.getElementById('splash').style.backgroundImage='url('+uimg(POOL[1].u,1000,68)+')';}catch(e){}
+
+/* ============ seed (fallback) ============ */
+const SEED=[
+  {name:'สวนลุมพินี',lat:13.7307,lon:100.5418,kind:'park'},
+  {name:'สวนเบญจกิติ',lat:13.7245,lon:100.5601,kind:'park'},
+  {name:'ป่าเบญจกิติ',lat:13.7270,lon:100.5560,kind:'park'},
+  {name:'สวนเบญจสิริ',lat:13.7305,lon:100.5700,kind:'park'},
+  {name:'สวนจตุจักร',lat:13.8025,lon:100.5535,kind:'park'},
+  {name:'สวนวชิรเบญจทัศ (สวนรถไฟ)',lat:13.8060,lon:100.5470,kind:'park'},
+  {name:'สวนสมเด็จพระนางเจ้าสิริกิติ์ฯ',lat:13.8095,lon:100.5500,kind:'park'},
+  {name:'สวนสันติภาพ',lat:13.7575,lon:100.5290,kind:'park'},
+  {name:'สวนรมณีนาถ',lat:13.7468,lon:100.5042,kind:'park'},
+  {name:'สวนสราญรมย์',lat:13.7480,lon:100.4945,kind:'park'},
+  {name:'สวนหลวง ร.9',lat:13.6960,lon:100.6560,kind:'park'},
+  {name:'สวนสันติชัยปราการ',lat:13.7660,lon:100.4958,kind:'park'},
+  {name:'สวนเสรีไทย',lat:13.7770,lon:100.6760,kind:'park'},
+  {name:'สวนนาคราภิรมย์',lat:13.7430,lon:100.4890,kind:'park'},
+  {name:'สวนเฉลิมพระเกียรติ 80 พรรษา',lat:13.7595,lon:100.4725,kind:'park'},
+  {name:'สวนธนบุรีรมย์',lat:13.6720,lon:100.4360,kind:'park'},
+  {name:'สวนนวมินทร์ภิรมย์ (บึงกุ่ม)',lat:13.7850,lon:100.6700,kind:'park'},
+  {name:'สวนกีฬารามอินทรา',lat:13.8530,lon:100.6520,kind:'park'},
+  {name:'สนามกีฬาแห่งชาติ ศุภชลาศัย',lat:13.7460,lon:100.5290,kind:'court',sport:'multi'},
+  {name:'ราชมังคลากีฬาสถาน',lat:13.7558,lon:100.6220,kind:'court',sport:'multi'},
+  {name:'ศูนย์เยาวชนกรุงเทพมหานคร (ไทย-ญี่ปุ่น)',lat:13.7700,lon:100.5560,kind:'court',sport:'multi'},
+  {name:'อินดอร์สเตเดียม หัวหมาก',lat:13.7575,lon:100.6195,kind:'court',sport:'badminton'},
+  {name:'ลานกีฬาชุมชนคลองเตย',lat:13.7160,lon:100.5560,kind:'court',sport:'multi'},
+  {name:'ศูนย์กีฬาเฉลิมพระเกียรติ บางมด',lat:13.6480,lon:100.4900,kind:'court',sport:'badminton'},
+  {name:'อุทยาน 100 ปี จุฬาลงกรณ์มหาวิทยาลัย',lat:13.7360,lon:100.5290,kind:'park'},
+  {name:'ลานคนเมือง (ศาลาว่าการ กทม.)',lat:13.7560,lon:100.5060,kind:'park'},
+  {name:'สวนเฉลิมหล้า (สะพานหัวช้าง)',lat:13.7510,lon:100.5300,kind:'park'},
+  {name:'สวนหลวงพระราม 8',lat:13.7665,lon:100.5010,kind:'park'},
+  {name:'สวนสมเด็จย่า (คลองสาน)',lat:13.7300,lon:100.5080,kind:'park'},
+  {name:'สวนครูองุ่น (ทองหล่อ)',lat:13.7330,lon:100.5820,kind:'park'},
+  {name:'ศูนย์กีฬาทางน้ำบึงหนองบอน',lat:13.6850,lon:100.6700,kind:'court',sport:'swimming'},
+  {name:'สนามกีฬาเฉลิมพระเกียรติ 72 พรรษา (มีนบุรี)',lat:13.8120,lon:100.7320,kind:'court',sport:'multi'},
+  {name:'สวนเฉลิมพระเกียรติ 80 พรรษา บางกอกน้อย',lat:13.7600,lon:100.4720,kind:'park'},
+  {name:'สวนสาธารณะเฉลิมพระเกียรติ บางบอน',lat:13.6580,lon:100.4150,kind:'park'},
+  /* ===== สวนสาธารณะจริงทั่วประเทศ (ตรวจพิกัดจากแหล่งข้อมูลจริง) ===== */
+  // ภาคเหนือ
+  {name:'สวนสาธารณะหนองบวกหาด (เชียงใหม่)',lat:18.7826,lon:98.9785,kind:'park'},
+  {name:'อุทยานหลวงราชพฤกษ์ (เชียงใหม่)',lat:18.7466,lon:98.9270,kind:'park'},
+  {name:'สวนตุงและโคมเฉลิมพระเกียรติ (เชียงราย)',lat:19.9072,lon:99.8316,kind:'park'},
+  {name:'สวนสาธารณะหนองธรณี / สวนชมน่าน (พิษณุโลก)',lat:16.8155,lon:100.2625,kind:'park'},
+  // ภาคอีสาน
+  {name:'บึงแก่นนคร (ขอนแก่น)',lat:16.4180,lon:102.8360,kind:'park'},
+  {name:'สวนสาธารณะ 200 ปี บึงทุ่งสร้าง (ขอนแก่น)',lat:16.4520,lon:102.8350,kind:'park'},
+  {name:'สวนสาธารณะหนองประจักษ์ศิลปาคม (อุดรธานี)',lat:17.4188,lon:102.7800,kind:'park'},
+  {name:'สวนสาธารณะทุ่งศรีเมือง (อุบลราชธานี)',lat:15.2290,lon:104.8570,kind:'park'},
+  {name:'สวนสมเด็จพระศรีนครินทร์ บึงพลาญชัย (ร้อยเอ็ด)',lat:16.0560,lon:103.6530,kind:'park'},
+  {name:'สวนน้ำบุ่งตาหลัว เฉลิมพระเกียรติ (นครราชสีมา)',lat:14.9990,lon:102.1230,kind:'park'},
+  // ภาคกลาง/ตะวันออก
+  {name:'บึงพระราม (พระนครศรีอยุธยา)',lat:14.3560,lon:100.5650,kind:'park'},
+  {name:'สวนสมเด็จพระศรีนครินทร์ นนทบุรี',lat:13.8560,lon:100.4880,kind:'park'},
+  {name:'สวนศรีเมือง (ระยอง)',lat:12.6800,lon:101.2540,kind:'park'},
+  {name:'สวนสาธารณะเฉลิมพระเกียรติ (พัทยา)',lat:12.9290,lon:100.8850,kind:'park'},
+  // ภาคใต้
+  {name:'สวนสาธารณะสะพานหิน (ภูเก็ต)',lat:7.8680,lon:98.3920,kind:'park'},
+  {name:'สวนเฉลิมพระเกียรติ ร.9 สวนหลวง (ภูเก็ต)',lat:7.8880,lon:98.3880,kind:'park'},
+  {name:'สวนสาธารณะเทศบาลนครหาดใหญ่ (สงขลา)',lat:7.0090,lon:100.4520,kind:'park'},
+  {name:'สวนสองทะเล แหลมสมิหลา (สงขลา)',lat:7.2030,lon:100.5930,kind:'park'},
+  {name:'สวนสาธารณะเกาะลำพู (สุราษฎร์ธานี)',lat:9.1390,lon:99.3290,kind:'park'},
+  {name:'สวนสมเด็จพระศรีนครินทร์ 84 ทุ่งท่าลาด (นครศรีธรรมราช)',lat:8.4200,lon:99.9700,kind:'park'},
+  {name:'สวนสาธารณะธารา (กระบี่)',lat:8.0610,lon:98.9170,kind:'park'},
+];
+
+/* ============ state ============ */
+let map,baseMap,satMap,satLabels,layerMode='map',meMarker,radiusCircle,cluster,markerLayer,POIS=[];
+let center={lat:13.7307,lon:100.5418},approxLoc=true,usingSeed=false,userArea='';
+let state={radius:3,sort:'density',sport:'all',bookings:[],saved:[]};
+const OWNER_EMAIL='owner@as.app';const OWNER_PASS='owner1234';
+let CUR_USER=null;try{CUR_USER=JSON.parse(localStorage.getItem('as_user')||'null');}catch(e){}
+function seedOwner(){let u=[];try{u=JSON.parse(localStorage.getItem('as_users')||'[]');}catch(e){}
+  if(!u.some(x=>x.email===OWNER_EMAIL)){u.push({name:'เจ้าของระบบ',email:OWNER_EMAIL,age:'',gender:'',role:'owner',createdAt:Date.now(),pass:btoa(unescape(encodeURIComponent(OWNER_PASS)))});try{localStorage.setItem('as_users',JSON.stringify(u));}catch(e){}}}
+seedOwner();
+let _afterAuth=null;
+function authUsers(){try{return JSON.parse(localStorage.getItem('as_users')||'[]');}catch(e){return[];}}
+let _gGender='';
+function setGender(g,el){_gGender=g;[...document.querySelectorAll('.gchip')].forEach(c=>c.classList.remove('on'));el.classList.add('on');}
+function openAuth(mode){mode=mode||'login';_gGender='';const su=mode==='signup';
+  document.getElementById('ctabar').innerHTML='';
+  document.getElementById('sheetbody').innerHTML=`<div class="sbody" style="padding:0 0 12px">
+    <div class="authhead">
+      <button class="close" style="background:rgba(255,255,255,.22);color:#fff" onclick="closeSheet()">${svg('x')}</button>
+      <div class="authav">${svg('user')}</div>
+      <div class="authtitle">${su?'สร้างบัญชีใหม่':'ยินดีต้อนรับกลับ'}</div>
+      <div class="authsub">${su?'สมัครสมาชิกเพื่อจองสนามและบันทึกที่ชื่นชอบ':'เข้าสู่ระบบเพื่อใช้งานต่อ'}</div>
+    </div>
+    <div class="authbox">
+      ${su?`<label class="alabel">ชื่อที่แสดง</label><input id="au-name" class="ain" placeholder="เช่น สมชาย ใจดี">
+      <div style="display:flex;gap:10px">
+        <div style="flex:1"><label class="alabel">อายุ</label><input id="au-age" class="ain" type="number" min="1" max="120" placeholder="เช่น 18"></div>
+        <div style="flex:1.5"><label class="alabel">เพศ</label><div class="gchips"><div class="gchip" onclick="setGender('ชาย',this)">ชาย</div><div class="gchip" onclick="setGender('หญิง',this)">หญิง</div><div class="gchip" onclick="setGender('อื่นๆ',this)">อื่นๆ</div></div></div>
+      </div>`:''}
+      <label class="alabel">อีเมล</label><input id="au-email" class="ain" type="email" placeholder="you@email.com">
+      <label class="alabel">รหัสผ่าน</label><input id="au-pass" class="ain" type="password" placeholder="${su?'อย่างน้อย 6 ตัวอักษร':'รหัสผ่าน'}">
+      <button class="navmain" style="margin-top:8px" onclick="doAuth('${mode}')">${su?'สมัครสมาชิก':'เข้าสู่ระบบ'}</button>
+      <div style="text-align:center;font-size:13px;color:var(--muted);margin-top:14px">${su?'มีบัญชีแล้ว? ':'ยังไม่มีบัญชี? '}<a onclick="openAuth('${su?'login':'signup'}')" style="color:var(--cta);cursor:pointer;font-weight:700">${su?'เข้าสู่ระบบ':'สมัครสมาชิก'}</a></div>
+      <div class="facnote" style="margin-top:16px">* ข้อมูลสมาชิกเก็บในเครื่องนี้ (เดโม) — เวอร์ชันใช้จริงควรต่อ Firebase Auth เพื่อความปลอดภัย</div>
+    </div></div>`;
+  showSheet();
+}
+function doAuth(mode){
+  const email=((document.getElementById('au-email')||{}).value||'').trim().toLowerCase();
+  const pass=((document.getElementById('au-pass')||{}).value||'').trim();
+  if(!/.+@.+\..+/.test(email)){toast('กรอกอีเมลให้ถูกต้อง');return;}
+  if(pass.length<6){toast('รหัสผ่านอย่างน้อย 6 ตัวอักษร');return;}
+  let users=authUsers();
+  if(mode==='signup'){
+    const name=((document.getElementById('au-name')||{}).value||'').trim()||email.split('@')[0];
+    const age=((document.getElementById('au-age')||{}).value||'').trim();
+    if(users.some(u=>u.email===email)){toast('อีเมลนี้มีบัญชีแล้ว ลองเข้าสู่ระบบ');return;}
+    const role=(email===OWNER_EMAIL)?'owner':'';
+    const rec={name,email,age,gender:_gGender,role,createdAt:Date.now(),pass:btoa(unescape(encodeURIComponent(pass)))};
+    users.push(rec);try{localStorage.setItem('as_users',JSON.stringify(users));}catch(e){}
+    CUR_USER={name,email,age,gender:_gGender,role};
+  }else{
+    const u=users.find(u=>u.email===email&&u.pass===btoa(unescape(encodeURIComponent(pass))));
+    if(!u){toast('อีเมลหรือรหัสผ่านไม่ถูกต้อง');return;}
+    CUR_USER={name:u.name,email:u.email,age:u.age,gender:u.gender,role:u.role||(u.email===OWNER_EMAIL?'owner':'')};
+  }
+  try{localStorage.setItem('as_user',JSON.stringify(CUR_USER));}catch(e){}
+  toast('ยินดีต้อนรับ '+CUR_USER.name+' ✓');closeSheet();renderMyBookings();
+  if(_afterAuth){const fn=_afterAuth;_afterAuth=null;setTimeout(fn,250);}
+}
+function logout(){CUR_USER=null;try{localStorage.removeItem('as_user');}catch(e){}toast('ออกจากระบบแล้ว');renderMyBookings();}
+function requireLogin(after){if(CUR_USER){after&&after();return;}_afterAuth=after;openAuth('login');}
+function dashBars(data,unit){const max=Math.max(1,...data.map(d=>d.value));
+  return '<div class="dbars">'+data.map(d=>`<div class="dbar"><div class="dblab">${xmlEsc(d.label)}</div><div class="dbtrack"><i style="width:${Math.round(d.value/max*100)}%;background:${d.color||'var(--brand)'}"></i></div><div class="dbval">${d.value}${unit||''}</div></div>`).join('')+'</div>';}
+function openDashboard(){
+  if(!CUR_USER||CUR_USER.role!=='owner'){toast('เฉพาะบัญชีเจ้าของเท่านั้น');return;}
+  const users=authUsers().filter(u=>u.role!=='owner');const bk=state.bookings||[];
+  const members=users.length, totalBk=bk.length, revenue=bk.reduce((s,b)=>s+(+b.price||0),0);
+  const ages=users.map(u=>+u.age).filter(a=>a>0);const avgAge=ages.length?Math.round(ages.reduce((a,b)=>a+b,0)/ages.length):'-';
+  const g={};users.forEach(u=>{const k=u.gender||'ไม่ระบุ';g[k]=(g[k]||0)+1;});
+  const genderData=Object.keys(g).map((k,i)=>({label:k,value:g[k],color:['#5FD08A','#E8B25C','#7FB04A','#F0655F'][i%4]}));
+  const buckets={'ต่ำกว่า 18':0,'18-25':0,'26-40':0,'41 ขึ้นไป':0};
+  ages.forEach(a=>{if(a<18)buckets['ต่ำกว่า 18']++;else if(a<=25)buckets['18-25']++;else if(a<=40)buckets['26-40']++;else buckets['41 ขึ้นไป']++;});
+  const ageData=Object.keys(buckets).map(k=>({label:k,value:buckets[k],color:'var(--brand)'}));
+  const m={};bk.forEach(b=>{const k=b.method||'ไม่ระบุ';m[k]=(m[k]||0)+1;});
+  const methodData=Object.keys(m).map((k,i)=>({label:k,value:m[k],color:['#A4CC60','#E8B25C','#5FD08A','#F0655F'][i%4]}));
+  const vv={};bk.forEach(b=>{vv[b.place]=(vv[b.place]||0)+1;});
+  const venues=Object.keys(vv).map(k=>({name:k,n:vv[k]})).sort((a,b)=>b.n-a.n).slice(0,6);
+  document.getElementById('ctabar').innerHTML=`<button class="btn btn-go free" onclick="closeSheet();go('bookings')">ปิดแดชบอร์ด</button>`;
+  document.getElementById('sheetbody').innerHTML=`<div class="sbody" style="padding-top:14px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+      <button class="close" style="position:static;width:34px;height:34px;background:#eef3ef;color:#222" onclick="closeSheet()">${svg('x')}</button>
+      <div><div style="font-family:'Bai Jamjuree';font-weight:700;font-size:19px">แดชบอร์ดเจ้าของ 👑</div><div style="font-size:12px;color:var(--muted)">ภาพรวมผู้ใช้งานและการจอง</div></div></div>
+    <div class="statgrid">
+      <div class="statcard"><div class="stv">${members}</div><div class="stl">สมาชิก</div></div>
+      <div class="statcard"><div class="stv">${totalBk}</div><div class="stl">การจอง</div></div>
+      <div class="statcard"><div class="stv">${revenue.toLocaleString()}</div><div class="stl">รายได้ (บาท)</div></div>
+      <div class="statcard"><div class="stv">${avgAge}</div><div class="stl">อายุเฉลี่ย</div></div>
+    </div>
+    <div class="dashsec"><div class="dasht">${svg('chart')}การจองตามวิธีชำระเงิน</div>${methodData.length?dashBars(methodData,' ครั้ง'):'<div class="dashempty">ยังไม่มีการจอง</div>'}</div>
+    <div class="dashsec"><div class="dasht">${svg('user')}สัดส่วนเพศสมาชิก</div>${genderData.length?dashBars(genderData,' คน'):'<div class="dashempty">ยังไม่มีสมาชิก</div>'}</div>
+    <div class="dashsec"><div class="dasht">${svg('activity')}ช่วงอายุสมาชิก</div>${ages.length?dashBars(ageData,' คน'):'<div class="dashempty">ยังไม่มีข้อมูลอายุ</div>'}</div>
+    <div class="dashsec"><div class="dasht">${svg('pin')}สถานที่ยอดนิยม</div>${venues.length?venues.map((v,i)=>`<div class="dvrow"><span class="dvn">${i+1}. ${xmlEsc(v.name)}</span><b>${v.n} การจอง</b></div>`).join(''):'<div class="dashempty">ยังไม่มีการจอง</div>'}</div>
+    <div class="facnote" style="margin-top:6px">* ข้อมูลนี้รวมจากเครื่องนี้ (เดโม) — เวอร์ชันใช้จริงจะดึงสถิติผู้ใช้ทั้งหมดจากเซิร์ฟเวอร์/ฐานข้อมูลกลาง</div>
+    <div style="height:8px"></div></div>`;
+  showSheet();
+}
+let jitter={},currentDetail=null,agoStart=Date.now(),currentPage='map',routeLayer=null,navWatch=null;
+let weather=null,realPM=null,insecure=false,pmMsg='แตะเพื่อดูรายละเอียดอากาศ';
+let IQKEY='',airType='AQI',airSrc='Open-Meteo',isRaining=false,airPM25=null,airPM10=null,airUpdated=null;
+
+/* ============ persistence ============ */
+async function loadStore(){
+  try{const r=await window.storage.get('as_bookings');if(r&&r.value)state.bookings=JSON.parse(r.value);}catch(e){}
+  try{const r=await window.storage.get('as_saved');if(r&&r.value)state.saved=JSON.parse(r.value);}catch(e){}
+  renderBadge();
+}
+async function saveStore(k){try{await window.storage.set(k==='b'?'as_bookings':'as_saved',JSON.stringify(k==='b'?state.bookings:state.saved));}catch(e){}}
+
+/* ============ helpers ============ */
+function hashStr(s){let h=0;for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))|0;return Math.abs(h);}
+function haversine(a,b){const R=6371,dLat=(b.lat-a.lat)*Math.PI/180,dLon=(b.lon-a.lon)*Math.PI/180;
+  const x=Math.sin(dLat/2)**2+Math.cos(a.lat*Math.PI/180)*Math.cos(b.lat*Math.PI/180)*Math.sin(dLon/2)**2;
+  return R*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));}
+const TPL_PARK=[55,80,90,72,50,40,35,38,44,48,46,44,55,72,86,92,80];
+const TPL_COURT=[12,22,28,24,18,22,38,55,50,44,42,48,62,74,82,88,80];
+function busyCurve(seed,kind){const t=kind==='court'?TPL_COURT:TPL_PARK;const sc=0.62+(seed%70)/100;const shift=(seed%5)-2;
+  const out=[];for(let i=0;i<t.length;i++){const src=t[(i+shift+t.length)%t.length];const noise=(hashStr(seed+'h'+i)%19)-9;out.push(Math.max(4,Math.min(98,Math.round(src*sc+noise))));}return out;}
+function hourIndex(){const h=new Date().getHours();return Math.min(16,Math.max(0,h-5));}
+function densityOf(p){let v=p.busy[hourIndex()];const dow=new Date().getDay();
+  if(dow===0||dow===6)v*=1.18;
+  const raining=isRaining||(p.wcode!=null&&[51,53,55,56,57,61,63,65,66,67,80,81,82,95,96,99].includes(p.wcode));
+  if(raining&&!isIndoor(p))v*=0.45;
+  if(!isIndoor(p)&&p.pm!=null){if(p.pm>150)v*=0.55;else if(p.pm>100)v*=0.78;}
+  return Math.max(3,Math.min(99,Math.round(v)));}
+function level(v){return v<38?{k:'ว่าง',c:'var(--green)'}:v<70?{k:'ปานกลาง',c:'var(--amber)'}:{k:'หนาแน่น',c:'var(--red)'};}
+function pmColor(v){if(airType==='AQI')return v<=50?'var(--green)':v<=100?'#8aa82e':v<=150?'var(--amber)':v<=200?'var(--red)':'#8e44ad';
+  return v<=25?'var(--green)':v<=37?'#8aa82e':v<=50?'var(--amber)':'var(--red)';}
+function pmLabel(v){if(airType==='AQI')return v<=50?'ดีมาก':v<=100?'ปานกลาง':v<=150?'เริ่มมีผล':v<=200?'มีผลต่อสุขภาพ':'อันตราย';
+  return v<=25?'ดี':v<=37?'ปานกลาง':v<=50?'เริ่มมีผล':'มีผลต่อสุขภาพ';}
+function airUnit(){return airType==='AQI'?'AQ':'PM';}
+function iqWx(ic){const c=(ic||'').slice(0,2);
+  if(c==='01')return{i:'sun',l:'ท้องฟ้าแจ่มใส',rain:false};
+  if(c==='02'||c==='03')return{i:'cloudsun',l:'มีเมฆบางส่วน',rain:false};
+  if(c==='04')return{i:'cloud',l:'เมฆมาก',rain:false};
+  if(c==='50')return{i:'cloud',l:'หมอก',rain:false};
+  if(c==='09')return{i:'rain',l:'ฝนตก',rain:true};
+  if(c==='10')return{i:'rain',l:'ฝนตก',rain:true};
+  if(c==='11')return{i:'rain',l:'พายุฝนฟ้าคะนอง',rain:true};
+  if(c==='13')return{i:'cloud',l:'หิมะ',rain:true};
+  return{i:'cloud',l:'มีเมฆ',rain:false};}
+function isIndoor(p){return p.kind==='fitness'||(p.fac&&p.fac.includes('gym'))||/ในร่ม|ฟิตเนส|fitness|gym|แบดมินตัน|badminton/i.test((p.ty||'')+' '+(p.name||''));}
+function isOpenNow(p){const h=new Date().getHours();return p.kind==='park'?(h>=5&&h<22):(h>=6&&h<22);}
+function closeHour(p){return '22:00';}
+
+function facsFor(kind,sport){
+  if(kind==='park'){const s=['walk','track'];if(sport!=='running')s.push('gym');s.push('yoga');return s;}
+  const m={tennis:['tennis'],basketball:['basket'],soccer:['football'],football:['football'],futsal:['futsal'],
+    badminton:['bad','pingpong'],volleyball:['volleyball'],beachvolleyball:['volleyball'],sepak_takraw:['takraw'],takraw:['takraw'],
+    swimming:['swim'],table_tennis:['pingpong'],fitness:['gym'],running:['track'],athletics:['track'],
+    boules:['petong'],petanque:['petong'],skateboard:['skate'],climbing:['climb'],golf:['golf'],equestrian:['horse'],cricket:['cricket'],rugby_union:['rugby'],rugby:['rugby'],
+    boxing:['muaythai'],martial_arts:['muaythai'],muay_thai:['muaythai'],
+    multi:['bad','futsal','football','basket','takraw','volleyball']};
+  return m[sport]||['futsal','basket'];
+}
+function tyFor(kind,sport){
+  if(kind==='park')return 'สวนสาธารณะ';if(kind==='fitness')return 'ลานออกกำลังกาย';
+  const m={tennis:'สนามเทนนิส',basketball:'สนามบาสเกตบอล',badminton:'สนามแบดมินตัน',swimming:'สระว่ายน้ำ',
+    futsal:'สนามฟุตซอล',soccer:'สนามฟุตบอล',football:'สนามฟุตบอล',volleyball:'สนามวอลเลย์บอล',sepak_takraw:'สนามตะกร้อ',
+    table_tennis:'โต๊ะปิงปอง',boules:'สนามเปตอง',petanque:'สนามเปตอง',skateboard:'ลานสเก็ต',climbing:'จุดปีนผา',
+    boxing:'ค่ายมวย',martial_arts:'ค่ายมวย',muay_thai:'ค่ายมวยไทย',multi:'ลานกีฬาอเนกประสงค์',athletics:'ลู่กรีฑา',running:'ลู่วิ่ง'};
+  return m[sport]||'สนามกีฬาชุมชน';
+}
+function basePM(seed){return realPM!=null?realPM:null;}
+function makeVenue(name,lat,lon,kind,sport){
+  const seed=hashStr(name+lat.toFixed(4));
+  const fac=Array.from(new Set(facsFor(kind,sport)));
+  const book=(kind==='court'||kind==='fitness');
+  return {id:'v'+seed+'_'+Math.round(lat*1000),name,lat,lon,kind,ty:tyFor(kind,sport),fac,book,
+    price:book?20:0,courts:book?(2+seed%5):0,pm:basePM(seed),seed,charge:'',paid:(kind==='court'||kind==='fitness'),
+    cap:kind==='park'?700+seed%1700:0,gem:false,img:'',thumb:'',gallery:[],realPhoto:false,temp:null,pm25:null,wcode:null,osmImg:'',commons:'',wiki:'',wd:'',photos:null,photoTry:false,busy:busyCurve(seed,kind==='park'?'park':'court')};
+}
+
+/* ============ map ============ */
+const GEO={
+  gulf:[[13.52,100.40],[13.52,100.84],[13.40,100.84],[13.40,100.40]],
+  river:[[13.905,100.488],[13.860,100.495],[13.820,100.500],[13.795,100.505],[13.772,100.493],[13.762,100.486],[13.745,100.494],[13.732,100.503],[13.722,100.512],[13.705,100.516],[13.690,100.508],[13.675,100.515],[13.660,100.530],[13.645,100.548],[13.620,100.565],[13.585,100.578],[13.550,100.585]],
+  roads:[
+    [[13.744,100.545],[13.738,100.560],[13.728,100.580],[13.715,100.600],[13.700,100.620],[13.685,100.640],[13.668,100.660]],
+    [[13.726,100.508],[13.724,100.535],[13.722,100.560],[13.720,100.585]],
+    [[13.755,100.534],[13.790,100.533],[13.820,100.532],[13.862,100.530]],
+    [[13.755,100.556],[13.800,100.558],[13.845,100.560],[13.885,100.562]],
+    [[13.700,100.540],[13.730,100.565],[13.772,100.570],[13.812,100.563],[13.845,100.546]],
+    [[13.748,100.535],[13.751,100.575],[13.755,100.615],[13.758,100.655]],
+    [[13.732,100.512],[13.715,100.508],[13.700,100.503],[13.685,100.498]],
+    [[13.720,100.485],[13.710,100.462],[13.700,100.438],[13.690,100.415]]
+  ],
+  parks:[
+    [[13.736,100.537],[13.736,100.547],[13.726,100.547],[13.726,100.537]],
+    [[13.812,100.544],[13.812,100.561],[13.796,100.561],[13.796,100.544]],
+    [[13.729,100.555],[13.729,100.566],[13.720,100.566],[13.720,100.555]],
+    [[13.733,100.566],[13.733,100.574],[13.727,100.574],[13.727,100.566]],
+    [[13.703,100.649],[13.703,100.663],[13.689,100.663],[13.689,100.649]]
+  ]
+};
+function drawBaseMap(){
+  L.polygon(GEO.gulf,{stroke:false,fillColor:'#bcdcf0',fillOpacity:.85,interactive:false}).addTo(map);
+  GEO.parks.forEach(p=>L.polygon(p,{color:'#9ccf93',weight:1,fillColor:'#c6e9bf',fillOpacity:.85,interactive:false}).addTo(map));
+  GEO.roads.forEach(r=>L.polyline(r,{color:'#e0c889',weight:3,opacity:.85,interactive:false}).addTo(map));
+  L.polyline(GEO.river,{color:'#8fc4e8',weight:6,opacity:.95,interactive:false}).addTo(map);
+}
+function initMap(){
+  map=L.map('map',{zoomControl:false,attributionControl:true,minZoom:5,maxZoom:18}).setView([center.lat,center.lon],14);
+  map.createPane('tilesTop');map.getPane('tilesTop').style.zIndex=450;
+  map.createPane('over');map.getPane('over').style.zIndex=500;
+  baseMap=L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{pane:'tilesTop',subdomains:'abcd',maxZoom:20,attribution:'&copy; OpenStreetMap &copy; CARTO'}).addTo(map);
+  satMap=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{pane:'tilesTop',maxZoom:19,attribution:'&copy; Esri'});
+  satLabels=L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}{r}.png',{pane:'tilesTop',subdomains:'abcd',maxZoom:20});
+  drawBaseMap();
+  meMarker=L.marker([center.lat,center.lon],{icon:L.divIcon({className:'as-pin',html:'<div class="me-dot"></div>',iconSize:[18,18],iconAnchor:[9,9]}),zIndexOffset:1000}).addTo(map);
+  radiusCircle=L.circle([center.lat,center.lon],{pane:'over',radius:state.radius*1000,color:'#0F5A4C',weight:1.4,fillColor:'#1C8068',fillOpacity:.05}).addTo(map);
+  if(L.markerClusterGroup){
+    cluster=L.markerClusterGroup({showCoverageOnHover:false,maxClusterRadius:48,
+      iconCreateFunction:c=>{const n=c.getChildCount();const s=n<10?34:n<50?42:50;
+        return L.divIcon({html:`<div class="clu" style="width:${s}px;height:${s}px;font-size:${n<10?12:13}px">${n}</div>`,className:'clu-wrap',iconSize:[s,s]});}});
+    map.addLayer(cluster);
+  }else{markerLayer=L.layerGroup().addTo(map);}
+  // ปุ่ม "ค้นหาบริเวณนี้" เมื่อเลื่อนแผนที่ออกจากจุดเดิม → โหลดข้อมูลจริงของพื้นที่ใหม่
+  const sb=document.createElement('button');sb.id='searchhere';sb.className='searchhere';
+  sb.innerHTML='ค้นหาบริเวณนี้';sb.style.display='none';sb.onclick=searchHere;
+  document.getElementById('page-map').appendChild(sb);
+
+  map.on('moveend',()=>{if(routeLayer)return;const c=map.getCenter();const moved=haversine(center,{lat:c.lat,lon:c.lng});sb.style.display=moved>2?'block':'none';});
+}
+function searchHere(){
+  const c=map.getCenter();center={lat:c.lat,lon:c.lng};approxLoc=true;
+  const sb=document.getElementById('searchhere');if(sb)sb.style.display='none';
+  if(radiusCircle)radiusCircle.setLatLng([center.lat,center.lon]);
+  const b=document.getElementById('locbanner');if(b)b.style.display='flex';
+  reverseGeo();fetchPOIs();loadConditions();
+}
+function toggleLayer(){
+  if(!map)return;
+  if(layerMode==='map'){map.removeLayer(baseMap);satMap.addTo(map);satLabels.addTo(map);layerMode='sat';toast('โหมดดาวเทียม');}
+  else{map.removeLayer(satMap);map.removeLayer(satLabels);baseMap.addTo(map);layerMode='map';toast('โหมดแผนที่');}
+}
+function pinHTML(p){const d=p.busy[hourIndex()],lv=level(d);
+  return `<div class="pin-wrap"><div class="ripple" style="background:${lv.c};opacity:.4"></div><div class="head" style="background:${lv.c}"><b>${d}</b></div></div>`;}
+function refreshMarkers(){
+  if(!map)return;const grp=cluster||markerLayer;if(!grp)return;grp.clearLayers();
+  const cap=cluster?POIS.length:Math.min(POIS.length,120);
+  POIS.slice(0,cap).forEach(p=>{
+    const m=L.marker([p.lat,p.lon],{icon:L.divIcon({className:'as-pin',html:pinHTML(p),iconSize:[40,48],iconAnchor:[20,44]})});
+    m.on('click',()=>openDetail(p));grp.addLayer(m);
+  });
+}
+function recenter(){if(map)map.flyTo([center.lat,center.lon],15);}
+
+/* ============ geolocation ============ */
+function geoOpts(hi){return {enableHighAccuracy:hi,timeout:hi?12000:20000,maximumAge:hi?0:300000};}
+function getPos(onOK,onErr){
+  /* ข้อ 6: ขอแบบแม่นยำสูงก่อน ถ้า timeout/หาไม่เจอ (code 2/3) ค่อย fallback เป็นแม่นยำต่ำ (เผื่อ iPad Wi-Fi ไม่มีชิป GPS) */
+  navigator.geolocation.getCurrentPosition(onOK,e=>{
+    if(e.code===2||e.code===3){navigator.geolocation.getCurrentPosition(onOK,onErr,geoOpts(false));}
+    else onErr(e);
+  },geoOpts(true));
+}
+/* ข้อ 5: ตรวจจับว่าเปิดในเบราว์เซอร์ในตัวของแอปอื่น (มักบล็อก GPS) */
+function inAppBrowser(){const ua=navigator.userAgent||'';return /FBAN|FBAV|FB_IAB|Instagram|Line\/|Messenger|MicroMessenger|Twitter|TikTok|; wv\)/i.test(ua);}
+function startLocate(){
+  setSplash('กำลังขอตำแหน่งของคุณ...');
+  if(!('geolocation' in navigator)||!window.isSecureContext){insecure=!window.isSecureContext;bootWith(center,true);return;}
+  let booted=false;
+  const fb=setTimeout(()=>{if(!booted){booted=true;bootWith(center,true);}},8000);
+  getPos(
+    pos=>{clearTimeout(fb);const c={lat:pos.coords.latitude,lon:pos.coords.longitude};if(!booted){booted=true;bootWith(c,false);}else applyNewCenter(c,false);},
+    ()=>{if(!booted){booted=true;bootWith(center,true);}}
+  );
+}
+function applyNewCenter(c,approx){
+  center=c;approxLoc=approx;
+  const b=document.getElementById('locbanner');if(b)b.style.display=approx?'flex':'none';
+  if(meMarker)meMarker.setLatLng([c.lat,c.lon]);
+  if(radiusCircle)radiusCircle.setLatLng([c.lat,c.lon]);
+  if(map)map.flyTo([c.lat,c.lon],15);
+  reverseGeo();fetchPOIs();loadConditions();
+}
+function jumpTo(lat,lon,name){applyNewCenter({lat,lon},true);go('map');toast('ไปยัง '+name+' — กำลังโหลดสวน/สนามจริงในพื้นที่');}
+function locateMe(){
+  /* ข้อ 1+2: เรียกขอตำแหน่งตรง ๆ ในจังหวะการแตะ ไม่มี await/permissions.query มาคั่น (กัน user-activation หลุดบนมือถือ) */
+  if(!('geolocation' in navigator)){toast('อุปกรณ์นี้ไม่รองรับ GPS');return;}
+  if(!window.isSecureContext){showPermHelp('insecure');return;}
+  if(inAppBrowser()){showPermHelp('inapp');return;}
+  toast('กำลังขอตำแหน่ง — แตะ "อนุญาต / Allow"');
+  getPos(
+    pos=>{applyNewCenter({lat:pos.coords.latitude,lon:pos.coords.longitude},false);toast('พบตำแหน่งของคุณแล้ว ✓');},
+    err=>{if(err.code===1)showPermHelp('denied');else toast(err.code===3?'หมดเวลาหา GPS — ลองใหม่ในที่โล่ง':'หาตำแหน่งไม่ได้ ลองใหม่อีกครั้ง');}
+  );
+}
+function showPermHelp(reason){
+  let el=document.getElementById('permmodal');
+  if(!el){el=document.createElement('div');el.id='permmodal';el.className='permmodal';el.onclick=ev=>{if(ev.target===el)closePerm();};document.querySelector('.screen').appendChild(el);}
+  const T={
+    insecure:{h:'ต้องเปิดผ่านลิงก์ https',p:'ตอนนี้เปิดไฟล์แบบออฟไลน์ (file://) เบราว์เซอร์จึงปิด GPS ไว้<br><br>วิธีใช้ GPS:<br>• รันด้วยไฟล์ <b>run_activesphere.py</b> แล้วเปิด http://localhost<br>• หรืออัปขึ้น Netlify/GitHub แล้วเปิดลิงก์ https://',btn:false},
+    inapp:{h:'โปรดเปิดในเบราว์เซอร์',p:'ดูเหมือนคุณเปิดลิงก์นี้ในแอปอื่น (เช่น LINE, Facebook, IG) ซึ่งมัก<b>บล็อก GPS</b><br><br>แตะปุ่ม ⋮ มุมขวาบน แล้วเลือก "เปิดในเบราว์เซอร์ / Open in Chrome/Safari" แล้วลองใหม่',btn:true},
+    denied:{h:'อนุญาตการเข้าถึงตำแหน่ง',p:'เบราว์เซอร์เคยตั้งเป็น "บล็อก" ตำแหน่งไว้ จึงเรียกหน้าต่างขออนุญาตโดยตรงไม่ได้ (เป็นข้อจำกัดด้านความปลอดภัย) เปลี่ยนได้ดังนี้:<br><br>1) แตะไอคอน <b>🔒</b> (หรือ ⓘ / รูปสไลเดอร์) หน้าแถบที่อยู่<br>2) เลือก "สิทธิ์" หรือ "ตำแหน่ง / Location"<br>3) เปลี่ยนเป็น "อนุญาต / Allow"<br>4) แล้วแตะปุ่มด้านล่าง',btn:true}
+  };
+  const d=T[reason]||T.denied;
+  el.innerHTML='<div class="pm-card"><div class="pm-ic">'+svg('locate')+'</div><h3>'+d.h+'</h3><p>'+d.p+'</p>'+
+    (d.btn?'<button class="pm-btn" onclick="retryGPS()">ลองอีกครั้ง</button>':'')+
+    '<button class="pm-close" onclick="closePerm()">ปิด</button></div>';
+  el.classList.add('show');
+}
+function closePerm(){const el=document.getElementById('permmodal');if(el)el.classList.remove('show');}
+function retryGPS(){closePerm();toast('กำลังลองอีกครั้ง...');getPos(
+    pos=>{applyNewCenter({lat:pos.coords.latitude,lon:pos.coords.longitude},false);toast('พบตำแหน่งแล้ว ✓');},
+    err=>{toast(err.code===1?'ยังถูกบล็อกอยู่ — โปรดเปลี่ยนเป็น "อนุญาต" ใน "ตำแหน่ง" ของแถบที่อยู่':'ลองใหม่อีกครั้ง');});}
+async function bootWith(c,approx){
+  center=c;approxLoc=approx;
+  const b=document.getElementById('locbanner');
+  if(b){b.style.display=approx?'flex':'none';const t=document.getElementById('locbannertxt');
+    if(t)t.innerHTML=insecure?'เปิดผ่านลิงก์ https เพื่อใช้ GPS — ตอนนี้ใช้ตำแหน่ง<b>โดยประมาณ</b>':'ใช้ตำแหน่งโดยประมาณ — <b>แตะที่นี่เพื่ออนุญาต GPS</b>';}
+  try{initMap();}catch(e){toast('แสดงแผนที่ไม่ได้ในหน้าต่างนี้ — ลองเปิดเต็มจอ/เบราว์เซอร์');}
+  reverseGeo();loadConditions();await fetchPOIs();hideSplash();
+}
+async function reverseGeo(){
+  try{const r=await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${center.lat}&lon=${center.lon}&accept-language=th&zoom=14`);
+    const d=await r.json();const a=d.address||{};
+    const dist=a.suburb||a.city_district||a.neighbourhood||a.quarter||a.town||a.city||a.county||'';
+    const prov=a.province||a.state||a.city||'';
+    const name=dist||prov||'ตำแหน่งของคุณ';
+    userArea=(dist?dist:'')+((prov&&prov!==dist)?(dist?' · ':'')+prov:'');
+    if(!userArea)userArea=name;
+    const ph=document.getElementById('mapsearch');if(ph)ph.placeholder=`📍 ${name}${approxLoc?' (โดยประมาณ)':''} — ค้นหาที่อื่น...`;
+    const wl=document.getElementById('wxloc');if(wl)wl.innerHTML=`${userArea}${approxLoc?' (โดยประมาณ)':''} • อัปเดตเรียลไทม์`;
+  }catch(e){}
+}
+
+/* ============ conditions: real weather + real PM2.5 ============ */
+function wxMap(code){
+  if(code===0)return{i:'sun',l:'แดดจัด'};if([1,2].includes(code))return{i:'cloudsun',l:'มีเมฆบางส่วน'};
+  if([3,45,48].includes(code))return{i:'cloud',l:'เมฆมาก'};
+  if(code>=51&&code<=67)return{i:'rain',l:'มีฝน'};if(code>=80&&code<=82)return{i:'rain',l:'ฝนตก'};
+  if(code>=95)return{i:'rain',l:'พายุฝน'};return{i:'cloud',l:'มีเมฆ'};
+}
+function fetchJSON(url,ms){return new Promise(async(res,rej)=>{const c=new AbortController();const t=setTimeout(()=>c.abort(),ms||8000);try{const r=await fetch(url,{signal:c.signal});clearTimeout(t);if(!r.ok)throw 0;res(await r.json());}catch(e){clearTimeout(t);rej(e);}});}
+async function loadConditions(){
+  // อากาศ + คุณภาพอากาศ "เรียลไทม์" จาก Open-Meteo (ฟรี ไม่ต้องคีย์ ใช้ได้บนเว็บไซต์ ไม่ติด CORS)
+  airType='AQI';airSrc='Open-Meteo';
+  try{
+    const w=await fetchJSON(`https://api.open-meteo.com/v1/forecast?latitude=${center.lat}&longitude=${center.lon}&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m,precipitation&timezone=auto`);
+    if(w&&w.current){const c=w.current;weather={t:Math.round(c.temperature_2m),feels:Math.round(c.apparent_temperature),hum:Math.round(c.relative_humidity_2m),code:c.weather_code,wind:Math.round(c.wind_speed_10m),precip:c.precipitation};}
+  }catch(e){}
+  try{
+    const a=await fetchJSON(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${center.lat}&longitude=${center.lon}&current=pm2_5,pm10,us_aqi&timezone=auto`);
+    if(a&&a.current){if(a.current.us_aqi!=null)realPM=Math.round(a.current.us_aqi);airPM25=a.current.pm2_5!=null?Math.round(a.current.pm2_5):null;airPM10=a.current.pm10!=null?Math.round(a.current.pm10):null;}
+  }catch(e){}
+  isRaining=!!(weather&&(weather.rain||(weather.precip>0)||[51,53,55,56,57,61,63,65,66,67,80,81,82,95,96,99].includes(weather.code)));
+  airUpdated=new Date();
+  // ไม่ก๊อปค่าตำแหน่งเราไปทุกสวนแล้ว — ค่าฝุ่นรายสวนจะดึงจริงทีละจุดผ่าน queueAir/loadDetailAir
+  renderConditions();render();
+  loadVenueAir();
+}
+function renderConditions(){
+  const wi=document.getElementById('wxicon'),wt=document.getElementById('wxt'),wl=document.getElementById('wxl');
+  if(weather){const m=weather.l?{i:weather.i,l:weather.l}:wxMap(weather.code);wi.innerHTML=svg(m.i);wi.dataset.done=1;wt.textContent=weather.t+'°';wl.innerHTML=m.l+' <span class="livedot"></span>';}
+  const near=POIS.filter(p=>p.dist<=state.radius);
+  const pm=realPM;
+  if(pm!=null){document.getElementById('pmv').textContent=pm;document.getElementById('pmav').style.background=pmColor(pm);document.getElementById('pml').textContent=(airType==='AQI'?'AQ':'PM2.5')+' · '+pmLabel(pm);}
+  else{document.getElementById('pmv').textContent='–';document.getElementById('pmav').style.background='var(--faint)';document.getElementById('pml').textContent='ไม่มีข้อมูล';}
+  const openParks=near.filter(p=>p.kind==='park'&&isOpenNow(p)).length;
+  document.getElementById('openc').textContent=openParks;
+  const fab=document.getElementById('wxfab');if(fab){const fi=document.getElementById('wxfabi');if(fi)fi.innerHTML=svg(isRaining?'rain':(weather?(weather.l?weather.i:wxMap(weather.code).i):'cloud'));fab.classList.toggle('rain',isRaining);}
+  let adv='เหมาะออกกำลังกาย';
+  if(isRaining)adv='ฝนตก เลี่ยงกลางแจ้ง แนะนำสนามในร่ม';
+  else if(weather&&weather.t>=35)adv='อากาศร้อนมาก เลี่ยงช่วงเที่ยง';
+  else if(pm!=null&&((airType==='AQI'&&pm>100)||(airType!=='AQI'&&pm>50)))adv=(airType==='AQI'?'ค่าฝุ่นสูง':'ฝุ่นสูง')+' ใส่หน้ากากหรือเลี่ยงกลางแจ้ง';
+  const wlbl=weather?(weather.l||wxMap(weather.code).l):'';
+  const upd=airUpdated?airUpdated.toLocaleTimeString('th-TH'):'';
+  pmMsg=`${weather?'🌡️ '+weather.t+'°C'+(weather.feels!=null?' (รู้สึกเหมือน '+weather.feels+'°)':'')+' • '+wlbl+'\n💧 ความชื้น '+(weather.hum!=null?weather.hum+'%':'-')+' • ลม '+weather.wind+' กม./ชม.'+(weather.precip>0?' • ฝน '+weather.precip+' มม.':'')+'\n':''}💨 AQ ${pm!=null?pm+' ('+pmLabel(pm)+')':'—'}${airPM25!=null?' • PM2.5 '+airPM25+' µg/m³':''}\n📡 ข้อมูลเปิดเรียลไทม์ • อัปเดต ${upd}\n✅ ${adv}`;
+}
+function condToast(){toast(pmMsg);}
+function openWeather(){
+  const w=weather||{};const upd=airUpdated?airUpdated.toLocaleTimeString('th-TH'):'';const pm=realPM;
+  const icon=isRaining?'rain':(w.l?w.i:(w.code!=null?wxMap(w.code).i:'cloud'));
+  const cond=w.l||(w.code!=null?wxMap(w.code).l:'—');
+  let adv=isRaining?'ฝนตก — เลี่ยงกลางแจ้ง แนะนำสนามในร่ม':(w.t>=35?'อากาศร้อนมาก เลี่ยงออกกำลังกายช่วงเที่ยง':((pm!=null&&pm>100)?'ค่าฝุ่นสูง ใส่หน้ากากหรือเลี่ยงกลางแจ้ง':'อากาศโอเค เหมาะออกกำลังกาย'));
+  const cards=[['thermo','รู้สึกเหมือน',(w.feels!=null?w.feels+'°':'—')],['cloud','ความชื้น',(w.hum!=null?w.hum+'%':'—')],['wind','ลม',(w.wind!=null?w.wind+' กม./ชม.':'—')],['rain','ฝน',((w.precip!=null?w.precip:0)+' มม.')],['wind','AQ (US)',(pm!=null?pm+' '+pmLabel(pm):'—')],['leaf','PM2.5',(airPM25!=null?airPM25+' µg/m³':'—')]];
+  document.getElementById('sheetbody').innerHTML=`
+    <div class="wxhero">
+      <button onclick="closeSheet()" style="position:absolute;top:calc(16px + env(safe-area-inset-top));right:14px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.92);border:none;display:grid;place-items:center;color:var(--ink);z-index:3">${svg('x')}</button>
+      <div class="wxbig">${svg(icon)}</div>
+      <div class="wxtemp">${w.t!=null?w.t+'°':'—'}</div>
+      <div class="wxcond">${cond}</div>
+      <div class="wxloc" id="wxloc">${userArea?userArea+(approxLoc?' (โดยประมาณ)':''):(approxLoc?'ตำแหน่งโดยประมาณ':'ตำแหน่งของคุณ')} • อัปเดต ${upd||'—'} (เรียลไทม์)</div>
+    </div>
+    <div class="sbody" style="padding-top:4px">
+      ${pm!=null?`<div style="display:flex;align-items:center;gap:11px;background:${pmColor(pm)}1f;border:1px solid ${pmColor(pm)}55;border-radius:16px;padding:13px 15px;margin-top:14px">
+        <div style="width:42px;height:42px;border-radius:50%;background:${pmColor(pm)};color:#fff;display:grid;place-items:center;font-family:'IBM Plex Mono';font-weight:700;font-size:14px;flex:none">${pm}</div>
+        <div><b style="font-family:'Bai Jamjuree';font-size:15px;color:${pmColor(pm)}">คุณภาพอากาศ: ${pmLabel(pm)}</b><div style="font-size:11.5px;color:var(--muted);margin-top:2px">AQ ${pm} · PM2.5 ${airPM25!=null?airPM25:'—'} · PM10 ${airPM10!=null?airPM10:'—'} µg/m³</div></div>
+      </div>`:''}
+      <div class="statgrid">${cards.map(c=>`<div class="stat"><span class="sic">${svg(c[0])}</span><small>${c[1]}</small><b style="font-size:16px">${c[2]}</b></div>`).join('')}</div>
+      <div class="block"><div class="bt">${svg('bulb')}คำแนะนำการออกกำลังกาย</div><p style="font-size:13px;color:var(--muted);line-height:1.65">${adv}</p></div>
+      <div style="height:6px"></div>
+    </div>`;
+  document.getElementById('ctabar').innerHTML=`<button class="btn btn-go free" onclick="closeSheet()">${svg('check')}เข้าใจแล้ว</button>`;
+  showSheet();
+}
+// ดึงคุณภาพอากาศ + อุณหภูมิ "รายสวน" จริงจาก Open-Meteo (หลายพิกัดในคำขอเดียว) → แต่ละเขตต่างกันตามจริง
+// คิวดึงค่าฝุ่น/อากาศ "ของจริงรายสวน" สำหรับทุกที่ที่ปรากฏบนจอ (Open-Meteo รองรับหลายพิกัด/คำขอ)
+let _airQ=[],_airT=null;
+function queueAir(vs){for(const p of vs)if(p&&p.pm==null&&!p._airTry)_airQ.push(p);clearTimeout(_airT);_airT=setTimeout(flushAir,400);}
+async function flushAir(){
+  const seen=new Set(),need=[],rest=[];
+  for(const p of _airQ){if(p.pm!=null||p._airTry||seen.has(p.id))continue;seen.add(p.id);(need.length<100?need:rest).push(p);}
+  _airQ=rest;
+  if(!need.length)return;
+  need.forEach(p=>p._airTry=true);
+  const lats=need.map(p=>p.lat.toFixed(3)).join(','),lons=need.map(p=>p.lon.toFixed(3)).join(',');
+  try{const a=await fetchJSON(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lats}&longitude=${lons}&current=us_aqi,pm2_5`,13000);
+    const arr=Array.isArray(a)?a:[a];need.forEach((p,i)=>{const c=arr[i]&&arr[i].current;if(c){if(c.us_aqi!=null)p.pm=Math.round(c.us_aqi);if(c.pm2_5!=null)p.pm25=Math.round(c.pm2_5);}});}
+  catch(e){need.forEach(p=>p._airTry=false);}
+  try{const w=await fetchJSON(`https://api.open-meteo.com/v1/forecast?latitude=${lats}&longitude=${lons}&current=temperature_2m,weather_code`,13000);
+    const arr=Array.isArray(w)?w:[w];need.forEach((p,i)=>{const c=arr[i]&&arr[i].current;if(c){if(c.temperature_2m!=null)p.temp=Math.round(c.temperature_2m);p.wcode=c.weather_code;}});}
+  catch(e){}
+  render();
+  if(_airQ.length){clearTimeout(_airT);_airT=setTimeout(flushAir,300);}
+}
+function loadVenueAir(){if(!POIS.length)return;queueAir(POIS.slice(0,200));prefetchPhotos();}
+// ดึงค่าจริงของ "สวนที่กำลังเปิดดู" แบบเจาะจงจุดเดียว แล้วอัปเดตกล่อง AQ/สภาพอากาศทันที
+async function loadDetailAir(p){
+  const rv=POIS.find(x=>x.id===p.id)||p;
+  try{const a=await fetchJSON(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${rv.lat}&longitude=${rv.lon}&current=us_aqi,pm2_5`,9000);
+    const c=a&&a.current;if(c){if(c.us_aqi!=null)rv.pm=Math.round(c.us_aqi);if(c.pm2_5!=null)rv.pm25=Math.round(c.pm2_5);}}catch(e){}
+  try{const w=await fetchJSON(`https://api.open-meteo.com/v1/forecast?latitude=${rv.lat}&longitude=${rv.lon}&current=temperature_2m,weather_code`,9000);
+    const c=w&&w.current;if(c){if(c.temperature_2m!=null)rv.temp=Math.round(c.temperature_2m);rv.wcode=c.weather_code;}}catch(e){}
+  rv._airTry=true;
+  if(currentDetail&&currentDetail.id===p.id){
+    currentDetail.pm=rv.pm;currentDetail.pm25=rv.pm25;currentDetail.temp=rv.temp;currentDetail.wcode=rv.wcode;
+    const aq=document.getElementById('dAQ');if(aq&&rv.pm!=null){aq.style.color=pmColor(rv.pm);aq.innerHTML=rv.pm+'<span class="unit"> '+pmLabel(rv.pm)+'</span>';}
+    const wx=document.getElementById('dWX');if(wx)wx.innerHTML=(rv.temp!=null?rv.temp+'°':'–')+'<span class="unit"> '+(rv.wcode!=null?wxMap(rv.wcode).l:'')+'</span>';
+    const da=document.getElementById('dair');if(da)da.innerHTML=(rv.temp!=null?'🌡️ '+rv.temp+'° ':'')+'💨 '+airUnit()+' '+(rv.pm!=null?rv.pm:'–')+' (ที่นี่)';
+  }
+  render();
+}
+
+/* ============ fetch real POIs ============ */
+const OVERPASS=['https://overpass-api.de/api/interpreter','https://overpass.kumi.systems/api/interpreter','https://overpass.openstreetmap.fr/api/interpreter'];
+async function fetchPOIs(){
+  setNearCount('กำลังค้นหา...');
+  const nationwide=state.radius>=900;
+  const seedV=SEED.map(s=>makeVenue(s.name,s.lat,s.lon,s.kind,s.sport)).filter(v=>haversine(center,v)<=state.radius);
+  let q;
+  if(nationwide){
+    // ดึงสวน/สนามจริง "ทั่วประเทศไทย" จาก OpenStreetMap (กรอบพิกัดทั้งประเทศ เฉพาะที่มีชื่อ)
+    setNearCount('กำลังโหลดทั่วประเทศ... (อาจใช้เวลาสักครู่)');
+    q=`[out:json][timeout:180];(nwr["leisure"~"^(park|stadium|golf_course|sports_centre|recreation_ground|pitch|fitness_centre|nature_reserve|common)$"]["name"](5.5,97.3,20.6,105.7););out center 8000;`;
+  }else{
+    // ดึงสดในรัศมีรอบตัว (จำกัด 40 กม. เพื่อความเร็ว) แล้วรวมกับสวนทั่วประเทศของเรา
+    const liveR=Math.round(Math.min(state.radius,40)*1000);
+    q=`[out:json][timeout:50];(nwr["leisure"~"^(park|pitch|sports_centre|track|fitness_station|fitness_centre|recreation_ground|stadium|golf_course|nature_reserve|common|dog_park)$"](around:${liveR},${center.lat},${center.lon}););out center 2000;`;
+  }
+  for(const url of OVERPASS){
+    try{
+      const ctrl=new AbortController();const t=setTimeout(()=>ctrl.abort(),nationwide?110000:22000);
+      const res=await fetch(url,{method:'POST',body:'data='+encodeURIComponent(q),signal:ctrl.signal});
+      clearTimeout(t);if(!res.ok)throw 0;const data=await res.json();
+      let raw=(data.elements||[]).map(parseEl).filter(Boolean);
+      const seen=new Set();raw=raw.filter(v=>{const k=v.lat.toFixed(3)+','+v.lon.toFixed(3);if(seen.has(k))return false;seen.add(k);return true;});
+      if(!raw.length)throw 0;usingSeed=false;finalize(raw);return;
+    }catch(e){/* try next mirror */}
+  }
+  usingSeed=true;finalize(seedV.length?seedV:SEED.map(s=>makeVenue(s.name,s.lat,s.lon,s.kind,s.sport)));
+  toast('เครือข่ายช้า • แสดงสวนจากชุดข้อมูลของแอปก่อน');
+}
+function parseEl(el){
+  const t=el.tags||{};if(!t.leisure)return null;
+  if(!/^(park|pitch|sports_centre|track|stadium|fitness_centre|fitness_station|recreation_ground|nature_reserve|dog_park)$/.test(t.leisure))return null;
+  if(t.disused==='yes'||t.abandoned==='yes'||Object.keys(t).some(k=>/^(disused|abandoned|construction|proposed|razed|demolished|was):/.test(k)))return null;
+  if(!(t['name:th']||t.name))return null;
+  const lat=el.lat||(el.center&&el.center.lat),lon=el.lon||(el.center&&el.center.lon);if(!lat||!lon)return null;
+  /* ใช้เฉพาะที่เข้าเล่นได้จริง: ตัดที่ห้ามเข้า/ส่วนตัว และของโรงเรียน/มหาวิทยาลัยออก */
+  const acc=(t.access||'').toLowerCase();
+  if(['private','no','members','permit','license'].includes(acc))return null;
+  if(t.amenity==='school'||t.amenity==='university'||t.amenity==='college'||t.school||t['isced:level'])return null;
+  const blob=((t.name||'')+' '+(t['name:th']||'')+' '+(t.operator||'')+' '+(t['operator:type']||'')).toLowerCase();
+  if(/โรงเรียน|ร\.ร\.|รร\.|school|วิทยาลัย|มหาวิทยาลัย|universit|college|วิทยาเขต|campus|ชุมชน|ศูนย์เยาวชน|หมู่บ้าน/.test(blob))return null;
+  let kind='park',sport=t.sport;
+  if(/pitch|sports_centre|track|stadium|golf_course/.test(t.leisure))kind='court';
+  if(t.leisure==='golf_course'||t.golf)sport='golf';
+  if(/fitness_station|fitness_centre/.test(t.leisure))kind='fitness';
+  if(/recreation_ground|nature_reserve|common|dog_park/.test(t.leisure))kind='park';
+  const name=t['name:th']||t.name||(kind==='park'?'สวนสาธารณะ (ไม่ระบุชื่อ)':tyFor(kind,sport));
+  const v=makeVenue(name,lat,lon,kind,sport);
+  const fee=(t.fee||'').toLowerCase();
+  if(kind!=='park'){v.charge=t.charge||''; v.paid=(fee==='yes'||!!t.charge||acc==='customers');}
+  if(t.image&&/^https?:/i.test(t.image))v.osmImg=t.image;
+  if(t['wikimedia_commons'])v.commons=t['wikimedia_commons'];
+  v.wiki=t.wikipedia||'';v.wd=t.wikidata||'';
+  return v;
+}
+function finalize(list){
+  list.forEach(v=>{v.dist=Math.round(haversine(center,v)*10)/10;if(!(v.id in jitter))jitter[v.id]=0;
+    v.gem=(v.kind==='park'&&v.busy[hourIndex()]<35&&v.dist<state.radius);});
+  list.sort((a,b)=>a.dist-b.dist);POIS=list.slice(0,2500);
+  render();refreshMarkers();renderConditions();
+  loadVenueAir();
+}
+
+/* ============ rendering ============ */
+function heartBtn(p){const on=isSaved(p.id);return `<div class="heart ${on?'on':''}" onclick="event.stopPropagation();toggleSave(${pjson(p)})">${svg('heart')}</div>`;}
+function pjson(p){return "'"+encodeURIComponent(JSON.stringify({id:p.id,name:p.name,lat:p.lat,lon:p.lon,kind:p.kind,ty:p.ty,fac:p.fac,book:p.book,price:p.price,courts:p.courts,pm:p.pm,cap:p.cap,seed:p.seed,img:p.img,thumb:p.thumb,gallery:p.gallery,busy:p.busy,dist:p.dist}))+"'";}
+function pcardHTML(p){
+  const d=densityOf(p),lv=level(p.busy[hourIndex()]);const open=isOpenNow(p);
+  const facs=p.fac.slice(0,4).map(f=>`<div class="f">${facIcon(f)}</div>`).join('');
+  const more=p.fac.length>4?`<span class="more">+${p.fac.length-4}</span>`:'';
+  const price=p.kind==='park'?'<span style="color:var(--brand);font-weight:700">ฟรี</span>':'<span style="color:var(--accent-deep);font-weight:700">'+(p.charge?p.charge:'มีค่าบริการ')+'</span>';
+  return `<div class="pcard ac" onclick="focusPlace('${p.id}')">
+    ${heartBtn(p)}
+    <div class="cover" style="background-image:url(${p.thumb||fallbackImg(p,600)})">
+      <span class="tg">${p.ty}</span>
+      <div class="coverg"></div>
+      <div class="covertitle">${p.name}${p.gem?'<span class="gem">Hidden Gem</span>':''}</div>
+    </div>
+    <div class="body">
+      <div class="meta">
+        <span>${svg('pin','ic')}${p.dist} กม.</span>
+        ${p.pm!=null?`<span><i style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${pmColor(p.pm)}"></i>${airUnit()} ${p.pm}</span>`:''}
+        ${p.temp!=null?`<span>🌡️ ${p.temp}°</span>`:''}
+        <span class="openb ${open?'o':'c'}">${open?'เปิดอยู่':'ปิดแล้ว'}</span>
+        ${price}
+      </div>
+      <div class="fac">${facs}${more}</div>
+      <div class="ldi">
+        <div class="lh"><span class="lab"><i class="dot" style="background:${lv.c}"></i>ความหนาแน่นโดยประมาณ</span><span class="st" style="color:${lv.c}">${lv.k} · ${d}%</span></div>
+        <div class="bar"><i style="width:${d}%;background:${lv.c}"></i></div>
+      </div>
+    </div></div>`;
+}
+function sortList(arr){const a=[...arr];
+  if(state.sort==='density')a.sort((x,y)=>densityOf(x)-densityOf(y));
+  if(state.sort==='distance')a.sort((x,y)=>x.dist-y.dist);
+  if(state.sort==='pm')a.sort((x,y)=>x.pm-y.pm);return a;}
+function render(){
+  const nl=document.querySelector('.peek .plist'); const nlTop=nl?nl.scrollTop:0;
+  const near=POIS.filter(p=>p.dist<=state.radius+0.05);
+  const _shownNear=sortList(near.length?near:POIS).slice(0,30);
+  document.getElementById('nearcards').innerHTML=_shownNear.map(pcardHTML).join('')||emptySmall();
+  queueAir(_shownNear);
+  if(nl)nl.scrollTop=nlTop;
+  setNearCount(`${near.length} แห่ง`);
+  document.getElementById('exsub').textContent=(usingSeed?'ตัวอย่างในกรุงเทพฯ · ':'')+`พบ ${POIS.length} แห่งจาก OpenStreetMap`;
+  if(currentPage==='explore'){
+    const ex=document.querySelector('#page-explore .scroll'); const exTop=ex?ex.scrollTop:0;
+    const q=(document.getElementById('exsearch')?.value||'').trim().toLowerCase();
+    let feed=POIS.filter(p=>{const okS=state.sport==='all'||p.fac.includes(state.sport);
+      const okQ=!q||p.name.toLowerCase().includes(q)||p.ty.toLowerCase().includes(q)||p.fac.some(f=>FAC[f]&&FAC[f].l.toLowerCase().includes(q));return okS&&okQ;});
+    feed=sortList(feed).slice(0,120);
+    document.getElementById('exfeed').innerHTML=feed.length?feed.map(pcardHTML).join(''):`<div class="empty">${svg('search','ic')}<p>ไม่พบสถานที่ที่ตรงกับการค้นหา</p></div>`;
+    queueAir(feed);
+    if(ex)ex.scrollTop=exTop;
+  }
+  if(currentPage==='saved')renderSaved();
+  if(currentPage==='bookings')renderMyBookings();
+  if(currentPage==='recommend')renderRecommend();
+  renderConditions();renderBadge();
+}
+function emptySmall(){return `<div class="empty" style="padding:30px"><p>ไม่มีสถานที่ในรัศมีนี้<br>ลองขยายรัศมีดู</p></div>`;}
+function recScore(p){const d=densityOf(p);const closed=isOpenNow(p)?0:60;const dist=Math.min(p.dist,30);const airv=p.pm!=null?p.pm:(airType==='AQI'?60:35);const air=(airType==='AQI'?airv*0.25:airv*0.5);const rain=(isRaining&&!isIndoor(p))?85:0;return d+closed+dist*1.4+air+rain;}
+function recReasons(p){const d=densityOf(p),out=[];if(d<35)out.push('คนน้อย');else if(d<55)out.push('คนปานกลาง');if(p.pm!=null&&p.pm<=25)out.push('อากาศดีมาก');else if(p.pm!=null&&p.pm<=50)out.push('อากาศโอเค');if(p.dist<=3)out.push('ใกล้คุณ');else if(p.dist<=8)out.push('ไม่ไกล');if(isOpenNow(p))out.push('เปิดอยู่');if(p.kind==='park')out.push('ฟรี');return out.slice(0,4);}
+function aiInsight(p){const d=densityOf(p);let lead=d<35?'AI ประเมินว่าคนน้อย เหมาะออกกำลังกายตอนนี้':(d<55?'คนปานกลาง ยังพอมีพื้นที่':'ค่อนข้างหนาแน่นในช่วงนี้');
+  let air=p.pm!=null?(p.pm<=25?' • อากาศดีมาก':(p.pm<=50?' • อากาศโอเค':' • ฝุ่นสูง ควรใส่หน้ากาก')):'';
+  return lead+air+' • ห่างคุณ '+p.dist+' กม.';}
+function bestHour(p){let bh=6,bv=999;for(let h=6;h<=21;h++){const v=p.busy[h]||50;if(v<bv){bv=v;bh=h;}}return bh;}
+function recCard(p,pct){const d=densityOf(p),lv=level(p.busy[hourIndex()]);
+  const chips=recReasons(p).map(c=>`<span class="rchip">${c}</span>`).join('');
+  return `<div class="pcard reccard" onclick="focusPlace('${p.id}')">${heartBtn(p)}
+    <div class="top">
+      <div class="thumb" style="background-image:url(${p.thumb||fallbackImg(p,400)})"><span class="tg">${p.ty}</span></div>
+      <div class="info">
+        <div class="nm">${p.name}</div>
+        <div class="recreasons">${chips}</div>
+        <div class="aiinsight">${svg('spark','ic')}${aiInsight(p)}</div>
+      </div>
+      <div class="match" style="--p:${pct}"><span>${pct}%</span></div>
+    </div>
+    <div class="meta" style="padding:2px 2px 0"><span>${svg('pin','ic')}${p.dist} กม.</span><span class="st" style="color:${lv.c}">${lv.k} · ${d}%</span><span>คนน้อยสุด ~${bestHour(p)}:00 น.</span></div>
+  </div>`;}
+function renderRecommend(){const el=document.getElementById('recfeed');if(!el)return;
+  const base=POIS.length?POIS:[];
+  if(!base.length){el.innerHTML=`<div class="empty">${svg('spark','ic')}<p>AI กำลังรอข้อมูล… เปิด GPS หรือขยายรัศมีเพื่อให้ AI ประมวลผล</p></div>`;return;}
+  const scored=base.map(p=>({p,s:recScore(p)})).sort((a,b)=>a.s-b.s).slice(0,20);
+  const lo=scored[0].s,hi=scored[scored.length-1].s,span=(hi-lo)||1;
+  scored.forEach(o=>o.pct=Math.round(73+(1-(o.s-lo)/span)*25));
+  const now=new Date(),hh=String(now.getHours()).padStart(2,'0'),mm=String(now.getMinutes()).padStart(2,'0');
+  const pmL=realPM!=null?pmLabel(realPM):'—';const top=scored[0];
+  const head=`<div class="aibox">
+     <div class="aihead"><span class="aibadge">${svg('spark','ic')}ประมวลผลโดย AI</span><span class="aitime">${hh}:${mm} น.</span></div>
+     <div class="aitext">AI วิเคราะห์ <b>${base.length}</b> สถานที่รอบตัว แล้วจัดอันดับจาก ความหนาแน่น (คาดการณ์) · PM2.5 จริง (${pmL}) · ระยะทาง · เวลาเปิด–ปิด (ทุกสนามปิด 22:00 น.)</div>
+     ${isRaining?'<div class="airain">🌧️ ตอนนี้ฝนตก — AI ลดอันดับที่กลางแจ้ง และแนะนำสนามในร่มก่อน</div>':''}
+     <div class="aitop">⭐ อันดับ 1 ของ AI ตอนนี้: <b>${top.p.name}</b><br>${aiInsight(top.p)}</div>
+   </div>
+   <div class="askai">
+     <div class="at">${svg('spark')}คำแนะนำเพิ่มเติม (ถาม AI ได้)</div>
+     <div class="asub">เช่น "ตอนนี้ฝนตก ไปวิ่งที่ไหนดี" หรือ "หาสนามแบดใกล้ ๆ เปิดถึงดึก"</div>
+     <div class="ar"><input id="aiq" placeholder="พิมพ์คำถาม…" onkeydown="if(event.key==='Enter')askAI()"><button class="aibtn" onclick="askAI()">ถาม</button></div>
+     <div class="aians" id="aians"></div>
+   </div>`;
+  queueAir(scored.map(o=>o.p));
+  el.innerHTML=head+scored.map(o=>recCard(o.p,o.pct)).join('');}
+function setNearCount(t){const e=document.getElementById('nearcount');if(e)e.textContent=t;}
+function focusPlace(id){const p=POIS.find(x=>x.id===id)||state.saved.find(x=>x.id===id);if(!p)return;if(map&&p.lat)map.flyTo([p.lat,p.lon],16);openDetail(p);}
+
+/* saved */
+function isSaved(id){return state.saved.some(s=>s.id===id);}
+function toggleSave(enc){const p=JSON.parse(decodeURIComponent(enc));const i=state.saved.findIndex(s=>s.id===p.id);
+  if(i>=0){state.saved.splice(i,1);toast('นำออกจากรายการบันทึกแล้ว');}else{state.saved.unshift(p);toast('บันทึกแล้ว ❤');}
+  saveStore('s');render();
+  if(currentDetail&&currentDetail.id===p.id){const b=document.getElementById('savebtn');if(b)b.classList.toggle('on',isSaved(p.id));}
+}
+function renderSaved(){
+  const el=document.getElementById('savedlist');if(!el)return;
+  if(!state.saved.length){el.innerHTML=`<div class="empty">${svg('heart','ic')}<p>ยังไม่มีที่บันทึกไว้<br>แตะรูปหัวใจบนการ์ดเพื่อบันทึก</p></div>`;return;}
+  el.innerHTML=state.saved.map(p=>{p.dist=Math.round(haversine(center,p)*10)/10;if(!(p.id in jitter))jitter[p.id]=0;return pcardHTML(p);}).join('');
+}
+
+function renderBadge(){const b=document.getElementById('bkbadge');if(!b)return;
+  if(state.bookings.length){b.style.display='grid';b.textContent=state.bookings.length;}else b.style.display='none';}
+function renderMyBookings(){
+  const el=document.getElementById('mybookings');if(!el)return;
+  const acct=CUR_USER
+    ?`<div class="acctcard"><div class="acctav">${xmlEsc((CUR_USER.name||"?").trim()[0]||"?")}</div><div style="flex:1;min-width:0"><b style="font-size:16px">${xmlEsc(CUR_USER.name)}${CUR_USER.role==='owner'?' 👑':''}</b><div style="font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis">${xmlEsc(CUR_USER.email)}</div><div style="font-size:12px;color:var(--muted)">${CUR_USER.age?("อายุ "+xmlEsc(CUR_USER.age)+" ปี"):""}${CUR_USER.gender?(" · "+xmlEsc(CUR_USER.gender)):""}</div></div><button class="cancel" style="margin:0;width:auto;padding:8px 14px" onclick="logout()">ออกจากระบบ</button></div>${CUR_USER.role==='owner'?`<button class="navmain" style="margin:0 0 14px" onclick="openDashboard()">${svg('chart')} แดชบอร์ดเจ้าของ</button>`:''}`
+    :`<div class="acctcard" style="flex-direction:column;align-items:stretch;gap:10px"><div style="font-weight:700">เข้าสู่ระบบเพื่อบันทึกการจองของคุณ</div><div style="display:flex;gap:8px"><button class="navmain" style="margin:0;flex:1" onclick="openAuth('login')">เข้าสู่ระบบ</button><button class="navmain" style="margin:0;flex:1;background:transparent;color:var(--cta);border:1.5px solid var(--cta)" onclick="openAuth('signup')">สมัครสมาชิก</button></div></div>`;
+  if(!state.bookings.length){el.innerHTML=acct+`<div class="empty">${svg('ticket','ic')}<p>ยังไม่มีการจอง<br>เลือกสนามที่ "จองได้" แล้วกดจองได้เลย</p></div>`;renderBadge();return;}
+  el.innerHTML=acct+state.bookings.map((b,i)=>`<div class="bcard"><div class="stripe"></div>
+    <div class="bh"><b>${b.place}</b><small>${b.code}</small></div>
+    <div class="brow"><span>${svg('calendar')}${b.date}</span><span>${svg('clock')}${b.slot}</span></div>
+    <div class="brow"><span>${svg('grid')}${b.court}</span><span style="color:var(--brand);font-weight:600">${b.price>0?b.price+' บาท':'ฟรี'}</span></div>${b.method?`<div class="brow"><span>${svg('ticket')}ชำระโดย ${b.method}</span></div>`:''}
+    <button class="cancel" onclick="cancelBooking(${i})">ยกเลิกการจอง</button></div>`).join('');
+  renderBadge();
+}
+
+/* ============ detail sheet ============ */
+function openDetail(p){
+  currentDetail=p;if(!(p.id in jitter))jitter[p.id]=0;
+  loadVenuePhotos(p).then(ph=>{if(ph&&ph.length&&currentDetail&&currentDetail.id===p.id)updateHero(ph);});
+  loadDetailAir(p);
+  const d=densityOf(p),lv=level(p.busy[hourIndex()]);const open=isOpenNow(p);
+  const hi=hourIndex();let bestI=hi,bestV=999;for(let i=hi;i<p.busy.length;i++)if(p.busy[i]<bestV){bestV=p.busy[i];bestI=i;}
+  const bestHr=(bestI+5)+':00';
+  const fc=p.busy.map((v,i)=>{const cls=(i===hi?'now ':'')+(i===bestI?'best':'');const l=level(v);
+    return `<div class="col ${cls}"><div class="bw"><div class="bv" style="height:${Math.max(8,v*0.6)}px;background:${l.c}"></div></div><small>${i+5}</small></div>`;}).join('');
+  const rvP=POIS.find(x=>x.id===p.id)||p;
+  const real=!!(rvP.realPhoto&&rvP.gallery&&rvP.gallery.length);
+  const gal=real?rvP.gallery:[fallbackImg(p,900)];
+  const slides=gal.map(u=>`<div class="hslide" style="background-image:url(${imgURL(u,900)})"></div>`).join('');
+  const dots=gal.map((_,i)=>`<i class="${i===0?'on':''}" onclick="heroGo(${i})"></i>`).join('');
+  document.getElementById('sheetbody').innerHTML=`
+    <div class="hero">
+      <div class="hgal" id="hgal" onscroll="heroScroll(this)">${slides}</div>
+      <div class="grip"></div>
+      <button class="close" onclick="closeSheet()">${svg('x')}</button>
+      <div class="hcount" id="hcount">1 / ${gal.length}</div>
+      ${real?'':'<div class="nophoto" id="nophoto">ภาพประกอบ · ยังไม่พบภาพจริงของสถานที่นี้</div>'}
+      <div class="hdots" id="hdots">${dots}</div>
+    </div>
+    <div class="dpanel">
+      <h3 class="dh3">${p.name}</h3>
+      <div class="dsub"><span class="${open?'kopen':'kclosed'}">${open?'เปิดอยู่ · ปิด '+closeHour(p):'ปิดแล้ว'}</span> · ${p.ty}${p.kind!=='park'?' · '+(p.charge||'มีค่าบริการ'):' · ฟรี'} <span id="dWX">${p.temp!=null?'· '+p.temp+'°':''}</span></div>
+      <div style="font-size:11px;color:var(--faint);margin:7px 0 0;display:flex;gap:5px;align-items:flex-start"><span>ℹ️</span><span>ข้อมูลสถานที่จาก OpenStreetMap อาจคลาดเคลื่อนหรือปิดปรับปรุง โปรดยืนยันใน Google Maps ก่อนเดินทาง</span></div>
+      <div class="dstats">
+        <div class="dstat"><span class="di">${svg('pin')}</span><span class="dv">${p.dist}</span><span class="dl">กม.</span></div>
+        <div class="dstat"><span class="di">${svg('clock')}</span><span class="dv" style="color:${open?'var(--green)':'var(--red)'};font-size:14.5px">${open?'เปิด':'ปิด'}</span><span class="dl">สถานะ</span></div>
+        <div class="dstat"><span class="di">${svg('wind')}</span><span class="dv" id="dAQ" style="color:${p.pm!=null?pmColor(p.pm):'var(--faint)'}">${p.pm!=null?p.pm:'…'}</span><span class="dl">${airType==='AQI'?'AQ':'PM2.5'}</span></div>
+      </div>
+      <span id="dair" style="display:none"></span>
+      <div class="block"><div class="bt">${svg('navigation')}นำทางในแอป</div>
+        <p style="font-size:12px;color:var(--muted);margin:-4px 0 11px;text-align:left">ดูเส้นทางในแอป หรือกดเปิดใน Google Maps ก็ได้</p>
+        <button class="navmain" onclick="startNav()">${svg('navigation')}นำทางในแอป</button>
+        <button class="navmain" style="background:transparent;color:var(--cta);border:1.5px solid var(--cta);box-shadow:none;margin-top:9px" onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}','_blank')">${svg('navigation')}เปิดเส้นทางใน Google Maps</button>
+      </div>
+      <div class="block"><div class="bt">${svg('navigation')}การเดินทาง & ที่จอดรถ</div>
+        <div style="display:flex;gap:8px;margin-bottom:9px">
+          <button class="travel-b" onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}&travelmode=driving','_blank')">${svg('navigation')}<span>ขับรถ</span></button>
+          <button class="travel-b" onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}&travelmode=transit','_blank')">${svg('grid')}<span>ขนส่งสาธารณะ</span></button>
+          <button class="travel-b" onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}&travelmode=walking','_blank')">${svg('activity')}<span>เดิน</span></button>
+        </div>
+        <button class="navmain" style="background:transparent;color:var(--cta);border:1.5px solid var(--cta);box-shadow:none" onclick="window.open('https://www.google.com/maps/search/'+encodeURIComponent('ที่จอดรถ')+'/@${p.lat},${p.lon},16z','_blank')">${svg('pin')}หาที่จอดรถใกล้เคียง</button>
+        <p style="font-size:11.5px;color:var(--faint);margin:9px 0 0;text-align:left">เลือกวิธีเดินทางเพื่อดูเส้นทาง/เวลาจริงใน Google Maps · ปุ่มที่จอดรถจะค้นจุดจอดรอบ ๆ สถานที่</p>
+      </div>
+      <div class="block"><div class="bt">${svg('activity')}ความหนาแน่นโดยประมาณ</div>
+        <div class="ldi" style="padding:0">
+          <div class="lh" style="margin-bottom:7px"><span class="lab"><i class="dot" style="background:${lv.c}"></i>คาดการณ์จากช่วงเวลา</span><span class="st" style="color:${lv.c};font-size:14px">${lv.k} · ${d}%</span></div>
+          <div class="bar" style="height:11px"><i style="width:${d}%;background:${lv.c}"></i></div>
+          <div class="ppl">* ค่าคาดการณ์ตามช่วงเวลา ยังไม่ใช่จำนวนคนจริง (เวอร์ชันจริงต้องต่อเซนเซอร์นับคนหน้างาน)</div>
+        </div></div>
+      <div class="block"><div class="bt">${svg('chart')}คาดการณ์ความหนาแน่นรายชั่วโมง</div>
+        <div class="fc">${fc}</div>
+        <div class="fc-tip">${svg('bulb','ic')}ช่วงที่แนะนำให้มา: <b style="margin-left:2px">${bestHr} น.</b> — คนน้อยที่สุดในช่วงที่เหลือของวัน</div></div>
+      <div class="block"><div class="bt">${svg('grid')}สิ่งอำนวยความสะดวก</div>
+        <div class="faclist">${p.fac.map(f=>`<div class="fi" onclick="showFac('${f}')"><div class="ic2">${facIcon(f)}</div><div>${(FAC[f]||FAC.walk).l}</div><span class="fchev">${svg('chevron')}</span></div>`).join('')}</div></div>
+      <div style="height:6px"></div>
+    </div>`;
+  document.getElementById('ctabar').innerHTML=`
+    <button class="btn btn-line ${isSaved(p.id)?'on':''}" id="savebtn" onclick="toggleSave(${pjson(p)})">${svg('heart')}</button>
+    <button class="btn btn-line" onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}','_blank')">${svg('navigation')}</button>
+    ${p.book?`<button class="btn btn-go" onclick="openBooking()">${svg('ticket')}จองสนาม</button>`
+      :`<button class="btn btn-go free" onclick="toast('สวนสาธารณะนี้เข้าใช้ได้ฟรี ไม่ต้องจอง')">${svg('check')}เข้าใช้ได้เลย (ฟรี)</button>`}`;
+  showSheet();agoStart=Date.now();startHeroAuto(gal.length);
+}
+async function startNav(){
+  const p=currentDetail;if(!p)return;
+  closeSheet();go('map');setPeek(58);
+  if(map)map.flyTo([p.lat,p.lon],14);
+  if(approxLoc)toast('แนะนำให้กดอนุญาตตำแหน่งก่อน เพื่อเส้นทางที่แม่นยำ');
+  else toast('กำลังคำนวณเส้นทาง...');
+  const o={lat:center.lat,lon:center.lon},d=p;
+  try{
+    const url='https://router.project-osrm.org/route/v1/driving/'+o.lon+','+o.lat+';'+d.lon+','+d.lat+'?overview=full&geometries=geojson&steps=true';
+    const ctrl=new AbortController();const t=setTimeout(()=>ctrl.abort(),9000);
+    const res=await fetch(url,{signal:ctrl.signal});clearTimeout(t);
+    const data=await res.json();
+    if(!data.routes||!data.routes.length)throw 0;
+    const r=data.routes[0];
+    drawRoute(r.geometry,false);
+    showNavPanel(p,r.distance,r.duration,(r.legs&&r.legs[0]&&r.legs[0].steps)||[],false);
+  }catch(e){
+    drawRoute({type:'LineString',coordinates:[[o.lon,o.lat],[d.lon,d.lat]]},true);
+    const km=haversine(o,d);showNavPanel(p,km*1000,km/35*3600,[],true);
+    toast('เส้นทางจริงไม่พร้อม • แสดงเส้นตรงโดยประมาณ');
+  }
+}
+function drawRoute(geo,dashed){
+  if(!map)return;
+  if(routeLayer){map.removeLayer(routeLayer);routeLayer=null;}
+  routeLayer=L.geoJSON(geo,{pane:'over',style:{color:'#FF6A3D',weight:6,opacity:.92,lineCap:'round',dashArray:dashed?'2 11':null}}).addTo(map);
+  try{map.fitBounds(routeLayer.getBounds(),{padding:[55,55],maxZoom:16});}catch(e){}
+}
+function maneuverTH(s){const m=s.maneuver||{};const mod=m.modifier||'';
+  if(m.type==='depart')return 'เริ่มต้นออกเดินทาง';
+  if(m.type==='arrive')return 'ถึงจุดหมาย';
+  if(/left/.test(mod))return 'เลี้ยวซ้าย';
+  if(/right/.test(mod))return 'เลี้ยวขวา';
+  if(/uturn/.test(mod))return 'กลับรถ';
+  return 'ตรงไป';}
+function showNavPanel(p,distM,durS,steps,approxRoute){
+  let el=document.getElementById('navpanel');
+  if(!el){el=document.createElement('div');el.id='navpanel';el.className='navpanel';document.getElementById('page-map').appendChild(el);}
+  const km=distM<10000?(distM/1000).toFixed(1):Math.round(distM/1000);
+  const mins=Math.max(1,Math.round(durS/60));
+  const rows=steps.length?steps.map(st=>{const d2=Math.round(st.distance);const nm=st.name?(' · '+st.name):'';
+    return '<div class="nstep"><span class="nd">'+(d2>=1000?(d2/1000).toFixed(1)+' กม.':d2+' ม.')+'</span><span>'+maneuverTH(st)+nm+'</span></div>';}).join('')
+    :'<div class="nstep"><span>เดินทางตรงไปยังจุดหมาย '+km+' กม.</span></div>';
+  el.innerHTML='<div class="np-head"><div><b>'+p.name+'</b><div class="np-eta">~ '+mins+' นาที · '+km+' กม.'+(approxRoute?' (โดยประมาณ)':'')+' · โดยรถยนต์</div></div>'+
+    '<button class="np-stop" onclick="stopNav()">'+svg('x')+'</button></div>'+
+    '<div class="np-steps">'+rows+'</div>';
+  el.classList.add('show');
+}
+function stopNav(){if(routeLayer&&map){map.removeLayer(routeLayer);routeLayer=null;}const el=document.getElementById('navpanel');if(el)el.classList.remove('show');}
+
+/* ============ booking ============ */
+let bk={court:null,slot:null};
+function openBooking(){
+  const p=currentDetail;bk={court:null,slot:null};
+  const slotsAll=['06:00','07:00','08:00','17:00','18:00','19:00','20:00'];
+  const seed=hashStr(p.id);const full=slotsAll.filter((s,i)=>((seed>>i)&3)===0);
+  const today=new Date().toLocaleDateString('th-TH',{day:'numeric',month:'short',year:'2-digit'});
+  document.getElementById('sheetbody').innerHTML=`<div class="sbody" style="padding-top:16px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <button class="close" style="position:static;width:34px;height:34px;background:#eef3ef;color:var(--text)" onclick="openDetail(currentDetail)">${svg('chevL')}</button>
+      <div><div style="font-family:'Bai Jamjuree';font-weight:700;font-size:18px">จองสนาม</div><div style="font-size:12px;color:var(--muted)">${p.name}</div></div>
+    </div>
+    <div class="bk-step"><div class="lbl">1. เลือกวันที่</div><div class="slots"><div class="slot on">${today} (วันนี้)</div><div class="slot">พรุ่งนี้</div></div></div>
+    <div class="bk-step"><div class="lbl">2. เลือกสนาม</div><div class="courts" id="courts">
+      ${Array.from({length:Math.max(2,p.courts)}).map((_,i)=>`<div class="court" onclick="pickCourt(${i+1},this)"><b>สนาม ${i+1}</b><small>${['พื้นยาง','พื้นไม้','กลางแจ้ง','ในร่ม'][i%4]}</small></div>`).join('')}
+    </div></div>
+    <div class="bk-step"><div class="lbl">3. เลือกช่วงเวลา (รอบละ 1 ชม.)</div><div class="slots" id="slots">
+      ${slotsAll.map(s=>`<div class="slot ${full.includes(s)?'full':''}" ${full.includes(s)?'':`onclick="pickSlot('${s}',this)"`}>${s}</div>`).join('')}
+    </div></div>
+    <div class="summary"><div class="sr"><span>สนาม</span><b id="su-court">—</b></div><div class="sr"><span>เวลา</span><b id="su-slot">—</b></div><div class="sr tot"><span>ราคารวม</span><b>${p.price>0?p.price+' บาท':'ฟรี'}</b></div></div>
+    <div style="height:6px"></div></div>`;
+  document.getElementById('ctabar').innerHTML=`<button class="btn btn-go${p.price>0?'':' free'}" id="confirmbtn" style="opacity:.5;pointer-events:none" onclick="confirmBooking()">เลือกสนามและเวลาก่อน</button>`;
+}
+function pickCourt(n,el){bk.court=n;[...document.querySelectorAll('#courts .court')].forEach(c=>c.classList.remove('on'));el.classList.add('on');document.getElementById('su-court').textContent='สนาม '+n;checkReady();}
+function pickSlot(s,el){bk.slot=s;[...document.querySelectorAll('#slots .slot')].forEach(c=>c.classList.remove('on'));el.classList.add('on');document.getElementById('su-slot').textContent=s+' น.';checkReady();}
+function checkReady(){const b=document.getElementById('confirmbtn');if(bk.court&&bk.slot){b.style.opacity=1;b.style.pointerEvents='auto';b.textContent=currentDetail.price>0?'ยืนยันการจอง · '+currentDetail.price+' บาท':'ยืนยันการจอง (ฟรี)';}}
+function confirmBooking(){
+  if(!CUR_USER){toast('กรุณาเข้าสู่ระบบก่อนจอง');requireLogin(confirmBooking);return;}
+  if(currentDetail.price>0){openPayment();return;}
+  finalizeBooking('ฟรี');
+}
+function crc16(s){let c=0xFFFF;for(let i=0;i<s.length;i++){c^=s.charCodeAt(i)<<8;for(let j=0;j<8;j++)c=(c&0x8000)?(((c<<1)^0x1021)&0xFFFF):((c<<1)&0xFFFF);}return c.toString(16).toUpperCase().padStart(4,'0');}
+function ppF(id,v){return id+(''+v.length).padStart(2,'0')+v;}
+function promptPayPayload(mobile,amount){
+  let m=(''+mobile).replace(/\D/g,'');if(m.length===10&&m[0]==='0')m=m.slice(1);
+  const id='0066'+m;const merchant=ppF('00','A000000677010111')+ppF('01',id);
+  let p=ppF('00','01')+ppF('01','12')+ppF('29',merchant)+ppF('53','764')+ppF('54',Number(amount).toFixed(2))+ppF('58','TH');
+  p+='6304';return p+crc16(p);
+}
+function openPayment(){
+  const p=currentDetail;
+  document.getElementById('sheetbody').innerHTML=`<div class="sbody" style="padding-top:16px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+      <button class="close" style="position:static;width:34px;height:34px;background:#eef3ef;color:#222" onclick="openBooking()">${svg('chevL')}</button>
+      <div><div style="font-family:'Bai Jamjuree';font-weight:700;font-size:18px">ชำระเงิน</div><div style="font-size:12px;color:var(--muted)">${p.name} · สนาม ${bk.court} · ${bk.slot} น.</div></div>
+    </div>
+    <div class="payamt"><span>ยอดที่ต้องชำระ</span><b>${p.price} บาท</b></div>
+    <div class="paytabs">
+      <div class="paytab on" onclick="payMethod('promptpay',this)">${svg('grid')} PromptPay</div>
+      <div class="paytab" onclick="payMethod('card',this)">${svg('ticket')} บัตร</div>
+      <div class="paytab" onclick="payMethod('cod',this)">${svg('pin')} จ่ายหน้างาน</div>
+    </div>
+    <div id="paybody"></div></div>`;
+  payMethod('promptpay');
+}
+function payMethod(m,el){
+  if(el){[...document.querySelectorAll('.paytab')].forEach(t=>t.classList.remove('on'));el.classList.add('on');}
+  const body=document.getElementById('paybody');const amt=currentDetail.price;if(!body)return;
+  if(m==='promptpay'){
+    body.innerHTML=`<div class="payqr"><div id="qrbox" class="qrbox"></div><div style="font-size:13px;color:var(--muted);text-align:center;margin-top:10px">สแกนด้วยแอปธนาคารเพื่อชำระ ${amt} บาท</div><div class="facnote" style="text-align:center;margin-top:8px">QR สาธิต (PromptPay) — ยังไม่ผูกบัญชีร้านจริง</div></div>`;
+    const box=document.getElementById('qrbox');
+    try{if(window.QRCode){box.innerHTML='';new QRCode(box,{text:promptPayPayload('0812345678',amt),width:196,height:196,correctLevel:QRCode.CorrectLevel.M});}else box.innerHTML='<div style="font-size:12px;color:var(--muted);padding:80px 10px">โหลด QR ไม่สำเร็จ (ต้องมีอินเทอร์เน็ต)</div>';}catch(e){box.innerHTML='<div style="font-size:12px;padding:80px 10px">สร้าง QR ไม่ได้</div>';}
+    document.getElementById('ctabar').innerHTML=`<button class="btn btn-go" onclick="finalizeBooking('PromptPay')">ฉันชำระเงินแล้ว (จำลอง)</button>`;
+  }else if(m==='card'){
+    body.innerHTML=`<div style="padding:4px 2px"><label class="alabel">หมายเลขบัตร</label><input class="ain" placeholder="1234 5678 9012 3456" inputmode="numeric"><div style="display:flex;gap:10px"><div style="flex:1"><label class="alabel">วันหมดอายุ</label><input class="ain" placeholder="MM/YY"></div><div style="flex:1"><label class="alabel">CVC</label><input class="ain" placeholder="123" inputmode="numeric"></div></div><div class="facnote">บัตรสาธิต — ไม่มีการตัดเงินจริง (ใช้จริงต้องผ่าน Omise/Stripe)</div></div>`;
+    document.getElementById('ctabar').innerHTML=`<button class="btn btn-go" onclick="finalizeBooking('บัตรเครดิต/เดบิต')">ชำระเงิน ${amt} บาท (จำลอง)</button>`;
+  }else{
+    body.innerHTML=`<div style="padding:16px 4px;font-size:14px;color:var(--muted)">ชำระเงินสดหรือสแกนจ่ายที่จุดบริการเมื่อไปถึงสนาม แล้วแสดงรหัสการจอง</div>`;
+    document.getElementById('ctabar').innerHTML=`<button class="btn btn-go free" onclick="finalizeBooking('จ่ายหน้างาน')">ยืนยันการจอง (จ่ายหน้างาน)</button>`;
+  }
+}
+function finalizeBooking(method){
+  const p=currentDetail;const code='AS-'+Math.random().toString(36).slice(2,6).toUpperCase()+Math.floor(Math.random()*90+10);
+  const date=new Date().toLocaleDateString('th-TH',{day:'numeric',month:'short',year:'2-digit'});
+  state.bookings.unshift({code,place:p.name,court:'สนาม '+bk.court,slot:bk.slot+' น.',date,price:p.price,method});saveStore('b');renderBadge();
+  document.getElementById('sheetbody').innerHTML=`<div class="sbody" style="padding-top:8px"><div class="success">
+    <div class="ok">${svg('checkbig')}</div><h3>${p.price>0?'ชำระเงิน & จองสำเร็จ!':'จองสำเร็จ!'}</h3><p>แสดงรหัสนี้ที่จุดบริการเพื่อเข้าใช้สนาม</p>
+    <div class="ticket"><div class="code">${code}</div>
+      <div class="tr"><span>สถานที่</span><b>${p.name}</b></div>
+      <div class="tr"><span>สนาม</span><b>สนาม ${bk.court}</b></div>
+      <div class="tr"><span>วัน-เวลา</span><b>${date} · ${bk.slot} น.</b></div>
+      <div class="tr"><span>ชำระโดย</span><b>${method}</b></div>
+      <div class="tr"><span>ราคา</span><b style="color:var(--brand)">${p.price>0?p.price+' บาท':'ฟรี'}</b></div>
+    </div>
+    <div class="facnote" style="text-align:left;margin-top:6px">การชำระเงินนี้เป็นการจำลองเพื่อสาธิต · ใช้งานจริงต้องเชื่อมผู้ให้บริการชำระเงิน (Omise/Stripe/PromptPay API) และระบบหลังบ้านของผู้ดูแลสนาม</div></div></div>`;
+  document.getElementById('ctabar').innerHTML=`<button class="btn btn-go free" onclick="closeSheet();go('bookings')">ดูการจองของฉัน</button>`;
+}
+function cancelBooking(i){state.bookings.splice(i,1);saveStore('b');renderMyBookings();toast('ยกเลิกการจองแล้ว');}
+
+/* ============ search ============ */
+async function doGeoSearch(q){
+  q=q.trim();if(!q)return;toast('กำลังค้นหา "'+q+'"...');
+  try{const r=await fetch(`https://nominatim.openstreetmap.org/search?format=json&countrycodes=th&accept-language=th&limit=1&q=${encodeURIComponent(q)}`);
+    const d=await r.json();
+    if(d&&d.length){center={lat:parseFloat(d[0].lat),lon:parseFloat(d[0].lon)};approxLoc=false;
+      document.getElementById('locbanner').style.display='none';
+      meMarker.setLatLng([center.lat,center.lon]);radiusCircle.setLatLng([center.lat,center.lon]);
+      map.flyTo([center.lat,center.lon],15);fetchPOIs();reverseGeo();loadConditions();
+      toast('ย้ายไปที่ '+(d[0].display_name||q).split(',')[0]);}
+    else throw new Error('nf');
+  }catch(e){const f=POIS.filter(p=>p.name.toLowerCase().includes(q.toLowerCase()));
+    if(f.length&&map){map.flyTo([f[0].lat,f[0].lon],16);openDetail(f[0]);}else toast('ไม่พบสถานที่ "'+q+'"');}
+}
+
+/* ============ ui ============ */
+function heroScroll(el){const i=Math.round(el.scrollLeft/Math.max(1,el.clientWidth));const c=document.getElementById('hcount');if(c)c.textContent=(i+1)+' / '+el.children.length;document.querySelectorAll('#hdots i').forEach((d,k)=>d.classList.toggle('on',k===i));}
+function heroGo(i){const g=document.getElementById('hgal');if(g)g.scrollTo({left:i*g.clientWidth,behavior:'smooth'});}
+let heroTimer=null;
+function startHeroAuto(n){clearInterval(heroTimer);if(!n||n<2)return;heroTimer=setInterval(()=>{const g=document.getElementById('hgal');if(!g){clearInterval(heroTimer);return;}const cur=Math.round(g.scrollLeft/Math.max(1,g.clientWidth));heroGo((cur+1)%n);},5000);}
+function showSheet(){document.getElementById('scrim').classList.add('show');document.getElementById('sheet').classList.add('show');}
+function closeSheet(){clearInterval(heroTimer);document.getElementById('scrim').classList.remove('show');document.getElementById('sheet').classList.remove('show');}
+
+const FB_SPORT='photo-1723074832950-9fb031b0f4ec';
+const FACDETAIL={
+ track:{imgs:['photo-1502904550040-7534597429ae','photo-1571008887538-b36bb32f4571','photo-1461896836934-ffe607ba8211'],info:'ลู่วิ่งมาตรฐานมักยาว 400 ม./รอบ พื้นยางกันลื่น เหมาะวิ่งจับเวลาและซ้อมระยะ',meta:['400 ม./รอบ','ฟรีส่วนใหญ่','เช้า/เย็นคนน้อย','ใส่รองเท้าวิ่ง']},
+ walk:{imgs:['photo-1441974231531-c6227db76b6e','photo-1476611317561-60117649dd94','photo-1518770660439-4636190af475'],info:'ทางเดิน-วิ่งในสวน ผิวเรียบ ร่มรื่น เหมาะเดินเร็ว จ๊อกกิ้ง หรือพาครอบครัว',meta:['ฟรี','เหมาะทุกวัย','มีไฟกลางคืนบางจุด']},
+ gym:{imgs:['photo-1534438327276-14e5300c3a48','photo-1571902943202-507ec2618e8f','photo-1599058917212-d750089bc07e'],info:'ฟิตเนสกลางแจ้ง เครื่องเหล็กใช้แรงต้านน้ำหนักตัว ใช้ฟรี เหมาะวอร์ม/เล่นพื้นฐาน',meta:['ฟรี','กลางแจ้ง','เช็ดอุปกรณ์ก่อนใช้']},
+ bad:{imgs:['photo-1626224583764-f87db24ac4ea','photo-1613918431703-aa50889e3be9','photo-1564226803380-3f5f3d3f3f3f'],info:'คอร์ตแบดมินตันในร่ม ควรจองล่วงหน้า นำไม้และลูกขนไก่มาเอง ใส่รองเท้าในร่ม',meta:['ต้องจอง','ในร่ม','เตรียมอุปกรณ์เอง','รองเท้าในร่ม']},
+ bike:{imgs:['photo-1485965120184-e220f721d03e','photo-1471506480208-91b3a4cc78be','photo-1507035895480-2b3156c31fc8'],info:'จุดเช่า/ปั่นจักรยาน มีค่ามัดจำ ควรสวมหมวกกันน็อกและตรวจเบรกก่อนปั่น',meta:['มีค่ามัดจำ','สวมหมวก','ตรวจเบรก']},
+ futsal:{imgs:['photo-1574629810360-7efbbe195018','photo-1551958219-acbc608c6377','photo-1518604666860-9ed391f76460'],info:'สนามฟุตซอลหญ้าเทียม 5 คน จองเป็นชั่วโมง ใส่รองเท้าฟุตซอลพื้นเรียบ',meta:['5 คน','จองรายชั่วโมง','รองเท้าฟุตซอล']},
+ football:{imgs:['photo-1551958219-acbc608c6377','photo-1459865264687-595d652de67e','photo-1431324155629-1a6deb1dec8d'],info:'สนามฟุตบอล 7-11 คน หญ้าจริง/เทียม ควรจองล่วงหน้า ใส่สตั๊ดตามชนิดสนาม',meta:['7-11 คน','จองล่วงหน้า','สตั๊ด']},
+ basket:{imgs:['photo-1546519638-68e109498ffc','photo-1608245449230-4ac19066d2d0','photo-1519861531473-9200262188bf'],info:'สนามบาสเกตบอล เล่นเต็มคอร์ตหรือ 3x3 ครึ่งคอร์ตก็ได้ บางที่ฟรี',meta:['ฟรีบางที่','3x3 ได้','กลางแจ้ง/ในร่ม']},
+ tennis:{imgs:['photo-1554068865-24cecd4e34b8','photo-1622279457486-62dcc4a431d6','photo-1595435742656-5272d0b3fa82'],info:'คอร์ตเทนนิสฮาร์ด/ดิน จองรายชั่วโมง นำแร็กเกตและลูกมาเอง',meta:['จองรายชั่วโมง','เตรียมอุปกรณ์เอง']},
+ volleyball:{imgs:['photo-1612872087720-bb876e2e67d1','photo-1592656094267-764a45160876','photo-1547347298-4074fc3086f0'],info:'สนามวอลเลย์บอล พื้นทราย/พื้นแข็ง ความสูงตาข่ายต่างกันชาย-หญิง',meta:['ทีมละ 6','ทราย/พื้นแข็ง']},
+ takraw:{imgs:[FB_SPORT,'photo-1518604666860-9ed391f76460','photo-1574629810360-7efbbe195018'],info:'สนามตะกร้อขนาดคล้ายแบดมินตัน ใช้ลูกหวาย/พลาสติก เล่นทีมละ 3',meta:['ทีมละ 3','คล้ายคอร์ตแบด']},
+ yoga:{imgs:['photo-1544367567-0f2fcb009e0b','photo-1506126613408-eca07ce68773','photo-1518611012118-696072aa579a'],info:'ลานโยคะ-แอโรบิก มักมีคลาสกลุ่มช่วงเย็น นำเสื่อมาเอง สวมชุดยืดหยุ่น',meta:['คลาสเย็น','นำเสื่อเอง','ฟรีบางที่']},
+ pingpong:{imgs:['photo-1534158914592-062992fbe900','photo-1611251135345-18c56206b863','photo-1503342394128-c104d54dba01'],info:'โต๊ะปิงปองมาตรฐาน นำไม้และลูกมาเอง เหมาะเล่นผ่อนคลายทุกวัย',meta:['นำไม้เอง','ทุกวัย']},
+ swim:{imgs:['photo-1530549387789-4c1017266635','photo-1576013551627-0cc20b96c2a7','photo-1519315901367-f34ff9154487'],info:'สระว่ายน้ำมาตรฐาน 25/50 ม. มีค่าเข้า ต้องใส่หมวกว่ายน้ำ ดูรอบเวลาเปิดสระ',meta:['มีค่าเข้า','หมวกว่ายน้ำ','25/50 ม.']},
+ muaythai:{imgs:['photo-1599058917212-d750089bc07e','photo-1517438476312-10d79c077509','photo-1544367567-0f2fcb009e0b'],info:'ค่ายมวย/ฟิตเนสมวยไทย มีเทรนเนอร์สอน นำผ้าพันมือ เริ่มได้แม้มือใหม่',meta:['มีเทรนเนอร์','ผ้าพันมือ','มือใหม่ได้']},
+ skate:{imgs:['photo-1520045892732-304bc3ac5d8e','photo-1564982752979-3f7bc974d29a','photo-1547447134-cd3f5c716030'],info:'ลานสเก็ต/สเก็ตบอร์ด ควรสวมหมวกและสนับป้องกัน เริ่มจากพื้นเรียบก่อน',meta:['สวมอุปกรณ์ป้องกัน','ระวังล้ม']},
+ petong:{imgs:[FB_SPORT,'photo-1597892657493-6847b9640bac','photo-1518604666860-9ed391f76460'],info:'สนามเปตองลานทราย/กรวด ใช้ลูกเหล็ก เล่นได้ทุกวัย เน้นแม่นยำ',meta:['ลูกเหล็ก','ทุกวัย','ลานทราย']},
+ climb:{imgs:['photo-1522163182402-834f871fd851','photo-1564769662533-4f00a87b4056','photo-1601224748483-2b2d6c9e8a6e'],info:'กำแพงปีนผามีอุปกรณ์เซฟตี้และครูฝึก เหมาะฝึกแขน-แกนกลางลำตัว',meta:['มีเซฟตี้','มีครูฝึก','ท้าทาย']},
+};
+function showFac(k){
+  const F=FACDETAIL[k]||FACDETAIL.walk;const meta=(FAC[k]||FAC.walk);
+  const v=currentDetail||{};
+  // รูปจริงของ"สถานที่นี้" (ถ้ามี) + ภาพประกอบที่ตรงประเภทกีฬาเสมอ (ไม่ใช้รูปสุ่มที่อาจผิดประเภท)
+  let slides=[];
+  if(v.realPhoto&&v.gallery&&v.gallery.length){slides=v.gallery.slice(0,3).map(u=>`<img src="${imgURL(u,800)}" onclick="window.open('${imgURL(u,1600)}','_blank')" style="cursor:zoom-in" onerror="this.style.display='none'" alt="">`);}
+  const hue=(hashStr(k)%360);
+  slides.push(`<div class="facplace" style="background:linear-gradient(150deg,hsl(${hue} 40% 22%),hsl(${(hue+40)%360} 45% 14%))"><div class="fpic">${facIcon(k)}</div><div class="fpname">${meta.l}</div><div class="fptag">ภาพประกอบประเภทกีฬา</div></div>`);
+  const imgs=slides.join('');
+  const realNote=(v.realPhoto&&v.gallery&&v.gallery.length)?'รูปแรก ๆ เป็นภาพจริงของสถานที่นี้ · ภาพสุดท้ายเป็นภาพประกอบประเภทกีฬา':'สถานที่นี้ยังไม่มีภาพจริงในฐานข้อมูลสาธารณะ จึงแสดงภาพประกอบประเภทกีฬาที่ตรงประเภท';
+  document.getElementById('facsheet').innerHTML=`
+    <div class="fachead"><button class="fback" onclick="closeFac()">${svg('x')}</button><h3><span class="fic">${facIcon(k)}</span>${meta.l}${v.name?' · '+v.name:''}</h3></div>
+    <div class="facgal">${imgs}</div>
+    <div class="facbody">
+      <div class="facinfo">${F.info}</div>
+      <div class="facmeta">${(F.meta||[]).map(m=>`<span>${m}</span>`).join('')}</div>
+    </div>
+    <div class="facnote">${realNote}</div>
+    <div style="flex:1"></div>
+    <button class="facclose" onclick="closeFac()">เข้าใจแล้ว</button>`;
+  document.getElementById('facscrim').classList.add('show');
+  document.getElementById('facsheet').classList.add('show');
+}
+function closeFac(){document.getElementById('facscrim').classList.remove('show');document.getElementById('facsheet').classList.remove('show');}
+
+/* ============ AI core (เชื่อม Claude ผ่าน serverless หรือ direct) ============ */
+const EV_FB=['photo-1533174072545-7a4b6ad7a6c3','photo-1571019613454-1cb2f99b2d8b','photo-1461896836934-ffe607ba8211'];
+/* ===== ฝัง API key ถาวร (ไม่บังคับ): วางคีย์ของคุณในเครื่องหมายคำพูด แล้วทุกคนที่เปิดแอปจะใช้ AI ได้เลย ===== */
+const EMBED_GEMINI_KEY='AQ.Ab8RN6I4a4gqRGzBye6hZHggJItj4n44DGdtZ1FOjuB5eOwnkw';      /* ← วางคีย์ Gemini (ฟรีจาก aistudio.google.com) ตรงนี้ เช่น 'AIzaSy....' */
+const EMBED_ANTHROPIC_KEY='';   /* ← หรือวางคีย์ Anthropic 'sk-ant-...' ตรงนี้ (ใช้อันใดอันหนึ่ง) */
+let AI_KEY='';try{AI_KEY=localStorage.getItem('as_aikey')||'';}catch(e){}
+if(!AI_KEY&&EMBED_ANTHROPIC_KEY)AI_KEY=EMBED_ANTHROPIC_KEY;
+function setAIKey(retry){
+  const k=prompt('วาง Anthropic API key (ขึ้นต้น sk-ant-...) เพื่อเปิดใช้ AI สำหรับเดโม\n(คีย์จะเก็บในเครื่องนี้เท่านั้น ใช้คีย์ของคุณเองในการเดโม)');
+  if(k&&k.trim()){AI_KEY=k.trim();try{localStorage.setItem('as_aikey',AI_KEY);}catch(e){}toast('บันทึกคีย์ AI แล้ว ✓');
+    if(retry==='ask')askAI();else if(retry==='events'){if(typeof aiFindEvents==='function')aiFindEvents();}}
+}
+let GEMINI_KEY='';try{GEMINI_KEY=localStorage.getItem('as_gemkey')||'';}catch(e){}
+if(!GEMINI_KEY&&EMBED_GEMINI_KEY)GEMINI_KEY=EMBED_GEMINI_KEY;
+function setGeminiKey(retry){
+  const k=prompt('วาง Google Gemini API key (ฟรี — ขอที่ aistudio.google.com → Get API key)');
+  if(k&&k.trim()){GEMINI_KEY=k.trim();try{localStorage.setItem('as_gemkey',GEMINI_KEY);}catch(e){}toast('บันทึก Gemini key แล้ว ✓');
+    if(retry==='ask')askAI();else if(retry==='events'){if(typeof aiFindEvents==='function')aiFindEvents();}}
+}
+function aiReady(){return !!(AI_KEY||GEMINI_KEY);}
+async function geminiCall(sys,msg,useSearch){
+  const MODELS=['gemini-2.0-flash','gemini-2.5-flash-lite','gemini-2.5-flash','gemini-flash-latest'];
+  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+  const isBusy=e=>/high demand|overload|unavailable|exhaust|RESOURCE_EXHAUSTED|503|429|try again/i.test((e&&e.message)||'');
+  async function go(model,withTool){
+    const body={system_instruction:{parts:[{text:sys}]},contents:[{role:'user',parts:[{text:msg}]}],generationConfig:{maxOutputTokens:8192,temperature:0.3}};
+    if(withTool)body.tools=[{google_search:{}}];
+    let r;try{r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+encodeURIComponent(GEMINI_KEY),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});}catch(netErr){throw new Error('Gemini: เชื่อมต่อไม่ได้ (อาจติด CORS/เครือข่าย) — '+(netErr&&netErr.message||netErr));}
+    let d;try{d=await r.json();}catch(_){throw new Error('Gemini: ตอบกลับไม่ถูกต้อง (HTTP '+r.status+')');}
+    if(d&&d.error)throw new Error('Gemini: '+(d.error.message||d.error.status||('HTTP '+r.status)));
+    if(d&&d.candidates&&d.candidates[0]&&d.candidates[0].content)return (d.candidates[0].content.parts||[]).map(p=>p.text||'').join('\n').trim();
+    throw new Error('Gemini: ไม่มีคำตอบกลับมา');
+  }
+  let lastErr=null,primErr=null;
+  for(const m of MODELS){
+    for(let attempt=0;attempt<2;attempt++){
+      try{return await go(m,!!useSearch);}
+      catch(e){lastErr=e;if(!primErr)primErr=e;
+        if(useSearch){try{return await go(m,false);}catch(e2){lastErr=e2;}}
+        if(isBusy(e)&&attempt===0){await sleep(700);continue;}  // คนใช้เยอะ: รอแล้วลองซ้ำ
+      }
+      break;
+    }
+  }
+  throw lastErr||primErr||new Error('Gemini: เชื่อมต่อไม่สำเร็จ');
+}
+async function callAI(sys,msg,useSearch){
+  // Gemini (ฟรี) ก่อน ถ้ามีคีย์
+  let gemErr=null;
+  if(GEMINI_KEY){try{const t=await geminiCall(sys,msg,useSearch);if(t)return t;}catch(e){gemErr=e;}}
+  const body={model:'claude-sonnet-4-6',max_tokens:4096,system:sys,messages:[{role:'user',content:msg}]};
+  if(useSearch)body.tools=[{type:'web_search_20250305',name:'web_search'}];
+  let data=null;
+  // 1) คีย์ของผู้ใช้ (เรียกตรงจากเบราว์เซอร์)
+  if(AI_KEY){try{const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':AI_KEY,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify(body)});data=await r.json();}catch(e){}}
+  // 2) Netlify Function (เก็บคีย์ฝั่งเซิร์ฟเวอร์)
+  if(!data||data.error){try{const r=await fetch('/.netlify/functions/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});if(r.ok)data=await r.json();}catch(e){}}
+  if(!data||data.error){try{const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sys,msg,useSearch})});if(r.ok){const j=await r.json();if(j&&j.text)return j.text;if(j&&j.content)data=j;}}catch(e){}}
+  // 3) direct (ใช้ได้ในตัวพรีวิวของ Claude.ai)
+  if(!data||data.error){try{const r2=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});data=await r2.json();}catch(e){}}
+  if(data&&data.content)return data.content.map(x=>x.type==='text'?x.text:'').join('\n').trim();
+  if(gemErr)throw gemErr;
+  throw new Error('no-ai');
+}
+function parseJSONLoose(t){if(!t)return null;t=t.replace(/```json/gi,'').replace(/```/g,'').trim();let a=t.indexOf('['),b=t.lastIndexOf(']');if(a>=0&&b>a){try{return JSON.parse(t.slice(a,b+1));}catch(e){}}a=t.indexOf('{');b=t.lastIndexOf('}');if(a>=0&&b>a){try{return JSON.parse(t.slice(a,b+1));}catch(e){}}return null;}
+function mdLite(t){if(!t)return'';return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');}
+function navTo(lat,lon){if(!lat)return;window.open('https://www.google.com/maps/dir/?api=1&destination='+lat+','+lon,'_blank');}
+
+/* ============ AI ถาม-ตอบ (คำแนะนำเพิ่มเติม) ============ */
+async function askAI(){
+  const inp=document.getElementById('aiq');if(!inp)return;const q=inp.value.trim();if(!q)return;
+  const ans=document.getElementById('aians');ans.style.display='block';ans.innerHTML='<span class="aidots">AI กำลังค้นหาและสรุป…</span>';
+  const ctx=POIS.slice(0,12).map(p=>`${p.name}(${p.ty},${p.dist}กม.,${isOpenNow(p)?'เปิด':'ปิด'}${p.pm!=null?',AQ '+p.pm:''})`).join('; ');
+  const sys='คุณเป็นผู้ช่วยแนะนำที่ออกกำลังกาย ตอบภาษาไทย กระชับแต่ครอบคลุม ตรงประเด็น ตอบเร็ว ใช้เฉพาะข้อมูลสถานที่ที่ให้มาเป็นหลัก เวลาแนะนำสถานที่ให้ใช้ชื่อให้ตรงกับรายการที่ให้มาเป๊ะ ๆ เพื่อให้ระบบลิงก์การ์ดได้ ห้ามเอ่ยชื่อหรืออ้างอิงแอป เว็บไซต์ แบรนด์ หรือแหล่งข้อมูลภายนอกใด ๆ และห้ามใส่ลิงก์ ตอบด้วยเนื้อหาโดยตรงเท่านั้น';
+  const um=`พื้นที่ผู้ใช้: ${userArea||'-'}\nสภาพอากาศ: ${weather?weather.t+'° '+(weather.l||''):'-'}, ฝน:${isRaining?'ตก':'ไม่ตก'}, AQ:${realPM!=null?realPM:'-'}\nสถานที่รอบตัว: ${ctx}\nคำถาม: ${q}`;
+  try{const t=await callAI(sys,um,false);ans.innerHTML=mdLite(t)||'(ไม่มีคำตอบ)';
+    const seen={};const picks=POIS.filter(p=>{if(!p.name||seen[p.id])return false;if(t.indexOf(p.name)>=0){seen[p.id]=1;return true;}return false;}).slice(0,5);
+    if(picks.length){ans.innerHTML+='<div class="aiplaces">'+picks.map(p=>`<div class="aiplace" onclick="focusPlace('${p.id}')"><div class="aptn" style="background-image:url(${imgURL(p.thumb||fallbackImg(p,200),200)})"></div><div class="api"><b>${evEsc(p.name)}</b><small>${evEsc(p.ty)} · ${p.dist} กม. · ${isOpenNow(p)?'เปิดอยู่':'ปิดแล้ว'}</small></div><span class="apc">${svg('chevron')}</span></div>`).join('')+'</div>';
+      picks.forEach(p=>{if(!p.photoTry)loadVenuePhotos(p).catch(()=>{});});}
+  }
+  catch(e){const msg=(e&&e.message)||'';const bad=/AIza|not valid|api key|API_KEY|invalid/i.test(msg);ans.innerHTML=(msg&&msg!=='no-ai'?('<div style=\"color:var(--red);font-size:12.5px;margin-bottom:8px;word-break:break-word\">'+xmlEsc(msg)+'</div>'):'')+(bad?'<div style=\"font-size:12px;color:var(--muted);margin-bottom:8px\">คีย์ Gemini ต้องขึ้นต้น AIza… (คีย์ AQ.… ใช้ไม่ได้)</div>':'')+'ใส่คีย์ที่ถูกต้องเพื่อใช้ AI (แนะนำ Gemini เพราะฟรี)<br><div style=\"display:flex;gap:8px;margin-top:9px;flex-wrap:wrap\"><button class=\"aibtn\" style=\"padding:9px 14px\" onclick=\"setGeminiKey(\'ask\')\">ใส่คีย์ Gemini (ฟรี)</button><button class=\"aibtn\" style=\"padding:9px 14px;background:transparent;color:var(--cta);border:1px solid var(--cta)\" onclick=\"setAIKey(\'ask\')\">Anthropic</button></div>';}
+}
+
+/* ============ Event พิเศษ (เพิ่ม/จัดการเอง — ข้อมูลจริงที่คุณกรอก ไม่ใช้คีย์/AI) ============ */
+let evState={tab:'all',items:null};
+function _evFuture(d){const x=new Date();x.setDate(x.getDate()+d);return x.toISOString().slice(0,10);}
+function evLoad(){try{const r=localStorage.getItem('as_events');if(r){evState.items=JSON.parse(r)||[];return;}}catch(e){}
+  evState.items=[{id:'ex1',name:'(ตัวอย่าง) มินิมาราธอนเพื่อสุขภาพ',type:'งานวิ่ง 5/10 กม.',venue:'สวนสาธารณะใกล้คุณ',lat:null,lon:null,date:_evFuture(14),endDate:'',time:'05:30 น.',poster:uimg(GEN_SPORT[0],700),images:[],registerUrl:'',desc:'นี่เป็นรายการตัวอย่าง กดปุ่มแก้ไขเพื่อใส่งานจริง หรือกดลบทิ้งได้',example:true}];}
+function evStore(){try{localStorage.setItem('as_events',JSON.stringify(evState.items));}catch(e){}}
+async function aiFindEvents(){
+  if(!aiReady()){setGeminiKey('events');return;}
+  evState.loading=true;renderEvents();
+  const prov=userArea?userArea.split(' · ').pop():'จังหวัดของผู้ใช้';const today=new Date().toISOString().slice(0,10);
+  const sys='คุณเป็นผู้ช่วยค้นหา "อีเวนต์พิเศษจริง" ด้านออกกำลังกาย/กีฬา/สุขภาพ ครอบคลุม 3 จังหวัด โดยใช้การค้นเว็บอย่างละเอียด ตอบกลับเป็น JSON array เท่านั้น ห้ามมีข้อความอื่น ห้ามแต่งข้อมูล/รูป ใส่เฉพาะงานจริงที่มีหน้าเว็บและหน้าสมัครจริง พยายามใส่ลิงก์รูปโปสเตอร์จริงให้ครบทุกงาน';
+  const um=`ค้นหาอีเวนต์/งานพิเศษด้านออกกำลังกาย/วิ่ง/ปั่นจักรยาน/แข่งกีฬา/สุขภาพ/งานในห้าง ใน "จังหวัด ${prov} และจังหวัดที่อยู่ติดหรือใกล้เคียงอีก 2 จังหวัด (รวมทั้งหมด 3 จังหวัด)" โดยคุณเลือกจังหวัดใกล้เคียงเองตามภูมิศาสตร์จริง ครอบคลุมทั้งงานที่ "จัดไปแล้ว" "กำลังจัด" และ "กำลังจะจัด/เปิดรับสมัคร" (อ้างอิงวันที่ ${today})
+ค้นให้ละเอียดและครบถ้วนที่สุด รวมหลาย ๆ งานเท่าที่หาได้จริง (เป้าหมาย 10-20 งานถ้ามี) เรียงไม่ต้องก็ได้
+แต่ละงานคืน object: name, type(ประเภทงาน), province(ชื่อจังหวัดที่จัด), venue, lat, lon, date(YYYY-MM-DD วันเริ่ม), endDate, time, status(past/ongoing/upcoming), images(array URL รูป "ของจริงที่เปิดดูได้โดยตรง" — เป็นลิงก์รูปตรง ๆ ลงท้าย .jpg/.png/.webp หรือรูปจาก Facebook/เว็บผู้จัด เรียง: [0]=โปสเตอร์/โปสเตอร์รับสมัคร, [1]=อินโฟกราฟิก, [2]=ภาพกิจกรรมจริง), registerUrl(ลิงก์หน้าสมัคร/รายละเอียดจริง), source(URL ที่มา)
+สำคัญมาก: พยายามใส่ images[0] (โปสเตอร์) ที่เป็น URL รูปจริงเปิดดูได้ทุกงาน · ใช้เฉพาะ URL/ลิงก์ของจริง ห้ามแต่งรูปมั่ว ถ้าหารูปไม่ได้จริง ๆ ให้ images=[] · คืนเป็น JSON array เท่านั้น`;
+  try{
+    const t=await callAI(sys,um,true);const arr=parseJSONLoose(t);
+    const ai=(Array.isArray(arr)?arr:[]).map((e,i)=>Object.assign({},e,{id:'ai'+Date.now()+i,_ai:true,poster:(e.poster||(e.images&&e.images[0])||'')}));
+    ai.sort((a,b)=>{const da=evDist(a),db=evDist(b);if(da!=null&&db!=null)return da-db;return 0;});
+    const manual=(evState.items||[]).filter(e=>!e.example&&!e._ai);
+    evState.items=ai.concat(manual);evStore();
+    if(!ai.length)toast('ยังไม่พบอีเวนต์จริง — ลองใหม่ หรือเพิ่มเอง');
+  }catch(e){
+    evState.loading=false;
+    const el=document.getElementById('evbody');
+    if(el)el.innerHTML=`<div class="evload"><p style="color:var(--red);font-weight:600">ค้นหาไม่สำเร็จ</p><p style="font-size:12.5px;color:var(--muted);word-break:break-word">${xmlEsc((e&&e.message)||'ไม่ทราบสาเหตุ')}</p><div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px"><button class="evtab on" onclick="aiFindEvents()">ลองใหม่</button><button class="evtab" onclick="setGeminiKey('events')">เปลี่ยนคีย์ Gemini</button></div><div class="facnote" style="margin-top:12px;text-align:left">คีย์ Gemini ต้องขึ้นต้น AIza… · ถ้าขึ้น "API key not valid" = คีย์ผิด · ถ้าขึ้น CORS/Failed to fetch ให้ลองใช้ Netlify Function แทน</div></div>`;
+    return;
+  }
+  evState.loading=false;renderEvents();
+}
+function openEvents(){
+  if(!evState.items)evLoad();
+  document.getElementById('evscrim').classList.add('show');
+  document.getElementById('evsheet').classList.add('show');
+  renderEvents();
+  const hasAI=(evState.items||[]).some(e=>e._ai);
+  if(!hasAI&&aiReady())aiFindEvents();  // ค้นจากอินเทอร์เน็ตอัตโนมัติ (ของจริง ไม่ให้เติมเอง)
+}
+function closeEvents(){document.getElementById('evscrim').classList.remove('show');document.getElementById('evsheet').classList.remove('show');}
+function evTab(t){evState.tab=t;renderEvents();}
+function evClassify(ev){const t=new Date();t.setHours(0,0,0,0);let st=ev.date?new Date(ev.date):null,en=ev.endDate?new Date(ev.endDate):st;
+  if(!st||isNaN(st))return'upcoming';if(en&&!isNaN(en)&&en<t)return'past';if(st<=t&&(!en||en>=t))return'ongoing';if(st>t)return'upcoming';return'upcoming';}
+function evDist(ev){return ev.lat?Math.round(haversine(center,{lat:+ev.lat,lon:+ev.lon})*10)/10:null;}
+function evEsc(v){return (''+(v==null?'':v)).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
+function renderEvents(){
+  const sh=document.getElementById('evsheet');if(!sh)return;
+  const tabs=[['all','ทั้งหมด'],['ongoing','กำลังจัด'],['upcoming','กำลังจะจัด'],['past','จัดไปแล้ว']];
+  let list=(evState.items||[]).map((ev,i)=>({ev,i,cls:evClassify(ev),dist:evDist(ev)})).filter(o=>!o.ev.example);
+  list.sort((a,b)=>{if(a.dist!=null&&b.dist!=null)return a.dist-b.dist;return (''+(a.ev.date||'')).localeCompare(''+(b.ev.date||''));});
+  let shown=evState.tab==='all'?list.filter(o=>o.cls!=='past'):list.filter(o=>o.cls===evState.tab);
+  const emptyCTA=!aiReady()
+    ?`<div class="evload"><p>อีเวนต์จริงดึงจากอินเทอร์เน็ตด้วย AI (เหมือนตอนหาสนาม) — ใส่คีย์ฟรีครั้งเดียว แล้วระบบจะค้นงานจริงทั้งจังหวัดให้อัตโนมัติ</p><div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px"><button class="evtab on" onclick="setGeminiKey('events')">ใส่ Gemini key (ฟรี)</button><button class="evtab" onclick="setAIKey('events')">หรือ Anthropic</button></div></div>`
+    :`<div class="evload"><p>ยังไม่พบอีเวนต์ในหมวดนี้</p><button class="evtab on" style="margin-top:12px" onclick="aiFindEvents()">ค้นหาอีกครั้ง</button></div>`;
+  const rows=evState.loading?`<div class="evload">${svg('spark','ic')}<p>AI กำลังค้นหาอีเวนต์จริง 3 จังหวัด (${userArea?userArea.split(' \u00b7 ').pop()+' + ใกล้เคียง':'พื้นที่ของคุณ'}) อย่างละเอียด…</p></div>`:(shown.length?shown.map(o=>evRow(o)).join(''):emptyCTA);
+  sh.innerHTML=`<div class="fachead"><button class="fback" onclick="closeEvents()">${svg('x')}</button><h3><span class="fic">${svg('calendar')}</span>อีเวนต์พิเศษ</h3></div>
+    <div class="evbody">
+      <div style="display:flex;gap:8px"><button class="evadd" onclick="aiFindEvents()" style="background:var(--cta);color:#11140F">${svg('spark')} ค้นหาด้วย AI (ทั้งจังหวัด)</button><button class="evadd" onclick="evForm(null)">${svg('check')} เพิ่มเอง</button></div>
+      <div class="evtabs">${tabs.map(t=>`<button class="evtab ${evState.tab===t[0]?'on':''}" onclick="evTab('${t[0]}')">${t[1]}</button>`).join('')}</div>
+      <div class="evhint">${svg('pin')} ค้นหาอีเวนต์จริงทั้งจังหวัดด้วย AI (งานก่อนหน้า + กำลังจะจัด) หรือเพิ่มเอง · แตะการ์ดดูรายละเอียด</div>
+      ${rows}
+    </div>`;
+}
+function evRow(o){const ev=o.ev;const poster=ev.poster||(ev.images&&ev.images[0])||'';
+  const badge=o.cls==='ongoing'?'<span class="evb on">กำลังจัด</span>':o.cls==='upcoming'?'<span class="evb up">เปิดรับสมัคร</span>':'<span class="evb pa">จัดไปแล้ว</span>';
+  return `<div class="evrow ${o.cls}" onclick="openEventDetail(${o.i})">
+    <div class="evthumb" style="background-image:url(${poster?imgURL(poster,300):genTile({name:ev.name||'อีเวนต์',id:ev.id||'',ty:ev.type||'อีเวนต์'})})"></div>
+    <div class="evmain"><div class="evname">${evEsc(ev.name)||'อีเวนต์'}${ev.example?'<span class="evexm">ตัวอย่าง</span>':''}</div>
+      <div class="evmeta">${svg('activity')}<span>${evEsc(ev.type)||'อีเวนต์'}${ev.province?(' · '+evEsc(ev.province)):''}</span></div>
+      <div class="evmeta">${svg('calendar')}<span>${evEsc(ev.date)||'-'}${ev.endDate&&ev.endDate!==ev.date?(' – '+evEsc(ev.endDate)):''}${o.dist!=null?(' · '+o.dist+' กม.'):''}</span></div></div>
+    ${badge}</div>`;
+}
+function evImg(u,idx){return `<img src="${imgURL(u,800)}" onclick="window.open('${imgURL(u,1600)}','_blank')" style="cursor:zoom-in" onerror="this.onerror=null;this.src=genTile({name:'อีเวนต์',ty:'รูปไม่พร้อมแสดง'})" alt="">`;}
+function openEventDetail(i){
+  const ev=evState.items[i];if(!ev)return;const cls=evClassify(ev);const dist=evDist(ev);const eta=dist!=null?Math.max(1,Math.round(dist/30*60)):null;
+  let imgs=[ev.poster].concat(ev.images||[]).filter(Boolean);imgs=[...new Set(imgs)].slice(0,5);
+  const gal=(imgs.length?imgs:[genTile({name:ev.name||'อีเวนต์',id:ev.id||'',ty:ev.type||'อีเวนต์'})]).map((u,idx)=>evImg(u,idx)).join('');
+  document.getElementById('evsheet').innerHTML=`
+   <div class="fachead"><button class="fback" onclick="renderEvents()">${svg('chevron')}</button><h3>${evEsc(ev.name)||'อีเวนต์'}</h3></div>
+   <div class="facgal">${gal}</div>
+   <div class="facbody">
+     <div class="facnote" style="padding:0 0 10px">${imgs.length?'รูป: โปสเตอร์ · อินโฟกราฟิก · ภาพกิจกรรมจริง — แตะรูปเพื่อดูเต็ม':'ยังไม่พบรูปจริงของงานนี้'}</div>
+     <span class="evstatus ${cls}">${cls==='ongoing'?'กำลังจัดอยู่':cls==='upcoming'?'กำลังจะจัด / เปิดรับสมัคร':'จัดไปแล้ว'}</span>
+     <div style="margin-top:13px">
+       <div class="evkv">${svg('activity')}<span><b>ประเภทกิจกรรม:</b> ${evEsc(ev.type)||'-'}</span></div>
+       <div class="evkv">${svg('calendar')}<span><b>วันจัดงาน:</b> ${evEsc(ev.date)||'-'}${ev.endDate&&ev.endDate!==ev.date?(' ถึง '+evEsc(ev.endDate)):''}${ev.time?(' · '+evEsc(ev.time)):''}</span></div>
+       <div class="evkv">${svg('pin')}<span><b>สถานที่:</b> ${evEsc(ev.venue)||'-'}${ev.province?(' · '+evEsc(ev.province)):''}${dist!=null?(' · '+dist+' กม.'+(eta!=null?(' (~'+eta+' นาที)'):'')):''}</span></div>
+       ${ev.desc?`<div class="evkv">${svg('bulb')}<span>${evEsc(ev.desc)}</span></div>`:''}
+     </div>
+     <div class="block" style="margin-top:14px"><div class="bt">${svg('spark')}สรุปโดย AI — เนื้อหา ข้อจำกัด และสิ่งที่ควรรู้</div><div class="facinfo" id="evdesc">${ev.aiSummary?mdLite(ev.aiSummary):(aiReady()?'<span class="aidots">AI กำลังสรุป…</span>':'ใส่คีย์ Gemini เพื่อให้ AI ช่วยสรุปเนื้อหา/ข้อจำกัดของงานนี้')}</div></div>
+     ${ev.registerUrl?`<a href="${evEsc(ev.registerUrl)}" target="_blank" rel="noopener" class="navmain" style="display:flex;text-decoration:none;margin-top:14px">${svg('ticket')}สมัคร / ลงทะเบียนเข้าร่วม</a>`:'<div class="facnote" style="padding:12px 0 0">ยังไม่มีลิงก์สมัคร (เพิ่มได้ในหน้าแก้ไข)</div>'}
+     ${ev.lat?`<button class="navmain" onclick="navTo(${+ev.lat},${+ev.lon})" style="margin-top:9px;background:transparent;color:var(--cta);border:1.5px solid var(--cta)">${svg('navigation')}นำทางไปสถานที่จัดงาน</button>`:''}
+     <div style="display:flex;gap:9px;margin-top:9px">
+       <button class="navmain" onclick="evForm(${i})" style="background:transparent;color:var(--text);border:1px solid var(--line)">${svg('check')}แก้ไข</button>
+       <button class="navmain" onclick="evDelete(${i})" style="background:transparent;color:var(--red);border:1px solid var(--line)">ลบ</button>
+     </div>
+   </div>`;
+  if(!ev.aiSummary&&aiReady())enrichEvent(i);
+}
+async function enrichEvent(i){
+  const ev=evState.items[i];if(!ev||!aiReady())return;
+  try{
+    const t=await callAI('สรุปข้อมูลอีเวนต์ออกกำลังกาย/กีฬานี้เป็นภาษาไทยแบบกระชับ อ่านง่าย ครอบคลุม: เนื้อหางานคืออะไร, ประเภท/ระยะทาง, ใครเหมาะจะเข้าร่วม, ค่าสมัคร(ถ้าทราบ), และข้อจำกัด/เงื่อนไข/สิ่งที่ต้องเตรียมหรือควรรู้ก่อนสมัคร ถ้าข้อมูลไม่พอให้ค้นเว็บเพิ่ม ตอบเป็นข้อความสั้น ๆ ไม่ต้องมีหัวข้อยาว','ชื่องาน: '+(ev.name||'')+' | ประเภท: '+(ev.type||'')+' | จังหวัด: '+(ev.province||'')+' | สถานที่: '+(ev.venue||'')+' | วันที่: '+(ev.date||'')+(ev.desc?(' | ข้อมูลเบื้องต้น: '+ev.desc):'')+(ev.registerUrl?(' | ลิงก์: '+ev.registerUrl):''),true);
+    if(t){ev.aiSummary=t;evStore();const d=document.getElementById('evdesc');if(d)d.innerHTML=mdLite(t);}
+  }catch(e){const d=document.getElementById('evdesc');if(d&&!ev.aiSummary)d.innerHTML='(สรุปไม่สำเร็จ: '+xmlEsc((e&&e.message)||'ไม่ทราบสาเหตุ')+')';}
+}
+function evDelete(i){if(!confirm('ลบอีเวนต์นี้?'))return;evState.items.splice(i,1);evStore();renderEvents();}
+function evForm(i){
+  const ev=(i!=null&&evState.items[i])?evState.items[i]:{};
+  document.getElementById('evsheet').innerHTML=`
+   <div class="fachead"><button class="fback" onclick="renderEvents()">${svg('chevron')}</button><h3>${i!=null?'แก้ไขอีเวนต์':'เพิ่มอีเวนต์ใหม่'}</h3></div>
+   <div class="facbody"><div class="evform">
+     <div><label>ชื่อกิจกรรม *</label><input id="ev_name" value="${evEsc(ev.name)}" placeholder="เช่น Bangkok Mini Marathon 2026"></div>
+     <div><label>ประเภทกิจกรรม</label><input id="ev_type" value="${evEsc(ev.type)}" placeholder="เช่น งานวิ่ง / แข่งจักรยาน / คลาสโยคะ"></div>
+     <div><label>สถานที่จัด</label><input id="ev_venue" value="${evEsc(ev.venue)}" placeholder="เช่น สวนลุมพินี"></div>
+     <div class="row2"><div><label>วันเริ่ม</label><input id="ev_date" type="date" value="${evEsc(ev.date)}"></div><div><label>วันจบ</label><input id="ev_end" type="date" value="${evEsc(ev.endDate)}"></div></div>
+     <div><label>เวลา</label><input id="ev_time" value="${evEsc(ev.time)}" placeholder="เช่น 05:30 น."></div>
+     <div><label>ลิงก์สมัคร / ลงทะเบียน</label><input id="ev_reg" type="url" value="${evEsc(ev.registerUrl)}" placeholder="https://..."></div>
+     <div><label>URL รูปโปสเตอร์</label><input id="ev_poster" type="url" value="${evEsc(ev.poster)}" placeholder="https://...jpg"></div>
+     <div><label>URL รูปเพิ่มเติม (คั่นด้วย , )</label><input id="ev_imgs" value="${evEsc((ev.images||[]).join(', '))}" placeholder="https://...jpg, https://...jpg"></div>
+     <div><label>รายละเอียดกิจกรรม</label><textarea id="ev_desc" placeholder="รายละเอียด ค่าสมัคร เหมาะกับใคร ฯลฯ">${evEsc(ev.desc)}</textarea></div>
+     <div class="row2"><div><label>พิกัด lat</label><input id="ev_lat" value="${evEsc(ev.lat)}" placeholder="13.73"></div><div><label>พิกัด lon</label><input id="ev_lon" value="${evEsc(ev.lon)}" placeholder="100.54"></div></div>
+     <button class="mini" onclick="document.getElementById('ev_lat').value=center.lat.toFixed(5);document.getElementById('ev_lon').value=center.lon.toFixed(5);">↪ ใช้พิกัดกลางแผนที่ปัจจุบัน</button>
+   </div>
+   <button class="evadd" style="margin-top:6px" onclick="evSaveForm(${i==null?'null':i})">${svg('check')} บันทึกอีเวนต์</button>
+   </div>`;
+}
+function evSaveForm(i){
+  const g=id=>{const e=document.getElementById(id);return e?e.value:'';};
+  const name=g('ev_name').trim();if(!name){toast('กรุณาใส่ชื่อกิจกรรมก่อน');return;}
+  const obj={id:(i!=null&&evState.items[i]?evState.items[i].id:'ev'+Date.now()),
+    name,type:g('ev_type').trim(),venue:g('ev_venue').trim(),date:g('ev_date'),endDate:g('ev_end'),time:g('ev_time').trim(),
+    registerUrl:g('ev_reg').trim(),poster:g('ev_poster').trim(),images:g('ev_imgs').split(',').map(x=>x.trim()).filter(Boolean),
+    desc:g('ev_desc').trim(),lat:parseFloat(g('ev_lat'))||null,lon:parseFloat(g('ev_lon'))||null};
+  if(i!=null&&evState.items[i])evState.items[i]=obj;else evState.items.unshift(obj);
+  evStore();toast('บันทึกอีเวนต์แล้ว ✓');renderEvents();
+}
+
+
+function go(pg){currentPage=pg;['map','explore','saved','bookings','recommend'].forEach(n=>{document.getElementById('page-'+n).classList.toggle('active',n===pg);document.getElementById('nav-'+n).classList.toggle('on',n===pg);});
+  document.getElementById('statusbar').className='statusbar '+(pg==='map'?'onlight':'ondark');
+  render();
+  if(pg==='map'&&map)setTimeout(()=>map.invalidateSize(),60);}
+function peekFull(){const m=document.getElementById('page-map');return m?m.clientHeight:600;}
+function setPeek(h){const p=document.getElementById('peek');if(p)p.style.height=Math.round(h)+'px';}
+function togglePeek(){const p=document.getElementById('peek');if(!p)return;const cur=p.getBoundingClientRect().height;const full=peekFull();setPeek(cur>full*0.4?58:full);}
+function initPeekDrag(){
+  const p=document.getElementById('peek'),h=document.getElementById('peekHandle');if(!p||!h)return;
+  let sy=0,sh=0,drag=false,moved=0;
+  const Y=e=>e.touches?e.touches[0].clientY:e.clientY;
+  const down=e=>{drag=true;moved=0;sy=Y(e);sh=p.getBoundingClientRect().height;p.style.transition='none';};
+  const move=e=>{if(!drag)return;const d=sy-Y(e);moved=Math.max(moved,Math.abs(d));let nh=Math.max(58,Math.min(peekFull(),sh+d));p.style.height=nh+'px';if(e.cancelable)e.preventDefault();};
+  const up=()=>{if(!drag)return;drag=false;p.style.transition='';const full=peekFull(),cur=p.getBoundingClientRect().height;
+    if(moved<8){togglePeek();return;}
+    const snaps=[58,250,Math.round(full*0.5),full];let best=snaps[0];
+    for(const sp of snaps)if(Math.abs(sp-cur)<Math.abs(best-cur))best=sp;
+    setPeek(best);};
+  h.addEventListener('touchstart',down,{passive:true});
+  h.addEventListener('touchmove',move,{passive:false});
+  h.addEventListener('touchend',up);
+  h.addEventListener('mousedown',e=>{down(e);e.preventDefault();});
+  window.addEventListener('mousemove',move);window.addEventListener('mouseup',up);
+}
+function setRadius(v){state.radius=parseFloat(v);const n=parseFloat(v);
+  document.getElementById('radlbl').textContent=n>=900?'ทั่วประเทศ':(n>=50?Math.round(n)+' กม.':n.toFixed(1)+' กม.');
+  if(radiusCircle){radiusCircle.setRadius(Math.min(state.radius,60)*1000);radiusCircle.setStyle({opacity:n>=900?0:1,fillOpacity:n>=900?0:.05});}
+  render();clearTimeout(window._rt);window._rt=setTimeout(fetchPOIs,n>=900?100:500);}
+function setSort(el,s){state.sort=s;[...el.parentNode.children].forEach(c=>c.classList.remove('on'));el.classList.add('on');render();}
+function setSport(el,s){state.sport=s;[...el.parentNode.children].forEach(c=>c.classList.remove('on'));el.classList.add('on');render();}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),3000);}
+function setSplash(m){const e=document.getElementById('splashmsg');if(e)e.textContent=m;}
+function hideSplash(){document.getElementById('splash').classList.add('hide');document.getElementById('statusbar').className='statusbar onlight';if(map)setTimeout(()=>map.invalidateSize(),120);}
+
+/* sport filters + static icons */
+const SPORTS=[['all','ทั้งหมด'],['track','ลู่วิ่ง'],['walk','เดิน-วิ่ง'],['bad','แบดมินตัน'],['futsal','ฟุตซอล'],['football','ฟุตบอล'],['basket','บาสเกตบอล'],['tennis','เทนนิส'],['volleyball','วอลเลย์บอล'],['takraw','ตะกร้อ'],['pingpong','ปิงปอง'],['swim','ว่ายน้ำ'],['bike','จักรยาน'],['gym','ฟิตเนส'],['yoga','โยคะ'],['muaythai','มวยไทย'],['petong','เปตอง'],['skate','สเก็ต'],['climb','ปีนผา'],['golf','กอล์ฟ'],['rugby','รักบี้'],['cricket','คริกเก็ต'],['horse','ขี่ม้า']];
+document.getElementById('sportfilters').innerHTML=SPORTS.map(([k,l],i)=>`<div class="chip ${i===0?'on':''}" onclick="setSport(this,'${k}')">${l}</div>`).join('');
+document.getElementById('sysicons').innerHTML=
+  '<svg class="ic" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M2 17h2v3H2zm4-3h2v6H6zm4-4h2v10h-2zm4-3h2v13h-2zm4-4h2v17h-2z"/></svg>'+
+  '<svg class="ic" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 6c3.6 0 6.8 1.5 9 3.8l-1.4 1.4C17.8 9.2 15 8 12 8s-5.8 1.2-7.6 3.2L3 9.8C5.2 7.5 8.4 6 12 6z"/></svg>'+
+  '<svg class="ic" viewBox="0 0 24 24"><rect x="2" y="7" width="18" height="10" rx="2.5"/><rect x="4" y="9" width="13" height="6" rx="1" fill="currentColor" stroke="none"/><rect x="21" y="10" width="1.6" height="4" rx="1" fill="currentColor" stroke="none"/></svg>';
+['p1','p2','p3'].forEach((id,i)=>{const e=document.getElementById(id);if(e)e.innerHTML=svg(['activity','wind','heart'][i]);});
+
+/* live loop */
+function tickClock(){const n=new Date();document.getElementById('clock').textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');}
+setInterval(()=>{render();},60000);
+setInterval(tickClock,1000);
+setInterval(()=>{if(map)loadConditions();},180000); // refresh weather/air every 3 min
+
+/* PWA: make installable as an app (Add to Home Screen) */
+(function(){
+  const ICON='data:image/svg+xml,'+encodeURIComponent(`<svg viewBox="0 0 512 512"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1C8068"/><stop offset="1" stop-color="#0E5446"/></linearGradient><linearGradient id="gc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF8159"/><stop offset="1" stop-color="#F1542A"/></linearGradient></defs><rect width="512" height="512" rx="115" fill="url(#g)"/><ellipse cx="180" cy="150" rx="230" ry="170" fill="#ffffff" opacity="0.06"/><g fill="none" stroke="#ffffff" stroke-opacity="0.10"><circle cx="256" cy="210" r="150" stroke-width="14"/><circle cx="256" cy="210" r="106" stroke-width="12"/></g><ellipse cx="256" cy="436" rx="66" ry="15" fill="#05332a" opacity="0.30"/><path d="M256 96C188 96 136 148 136 214 136 300 256 432 256 432 256 432 376 300 376 214 376 148 324 96 256 96Z" fill="#ffffff"/><circle cx="256" cy="200" r="70" fill="url(#gc)"/><ellipse cx="232" cy="176" rx="17" ry="10" fill="#ffffff" opacity="0.30" transform="rotate(-35 232 176)"/><path d="M256 158C292 174 292 212 256 246 220 212 220 174 256 158Z" fill="#ffffff"/><path d="M256 166L256 238" stroke="#F1542A" stroke-width="6" stroke-linecap="round"/><path d="M256 196L278 182M256 210L234 198" stroke="#F1542A" stroke-width="5" stroke-linecap="round"/></svg>`);
+  try{document.getElementById('appicon').href=ICON;document.getElementById('favicon').href=ICON;}catch(e){}
+  try{
+    const m={name:'ActiveSphere',short_name:'ActiveSphere',description:'หาที่ออกกำลังกายที่คนไม่แน่นใกล้คุณ',display:'standalone',orientation:'portrait',background_color:'#082420',theme_color:'#0F5A4C',start_url:'./',
+      icons:[{src:ICON,sizes:'any',type:'image/svg+xml',purpose:'any'},{src:ICON,sizes:'512x512',type:'image/svg+xml',purpose:'maskable'}]};
+    const b=new Blob([JSON.stringify(m)],{type:'application/json'});
+    document.getElementById('manifest').href=URL.createObjectURL(b);
+  }catch(e){}
+})();
+
+/* boot */
+paintIcons();tickClock();loadStore();initPeekDrag();
+setTimeout(function(){try{toast('✓ เวอร์ชันใหม่ v31 — อัปเดตโมเดล Gemini');}catch(e){}},800);
+
+function boot(){startLocate();}
+if(document.readyState==='complete')boot();else window.addEventListener('load',boot);
+</script>
+  <div class="facscrim" id="facscrim" onclick="closeFac()"></div>
+  <div class="facsheet" id="facsheet"></div>
+  <div class="facscrim" id="evscrim" onclick="closeEvents()"></div>
+  <div class="facsheet" id="evsheet"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</body>
+</html>
